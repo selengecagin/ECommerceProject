@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="h-14 bg-gradient-to-r from-cyan-500 to-blue-500">
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -29,7 +29,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
 export default App
