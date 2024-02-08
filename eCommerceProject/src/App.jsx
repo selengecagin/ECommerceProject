@@ -1,5 +1,5 @@
-import PageContent from "./pages/PageContent";
 import "./App.css";
+import PageContent from "./layout/PageContent";
 
 function App() {
   return (
