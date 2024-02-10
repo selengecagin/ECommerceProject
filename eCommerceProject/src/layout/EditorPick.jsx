@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function EditorPick() {
   return (
-    <main className="flex flex-col px-48 py-20 gap-12 bg-[#FAFAFA] items-center justify-center self-stretch">
-        
+    <main className="flex flex-col px-48 py-20 gap-12 bg-[#FAFAFA] items-center justify-center w-[1440px]">
       <div className="flex flex-col items-center gap-2.5 ">
         <h2 className="text-2xl font-bold text-[#252B42]">EDITOR’S PICK</h2>
         <p className="text-sm font-normal text-[#737373]">
@@ -24,7 +23,7 @@ export default function EditorPick() {
           />
           <div className="absolute w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
             <div className="text-center">
-              <Link to="/details1" className="text-[#252B42] font-bold ">
+              <Link to="/men" className="text-[#252B42] font-bold ">
                 MEN
               </Link>
             </div>
@@ -35,10 +34,7 @@ export default function EditorPick() {
           <img src={editorsPick2} alt="editors-pick-img-2" />
           <div className="absolute flex items-center  justify-center bg-white w-[136px] w-[136px]">
             <div className="text-center">
-              <Link
-                to="/details2"
-                className="text-[#252B42] font-bold text-base"
-              >
+              <Link to="/women" className="text-[#252B42] font-bold text-base">
                 WOMEN
               </Link>
             </div>
@@ -54,7 +50,7 @@ export default function EditorPick() {
             />
             <div className="absolute w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
               <div className="text-center">
-                <Link to="/details3" className="text-[#252B42] font-bold ">
+                <Link to="/accessories" className="text-[#252B42] font-bold ">
                   ACCESSORIES
                 </Link>
               </div>
@@ -65,7 +61,7 @@ export default function EditorPick() {
             <img src={editorsPick4} alt="Image 4" className="w-full" />
             <div className="absolute  w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
               <div className="text-center">
-                <Link to="/details4" className="text-[#252B42] font-bold ">
+                <Link to="/kids" className="text-[#252B42] font-bold ">
                   KIDS
                 </Link>
               </div>

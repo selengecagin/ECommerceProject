@@ -3,13 +3,16 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Carousel from "../layout/Carousel";
 import EditorPick from "../layout/EditorPick";
+import BestSellerProducts from "../layout/BestSellerProducts";
 export default function HomePage() {
   return (
-    <div>
-      {/* <Header /> */}
-      {/* <Footer /> */}
+    <main /*className=" font-montserrat"*/>
+      <Header />
+
       <Carousel />
       <EditorPick/>
-    </div>
+      <BestSellerProducts />
+      <Footer />
+    </main>
   );
 }
