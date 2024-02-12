@@ -5,7 +5,6 @@ import Carousel from "../layout/Carousel";
 import EditorPick from "../layout/EditorPick";
 import BestSellerProducts from "../layout/BestSellerProducts";
 import ProductInformation from "../layout/ProductInformation";
-import ContentCard from "../components/ContentCard";
 import FeaturedPosts from "../layout/FeaturedPosts";
 export default function HomePage() {
   return (
