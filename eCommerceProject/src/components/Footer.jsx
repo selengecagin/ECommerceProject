@@ -12,9 +12,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 export default function Footer() {
   return (
-    <footer className="flex flex-col ">
+    <footer className="flex flex-col px-48 ">
       <div className="footer-1 flex flex-row h-[142px] bg-[#FAFAFA] justify-between items-center px-48 gap-[305px]">
-
         <div className="flex flex-col 10px gap-2.5">
           <h3 className="text-[#252B42] font-bold text-2xl pb-2.5">
             Consulting Agency For Your Business
@@ -172,7 +171,6 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        
       </div>
     </footer>
   );
