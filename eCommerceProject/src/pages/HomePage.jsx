@@ -8,12 +8,12 @@ import ProductInformation from "../layout/ProductInformation";
 export default function HomePage() {
   return (
     <main /*className=" font-montserrat"*/>
-      {/* <Header />
+      <Header />
       <Carousel />
       <EditorPick />
       <BestSellerProducts />
-      <Footer /> */}
-      <ProductInformation/>
+      <ProductInformation />
+      <Footer />
     </main>
   );
 }
