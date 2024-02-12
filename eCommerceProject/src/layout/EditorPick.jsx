@@ -48,7 +48,7 @@ export default function EditorPick() {
               alt="editors-pick-img-"
               className="w-full"
             />
-            <div className="absolute w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
+            <div className=" absolute w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
               <div className="text-center">
                 <Link to="/accessories" className="text-[#252B42] font-bold ">
                   ACCESSORIES
@@ -59,13 +59,14 @@ export default function EditorPick() {
 
           <div className="relative">
             <img src={editorsPick4} alt="Image 4" className="w-full" />
-            <div className="absolute  w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
+            <div className=" absolute  w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
               <div className="text-center">
                 <Link to="/kids" className="text-[#252B42] font-bold ">
                   KIDS
                 </Link>
               </div>
             </div>
+
           </div>
         </div>
       </div>

@@ -12,7 +12,7 @@ import img8 from "../assets/images/bestSellerProducts8.png";
 export default function BestSellerProducts() {
   return (
     <main className="flex justify-center items-center px-48 ">
-      <div className="seondDiv flex flex-col py-20 gap-20 ">
+      <div className="flex flex-col py-20 gap-20 ">
         <div className="textArea flex flex-col gap-2.5">
           <p className="text-xl font-normal leading-7 text-center text-[#737373]">
             Featured Products
