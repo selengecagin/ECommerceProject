@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 export default function Footer() {
   return (
-    <footer className="flex flex-col w-[1440px] h-[488px] ">
+    <footer className="flex flex-col ">
       <div className="footer-1 flex flex-row h-[142px] bg-[#FAFAFA] justify-between items-center px-48 gap-[305px]">
 
         <div className="flex flex-col 10px gap-2.5">

@@ -7,13 +7,11 @@ import BestSellerProducts from "../layout/BestSellerProducts";
 export default function HomePage() {
   return (
     <main /*className=" font-montserrat"*/>
-      {/* <Header />
-
+      <Header />
       <Carousel />
       <EditorPick />
-
-      <Footer /> */}
       <BestSellerProducts />
+      <Footer />
     </main>
   );
 }

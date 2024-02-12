@@ -21,7 +21,7 @@ export default function BestSellerProducts() {
             BESTSELLER PRODUCTS
           </h2>
           <h6 className="text-sm font-normal leading-5 text-center text-[#737373]">
-            Problems trying to resolve the conflict between{" "}
+            Problems trying to resolve the conflict between
           </h6>
         </div>
 

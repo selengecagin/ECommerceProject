@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function EditorPick() {
   return (
-    <main className="flex flex-col px-48 py-20 gap-12 bg-[#FAFAFA] items-center justify-center w-[1440px]">
+    <main className="flex flex-col px-48 py-20 gap-12 bg-[#FAFAFA] items-center justify-center">
       <div className="flex flex-col items-center gap-2.5 ">
         <h2 className="text-2xl font-bold text-[#252B42]">EDITOR’S PICK</h2>
         <p className="text-sm font-normal text-[#737373]">
