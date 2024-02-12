@@ -10,7 +10,6 @@ export default function ContentCard() {
         <p className="text-[#737373] text-xs font-normal">Trending</p>
         <p className="text-[#737373] text-xs font-normal">New</p>
       </div>
-
       <div className="flex flex-col gap-2.5">
         <h4 className="text-[#252B42] text-xl font-normal w-[247px]">
           Loudest à la Madison #1 (L'integral)
@@ -20,19 +19,16 @@ export default function ContentCard() {
           keystroke away.
         </p>
       </div>
-
       <div className="flex flex-row justify-between py-3.5 items-center">
         <div className="flex flex-row gap-1.5">
           <img src={clock} />
           <p className="text-xs font-normal text-[#737373]">22 April 2021</p>
         </div>
-
         <div className="flex flex-row gap-1.5">
           <img src={statistics} />
           <p className="text-xs font-normal text-[#737373]">10 comments</p>
         </div>
       </div>
-
       <div className="flex flex-row gap-2.5">
         <h6 className=" text-[#737373] text-sm font-bold ">Learn More</h6>
         <img src={rightArrow} />
