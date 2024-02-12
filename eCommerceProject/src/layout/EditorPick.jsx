@@ -32,7 +32,7 @@ export default function EditorPick() {
 
         <div className="relative">
           <img src={editorsPick2} alt="editors-pick-img-2" />
-          <div className="absolute flex items-center  justify-center bg-white w-[136px] w-[136px]">
+          <div className="absolute flex items-center justify-center bg-white w-[136px]">
             <div className="text-center">
               <Link to="/women" className="text-[#252B42] font-bold text-base">
                 WOMEN
