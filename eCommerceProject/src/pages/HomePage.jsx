@@ -10,13 +10,13 @@ import FeaturedPosts from "../layout/FeaturedPosts";
 export default function HomePage() {
   return (
     <main /*className=" font-montserrat"*/>
-      {/* <Header />
+      <Header />
       <Carousel />
       <EditorPick />
       <BestSellerProducts />
       <ProductInformation />
       <FeaturedPosts />
-      <Footer /> */}
+      <Footer />
     </main>
   );
 }
