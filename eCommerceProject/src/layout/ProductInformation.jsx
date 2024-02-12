@@ -18,7 +18,9 @@ export default function ProductInformation() {
           Part of the Neural Universe
         </h1>
         <p className="flex flex-wrap text-xl font-normal text-[#737373]">
-          We know how large objects will act, but things on a small scale.
+          We know how large objects will act,
+          <br />
+          but things on a small scale.
         </p>
 
         <div className="flex flex-row gap-2.5 ">
