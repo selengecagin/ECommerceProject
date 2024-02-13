@@ -2,6 +2,7 @@ import React from "react";
 import pInfo from "../assets/images/productInformation.png";
 import buyNow from "../assets/images/buyNowButton.svg";
 import readMore from "../assets/images/readMoreButton.svg";
+
 export default function ProductInformation() {
   return (
     <main className="flex flex-row justify-center items-center gap-8 px-48">

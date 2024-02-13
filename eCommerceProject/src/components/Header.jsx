@@ -17,7 +17,7 @@ import {
 import { Link } from "react-router-dom";
 export default function Header() {
   return (
-    <main className="flex flex-col justify-start">
+    <main className="flex flex-col justify-start px-48 ">
       <header className=" flex flex-wrap justify-between h-[58px] px-[3%] items-center text-[#FFFFFF] font-bold bg-[#3C403D]">
         <div className="flex items-center gap-8 ">
           <div className="flex items-center gap-2 ">

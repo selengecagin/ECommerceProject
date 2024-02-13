@@ -1,6 +1,7 @@
 import { Carousel, Typography} from "@material-tailwind/react";
 import React from "react";
 import slide1 from "../assets/images/slide1.jpg";
+
 export default function Carousel2() {
   return (
     <main>

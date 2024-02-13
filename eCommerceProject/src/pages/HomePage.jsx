@@ -10,19 +10,14 @@ import Carousel2 from "../layout/Carousel2";
 export default function HomePage() {
   return (
     <main /*className=" font-montserrat"*/>
-      {/* <Header />
-
+      <Header />
+      <Carousel1 />
       <EditorPick />
       <BestSellerProducts />
+      <Carousel2 />
       <ProductInformation />
       <FeaturedPosts />
       <Footer />
-      */}
-      <Carousel1 />
-      <br />
-      <br />
-      <br />
-      <Carousel2 />
     </main>
   );
 }
