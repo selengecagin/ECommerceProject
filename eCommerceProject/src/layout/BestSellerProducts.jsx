@@ -10,60 +10,73 @@ import img7 from "../assets/images/bestSellerProducts7.png";
 import img8 from "../assets/images/bestSellerProducts8.png";
 
 export default function BestSellerProducts() {
+  const productImages = [img1, img2, img3, img4, img5, img6, img7, img8];
+
   return (
-    <main className="flex justify-center items-center px-48 ">
-      <div className="flex flex-col py-20 gap-20 ">
+    <main className="flex justify-center items-center ">
+      <section className="flex flex-col py-20 gap-20 ">
         <div className="textArea flex flex-col gap-2.5">
-          <p className="text-xl font-normal leading-7 text-center text-[#737373]">
+          <p className="text-xl font-normal leading-7 text-center text-secondTextColor">
             Featured Products
           </p>
-          <h2 className="text-2xl font-bold leading-8 text-center text-[#252B42]">
+          <h2 className="text-2xl font-bold leading-8 text-center text-darkTextColor">
             BESTSELLER PRODUCTS
           </h2>
-          <h6 className="text-sm font-normal leading-5 text-center text-[#737373]">
+          <p className="text-sm font-normal leading-5 text-center text-secondTextColor">
             Problems trying to resolve the conflict between
-          </h6>
+          </p>
         </div>
 
         <div className="productCard flex flex-row flex-wrap gap-x-8 gap-y-20 justify-center  pt-14">
-          <div>
-            <img src={img1}></img>
-            <ProductCard />
-          </div>
-
-          <div>
-            <img src={img2}></img>
-            <ProductCard />
-          </div>
-
-          <div>
-            <img src={img3}></img>
-            <ProductCard />
-          </div>
-
-          <div>
-            <img src={img4}></img>
-            <ProductCard />
-          </div>
-
-          <div>
-            <img src={img5}></img>
-            <ProductCard />
-          </div>
-          <div>
-            <img src={img6}></img>
-            <ProductCard />
-          </div>
-          <div>
-            <img src={img7}></img>
-            <ProductCard />
-          </div>
-          <div>
-            <img src={img8}></img>
-            <ProductCard />
-          </div>
+          {productImages.map((img, index) => {
+            return (
+              <div key={index}>
+                <img src={img} alt={`Product ${index + 1}`} />
+                <ProductCard />
+              </div>
+            );
+          })}
         </div>
-      </div>
+      </section>
     </main>
   );
+}
+
+{
+  /* <div>
+            <img src={img1} alt="Description of image 1"></img>
+            <ProductCard />
+          </div>
+
+          <div>
+            <img src={img2} alt="Description of image 2"></img>
+            <ProductCard />
+          </div>
+
+          <div>
+            <img src={img3} alt="Description of image 3"></img>
+            <ProductCard />
+          </div>
+
+          <div>
+            <img src={img4} alt="Description of image 4"></img>
+            <ProductCard />
+          </div>
+
+          <div>
+            <img src={img5} alt="Description of image 5"></img>
+            <ProductCard />
+          </div>
+          <div>
+            <img src={img6} alt="Description of image 6"></img>
+            <ProductCard />
+          </div>
+          <div>
+            <img src={img7} alt="Description of image 7"></img>
+            <ProductCard />
+          </div>
+          <div>
+            <img src={img8} alt="Description of image 8"></img>
+            <ProductCard />
+          </div> */
 }
