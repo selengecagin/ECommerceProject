@@ -16,9 +16,16 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 export default function Header() {
+  const socialMediaLinks = [
+    { icon: faInstagram, url: "https://www.instagram.com/" },
+    { icon: faYoutube, url: "https://www.youtube.com/" },
+    { icon: faFacebook, url: "https://www.facebook.com/" },
+    { icon: faTwitter, url: "https://twitter.com" },
+  ];
+
   return (
-    <main className="flex flex-col justify-start px-48 ">
-      <header className=" flex flex-wrap justify-between h-[58px] px-[3%] items-center text-[#FFFFFF] font-bold bg-[#3C403D]">
+    <header className="flex flex-col justify-start px-48 ">
+      <section className=" flex flex-wrap justify-between h-[58px] px-[3%] items-center text-[#FFFFFF] font-bold bg-[#3C403D]">
         <div className="flex items-center gap-8 ">
           <div className="flex items-center gap-2 ">
             <FontAwesomeIcon icon={faPhone} style={{ color: "#ffffff" }} />
@@ -37,21 +44,19 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <p>Follow Us</p>
           <p>:</p>
-          <a href="https://www.instagram.com/" target="_blank">
-            <FontAwesomeIcon icon={faInstagram} style={{ color: "#ffffff" }} />
-          </a>
-
-          <a href="https://www.youtube.com/" target="_blank">
-            <FontAwesomeIcon icon={faYoutube} style={{ color: "#ffffff" }} />
-          </a>
-          <a href="https://www.facebook.com/" target="_blank">
-            <FontAwesomeIcon icon={faFacebook} style={{ color: "#ffffff" }} />
-          </a>
-          <a href="https://twitter.com" target="_blank">
-            <FontAwesomeIcon icon={faTwitter} style={{ color: "#ffffff" }} />
-          </a>
+          {socialMediaLinks.map((link, index) => {
+            return (
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  key={index}
+                  icon={link.icon}
+                  style={{ color: "#FFFF" }}
+                />
+              </a>
+            );
+          })}
         </div>
-      </header>
+      </section>
       <nav className="flex flex-wrap justify-between h-[76px] px-[3%] py-2.5 items-center bg-white ">
         <div className="text-[#252B42] text-2xl font-bold pt-0">
           <h3>BrandName </h3>
@@ -133,6 +138,6 @@ export default function Header() {
           </div>
         </div>
       </nav>
-    </main>
+    </header>
   );
 }
