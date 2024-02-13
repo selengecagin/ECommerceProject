@@ -17,23 +17,33 @@ import {
 import { Link } from "react-router-dom";
 export default function Header() {
   const socialMediaLinks = [
-    { icon: faInstagram, url: "https://www.instagram.com/" },
-    { icon: faYoutube, url: "https://www.youtube.com/" },
-    { icon: faFacebook, url: "https://www.facebook.com/" },
-    { icon: faTwitter, url: "https://twitter.com" },
+    {
+      icon: faInstagram,
+      url: "https://www.instagram.com/",
+      label: "Instagram",
+    },
+    { icon: faYoutube, url: "https://www.youtube.com/", label: "YouTube" },
+    { icon: faFacebook, url: "https://www.facebook.com/", label: "Facebook" },
+    { icon: faTwitter, url: "https://twitter.com", label: "Twitter" },
   ];
 
   return (
-    <header className="flex flex-col justify-start px-48 ">
-      <section className=" flex flex-wrap justify-between h-[58px] px-[3%] items-center text-[#FFFFFF] font-bold bg-[#3C403D]">
+    <header className="flex flex-col justify-start ">
+      <section className=" flex  justify-between h-[58px] px-[3%] items-center text-lightTextColor font-bold bg-darkBackgroundColor">
         <div className="flex items-center gap-8 ">
           <div className="flex items-center gap-2 ">
-            <FontAwesomeIcon icon={faPhone} style={{ color: "#ffffff" }} />
+            <FontAwesomeIcon
+              icon={faPhone}
+              style={{ color: "lightTextColor" }}
+            />
             <p>(225) 555-0118</p>
           </div>
 
           <div className="flex items-center gap-2 ">
-            <FontAwesomeIcon icon={faEnvelope} style={{ color: "#ffffff" }} />
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              style={{ color: "lightTextColor" }}
+            />
             <p>michelle.rivera@example.com</p>
           </div>
         </div>
@@ -46,65 +56,83 @@ export default function Header() {
           <p>:</p>
           {socialMediaLinks.map((link, index) => {
             return (
-              <a href={link.url} target="_blank" rel="noopener noreferrer">
+              <a
+                href={link.url}
+                key={index}
+                target="_blank"
+                aria-label={`Follow us on ${link.label}`}
+                rel="noopener noreferrer"
+                className="text-lightTextColor"
+              >
                 <FontAwesomeIcon
-                  key={index}
                   icon={link.icon}
-                  style={{ color: "#FFFF" }}
+                  style={{ color: "lightTextColor" }}
                 />
               </a>
             );
           })}
         </div>
       </section>
-      <nav className="flex flex-wrap justify-between h-[76px] px-[3%] py-2.5 items-center bg-white ">
-        <div className="text-[#252B42] text-2xl font-bold pt-0">
+      <nav className="flex  justify-between h-[76px] px-[3%] py-2.5 items-center bg-white ">
+        <div className="text-darkTextColor text-2xl font-bold pt-0">
           <h3>BrandName </h3>
         </div>
 
-        <div className="flex flex-wrap gap-4  ">
+        <div className="flex  gap-4  ">
           <div className="flex items-center">
-            <Link to="/" className="text-[#737373] text-sm font-bold">
+            <Link to="/" className="text-secondTextColor text-sm font-bold">
               Home
             </Link>
           </div>
           <div className="flex items-center">
-            <Link to="/shop" className="text-[#737373] text-sm font-bold">
+            <Link to="/shop" className="text-secondTextColor text-sm font-bold">
               Shop
             </Link>
           </div>
           <div className="flex items-center">
-            <Link to="/about" className="text-[#737373] text-sm font-bold">
+            <Link
+              to="/about"
+              className="text-secondTextColor text-sm font-bold"
+            >
               About
             </Link>
           </div>
           <div className="flex items-center">
-            <Link to="/blog" className="text-[#737373] text-sm font-bold">
+            <Link to="/blog" className="text-secondTextColor text-sm font-bold">
               Blog
             </Link>
           </div>
           <div className="flex items-center">
-            <Link to="/contact" className="text-[#737373] text-sm font-bold">
+            <Link
+              to="/contact"
+              className="text-secondTextColor text-sm font-bold"
+            >
               Contact
             </Link>
           </div>
           <div className="flex items-center">
-            <Link to="/pages" className="text-[#737373] text-sm font-bold">
+            <Link
+              to="/pages"
+              className="text-secondTextColor text-sm font-bold"
+            >
               Pages
             </Link>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-6 text-[#23A6F0] items-center">
-          <div className="flex gap-2 text-[#23A6F0]">
+        <div className="flex  gap-6 text-primaryColor items-center">
+          <div className="flex gap-2 text-primaryColor">
             <Link to="/profile">
-              <FontAwesomeIcon icon={faUser} style={{ color: "#23a6f0" }} />
+              <FontAwesomeIcon
+                icon={faUser}
+                style={{ color: "primaryColor" }}
+              />
             </Link>
-            <Link to="/sign-ip" className="text-[#23A6F0]">
+            <Link to="/sign-ip" className="text-primaryColor">
               Login
             </Link>
-            <p className="text-[#23A6F0]">/</p>
-            <Link to="/sign-up" className="text-[#23A6F0]">
+            <p className="text-primaryColor">/</p>
+            <Link to="/sign-up" className="text-primaryColor">
               Register
             </Link>
           </div>
@@ -114,7 +142,7 @@ export default function Header() {
               <Link to="/search">
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
-                  style={{ color: "#23a6f0" }}
+                  style={{ color: "primaryColor" }}
                 />
               </Link>
             </div>
@@ -123,17 +151,20 @@ export default function Header() {
               <Link to="/basket">
                 <FontAwesomeIcon
                   icon={faCartShopping}
-                  style={{ color: "#23a6f0" }}
+                  style={{ color: "primaryColor" }}
                 />
               </Link>
-              <p className="text-[#23A6F0]">1</p>
+              <p className="text-primaryColor">1</p>
             </div>
 
             <div className="flex gap-2">
               <Link to="/favorites">
-                <FontAwesomeIcon icon={faHeart} style={{ color: "#23a6f0" }} />
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  style={{ color: "primaryColor" }}
+                />
               </Link>
-              <p className="text-[#23A6F0]">1</p>
+              <p className="text-primaryColor">1</p>
             </div>
           </div>
         </div>

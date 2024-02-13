@@ -5,7 +5,14 @@ export default withMT({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
-    colors: { blue: "#1fb6ff", mutedColor: "#BDBDBD", primaryColor: "#23A6F0" },
+    colors: {
+      mutedColor: "#BDBDBD",
+      primaryColor: "#23A6F0",
+      lightTextColor: "#FFFFFF",
+      darkTextColor: "#252B42",
+      secondTextColor: "#737373",
+      darkBackgroundColor: "#252B42",
+    },
   },
   plugins: [],
 });
