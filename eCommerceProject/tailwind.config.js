@@ -15,6 +15,7 @@ export default withMT({
       lightGray1: "#FAFAFA",
       lightBorderColor: "#E6E6E6",
       lightBgColor: "#F9F9F9",
+      disabledElementColor: "#8EC2F2",
     },
   },
   plugins: [],
