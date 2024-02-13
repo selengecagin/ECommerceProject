@@ -5,12 +5,12 @@ import statistics from "../assets/images/statistics.svg";
 export default function ContentCard() {
   return (
     <main className="flex flex-col flex-wrap px-6 pt-6 pb-8 justify-center w-[348px] gap-2.5">
-      <div className="flex flex-row justify-start gap-3.5">
+      <section className="flex flex-row justify-start gap-3.5">
         <p className="text-disabledElementColor text-xs font-normal">Google</p>
         <p className="text-secondTextColor text-xs font-normal">Trending</p>
         <p className="text-secondTextColor text-xs font-normal">New</p>
-      </div>
-      <div className="flex flex-col gap-2.5">
+      </section>
+      <section className="flex flex-col gap-2.5">
         <h4 className="text-darkTextColor text-xl font-normal w-[247px]">
           Loudest à la Madison #1 (L'integral)
         </h4>
@@ -18,8 +18,8 @@ export default function ContentCard() {
           We focus on ergonomics and meeting you where you work. It's only a
           keystroke away.
         </p>
-      </div>
-      <div className="flex flex-row justify-between py-3.5 items-center">
+      </section>
+      <section className="flex flex-row justify-between py-3.5 items-center">
         <div className="flex flex-row gap-1.5">
           <img src={clock} alt="Clock Icon" />
           <time className="text-xs font-normal text-secondTextColor">
@@ -32,11 +32,11 @@ export default function ContentCard() {
             10 comments
           </p>
         </div>
-      </div>
-      <div className="flex flex-row gap-2.5">
+      </section>
+      <section className="flex flex-row gap-2.5">
         <h6 className=" text-secondTextColor text-sm font-bold ">Learn More</h6>
         <img src={rightArrow} alt="Right Arrow Icon" />
-      </div>
+      </section>
     </main>
   );
 }

@@ -8,6 +8,7 @@ export default withMT({
     colors: {
       mutedColor: "#BDBDBD",
       primaryColor: "#23A6F0",
+      secondaryColor:"#23856D",
       lightTextColor: "#FFFFFF",
       darkTextColor: "#252B42",
       secondTextColor: "#737373",
@@ -16,6 +17,7 @@ export default withMT({
       lightBorderColor: "#E6E6E6",
       lightBgColor: "#F9F9F9",
       disabledElementColor: "#8EC2F2",
+
     },
   },
   plugins: [],
