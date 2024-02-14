@@ -1,11 +1,5 @@
 import React from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import SocialMediaContainer from "./SocialMediaContainer";
 
 export default function Footer() {
   return (
@@ -16,39 +10,7 @@ export default function Footer() {
         </h3>
 
         <div className="flex flex-row gap-2.5">
-          <a
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faFacebook}
-              style={{ color: "#23A6F0" }}
-              size="lg"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faInstagram}
-              style={{ color: "#23A6F0" }}
-              size="lg"
-            />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faTwitter}
-              style={{ color: "#23A6F0" }}
-              size="lg"
-            />
-          </a>
+          <SocialMediaContainer />
         </div>
       </section>
 
