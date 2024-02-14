@@ -78,7 +78,7 @@ export default function Header() {
           <h3>BrandName </h3>
         </div>
 
-        <div className="flex  gap-4  ">
+        <div className="flex gap-4">
           <div className="flex items-center">
             <Link to="/" className="text-secondTextColor text-sm font-bold">
               Home

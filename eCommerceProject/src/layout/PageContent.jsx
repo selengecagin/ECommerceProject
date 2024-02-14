@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import ProductListPage from "../pages/ProductListPage";
+import AboutPage from "../pages/AboutPage";
 
 export default function PageContent() {
   return (
@@ -9,9 +10,9 @@ export default function PageContent() {
       <Routes>
         <Route path="/hjk" element={<ProductListPage />}></Route>
 
-        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/" element={<AboutPage />}></Route>
 
-        <Route path="/about" element={<HomePage />}></Route>
+        <Route path="/sadcs" element={<HomePage />}></Route>
 
         <Route path="/blog" element={<HomePage />}></Route>
 
