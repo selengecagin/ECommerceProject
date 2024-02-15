@@ -3,7 +3,7 @@ import RightArrow from "../assets/images/rightArrowXs.png";
 
 export default function FilterMenu() {
   return (
-    <section className="flex flex-row flex-wrap gap-3.5 items-center py-6 justify-between">
+    <section className="flex flex-row flex-wrap gap-3.5 items-center px-[15%] py-6 justify-between">
       <div className=" flex ">
         <h2 className="text-center text-2xl font-bold text-[#252B42] bg-[#FAFAFA]">
           Shop

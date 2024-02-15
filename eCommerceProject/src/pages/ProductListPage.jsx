@@ -26,7 +26,7 @@ import FilterMenu from "../components/FilterMenu";
 
 export default function ProductListPage() {
   return (
-    <main className="flex flex-col px-48 ">
+    <main>
       <Header />
       <FilterMenu />
       <CategoryCard />
