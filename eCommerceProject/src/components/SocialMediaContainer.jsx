@@ -31,7 +31,7 @@ export default function SocialMediaContainer() {
           >
             <FontAwesomeIcon
               icon={link.icon}
-           
+              size="xl"
               style={{ color: "#23A6F0" }}
             />
           </a>

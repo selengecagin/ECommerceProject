@@ -4,7 +4,7 @@ import SocialMediaContainer from "./SocialMediaContainer";
 export default function Footer() {
   return (
     <footer className="flex flex-col">
-      <section className="footer-1 flex flex-row h-[142px] bg-lightGray1 justify-between items-center px-48 gap-[305px]">
+      <section className="footer-1 flex flex-row h-[142px]  justify-between items-center px-48 gap-[305px]">
         <h3 className="text-darkTextColor font-bold text-2xl pb-2.5">
           Bandage
         </h3>
@@ -175,11 +175,11 @@ export default function Footer() {
           <div className="flex flex-col items-start gap-5 ">
             <h5 className="text-darkTextColor font-bold ">Get In Touch</h5>
 
-            <div className="flex items-center  ">
+            <div className="flex items-center">
               <input
                 type="email"
                 placeholder="Your Email"
-                className=" px-[4%] h-[57px] rounded-l-md border border-solid border-lightBorderColor bg-lightBgColor"
+                className=" px-[12px] h-[57px] rounded-l-md border border-solid border-lightBorderColor bg-lightBgColor"
               />
               <button className="bg-primaryColor text-white px-6 py-4  rounded-r-md  items-center shrink-0 border border-solid border-lightBorderColor">
                 Subscribe

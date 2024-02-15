@@ -10,12 +10,10 @@ import img7 from "../assets/images/bestSellerProducts7.png";
 import img8 from "../assets/images/bestSellerProducts8.png";
 
 export default function BestSellerProducts() {
-  const productImages = [img1, img2, img3, img4, img5, img6, img7, img8];
-
   return (
-    <main className="flex justify-center items-center ">
-      <section className="flex flex-col py-20 gap-20 ">
-        <div className="textArea flex flex-col gap-2.5">
+    <section className="flex flex-col justify-center items-center w-full">
+      <div className="flex flex-col py-20 gap-20 ">
+        <div className="flex flex-col gap-2.5">
           <p className="text-xl font-normal leading-7 text-center text-secondTextColor">
             Featured Products
           </p>
@@ -27,56 +25,60 @@ export default function BestSellerProducts() {
           </p>
         </div>
 
-        <div className="productCard flex flex-row flex-wrap gap-x-8 gap-y-20 justify-center  pt-14">
-          {productImages.map((img, index) => {
+        <div className="productCard flex flex-col flex-wrap gap-y-20 justify-center  pt-14">
+          <div className="flex gap-8">
+            <div>
+              <img src={img1} alt="Description of image 1"></img>
+              <ProductCard />
+            </div>
+
+            <div>
+              <img src={img2} alt="Description of image 2"></img>
+              <ProductCard />
+            </div>
+
+            <div>
+              <img src={img3} alt="Description of image 3"></img>
+              <ProductCard />
+            </div>
+
+            <div>
+              <img src={img4} alt="Description of image 4"></img>
+              <ProductCard />
+            </div>
+          </div>
+          <div className="flex gap-8">
+            <div>
+              <img src={img5} alt="Description of image 5"></img>
+              <ProductCard />
+            </div>
+            <div>
+              <img src={img6} alt="Description of image 6"></img>
+              <ProductCard />
+            </div>
+            <div>
+              <img src={img7} alt="Description of image 7"></img>
+              <ProductCard />
+            </div>
+            <div>
+              <img src={img8} alt="Description of image 8"></img>
+              <ProductCard />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+{
+  // const productImages = [img1, img2, img3, img4, img5, img6, img7, img8];
+  /* {productImages.map((img, index) => {
             return (
               <div key={index}>
                 <img src={img} alt={`Product ${index + 1}`} />
                 <ProductCard />
               </div>
             );
-          })}
-        </div>
-      </section>
-    </main>
-  );
-}
-
-{
-  /* <div>
-            <img src={img1} alt="Description of image 1"></img>
-            <ProductCard />
-          </div>
-
-          <div>
-            <img src={img2} alt="Description of image 2"></img>
-            <ProductCard />
-          </div>
-
-          <div>
-            <img src={img3} alt="Description of image 3"></img>
-            <ProductCard />
-          </div>
-
-          <div>
-            <img src={img4} alt="Description of image 4"></img>
-            <ProductCard />
-          </div>
-
-          <div>
-            <img src={img5} alt="Description of image 5"></img>
-            <ProductCard />
-          </div>
-          <div>
-            <img src={img6} alt="Description of image 6"></img>
-            <ProductCard />
-          </div>
-          <div>
-            <img src={img7} alt="Description of image 7"></img>
-            <ProductCard />
-          </div>
-          <div>
-            <img src={img8} alt="Description of image 8"></img>
-            <ProductCard />
-          </div> */
+          })} */
 }

@@ -5,7 +5,7 @@ import readMore from "../assets/images/readMoreButton.svg";
 
 export default function ProductInformation() {
   return (
-    <main className="flex flex-row justify-center items-center gap-8 px-48">
+    <main className="flex flex-row w-full  justify-center items-center gap-8 px-48  ">
       <section className="flex justify-center">
         <img
           src={pInfo}

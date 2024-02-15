@@ -5,7 +5,7 @@ import FP2 from "../assets/images/featuredPosts2.png";
 import FP3 from "../assets/images/featuredPosts3.png";
 export default function FeaturedPosts() {
   return (
-    <main className="flex flex-col items-center py-28 w-full gap-20">
+    <main className="flex flex-col items-center py-28 w-full gap-20 ">
       <section className="flex flex-col gap-2.5 items-center flex-wrap">
         <h6 className="text-sm font-bold text-center text-primaryColor">
           Practice Advice

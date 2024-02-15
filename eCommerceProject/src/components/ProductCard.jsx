@@ -2,8 +2,8 @@ import React from "react";
 import productColors from "../assets/images/product-colors.png";
 export default function ProductCard() {
   return (
-    <main className="flex flex-wrap py-6 pb-9 items-center justify-center w-full">
-      <section className="flex flex-col justify-center items-center gap-2.5">
+    <section className="flex flex-wrap py-6 pb-9 items-center justify-center w-full">
+      <div className="flex flex-col justify-center items-center gap-2.5">
         <h2 className="text-base font-bold leading-3 text-darkTextColor text-center">
           Graphic Design
         </h2>
@@ -19,8 +19,8 @@ export default function ProductCard() {
           alt="product-colors-ellipses"
           className=""
         ></img>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
 

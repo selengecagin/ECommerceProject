@@ -19,6 +19,7 @@ export default withMT({
       disabledElementColor: "#8EC2F2",
       dangerTextColor: "#E74040",
       hoverColor: "#2A7CC7",
+      greenBg: "#23856D",
     },
   },
   plugins: [],
