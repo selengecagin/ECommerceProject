@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 import rightArrow from "../assets/images/rightArrowIconAboutPage.svg";
 import aboutUsHero from "../assets/images/aboutUsHero.png";
-import playIcon from "../assets/images/playIcon.png";
-import videoImage from "../assets/images/videoImage.png";
+
 import TeamCard from "../components/TeamCard";
 import Client from "../components/Client";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
-import SocialMediaContainer from "../components/SocialMediaContainer";
+import VideoCard from "../components/VideoCard";
+
 export default function AboutPage() {
   return (
     <main className="flex flex-col items-center w-full ">
@@ -139,20 +139,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="relative flex justify-center py-28">
-        <img
-          src={videoImage}
-          alt="img2"
-          className="rounded-3xl w-[307px] xl:w-auto h-[307px] xl:h-auto"
-        />
-        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2">
-          <img
-            src={playIcon}
-            alt="svg2"
-            className="cursor-pointer pt-8 hover:scale-110 transition duration-150 w-[80px] xl:w-full h-[80px] xl:h-full"
-          />
-        </div>
-      </section>
+      <VideoCard />
       <TeamCard />
       <Client />
       <Testimonials />
