@@ -277,14 +277,38 @@ export default function TeamPage() {
             Try it free now
           </button>
           <div className="flex p-2.5 items-start gap-8">
-            <img src={teamTwitterLogo}></img>
-            <img src={teamFacebookLogo}></img>
-            <img src={teamInstagramLogo}></img>
-            <img src={teamLinkedinLogo}></img>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={teamTwitterLogo}></img>
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={teamFacebookLogo}></img>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={teamInstagramLogo}></img>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={teamLinkedinLogo}></img>
+            </a>
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </main>
   );
 }
