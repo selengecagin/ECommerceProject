@@ -2,7 +2,7 @@ import React from "react";
 import teamCard1 from "../assets/images/teamCard1.jpg";
 import teamCard2 from "../assets/images/teamCard2.jpg";
 import teamCard3 from "../assets/images/teamCard3.jpg";
-import SocialMediaContainer from "./SocialMediaContainer";
+import SocialMediaContainer from "../components/SocialMediaContainer";
 
 export default function TeamCard() {
   return (

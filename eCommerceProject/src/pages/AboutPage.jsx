@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 
 import rightArrow from "../assets/images/rightArrowIconAboutPage.svg";
 import aboutUsHero from "../assets/images/aboutUsHero.png";
-
-import TeamCard from "../components/TeamCard";
+import Header from "../components/Header";
+import TeamCard from "../layout/TeamCard";
 import Client from "../components/Client";
-import Testimonials from "../components/Testimonials";
+import Testimonials from "../layout/Testimonials";
 import Footer from "../components/Footer";
-import VideoCard from "../components/VideoCard";
+import VideoCard from "../layout/VideoCard";
+import Stats from "../components/Stats";
 
 export default function AboutPage() {
   return (
@@ -58,87 +59,12 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      
 
-      {/* <section className="hero">
-        <div className="flex flex-wrap flex-col justify-center start">
-          <p className="text-[#252B42] font-bold hidden sm:block md:block xl:block">
-            ABOUT COMPANY
-          </p>
-          <h1 className="text-[#252B42] text-[58px] font-bold pt-8">
-            ABOUT US
-          </h1>
-          <p className="text-[#737373] text-xl pt-8">
-            We know how large objects will act, but things on a small scale
-          </p>
+      
 
-          <div>
-            <img
-              src={aboutUsHero}
-              alt="aboutUsHero"
-              className="cursor-pointer pt-8 hover:scale-110 transition duration-200"
-            />
-          </div>
-        </div>
-      </section> */}
 
-      <section className="flex flex-col items-center shrink-0 py-6  ">
-        <div className="flex justify-center items-center gap-14">
-          <div className="flex flex-col items-start gap-6 w-[394px]">
-            <p className="text-sm font-normal text-dangerTextColor">
-              Problems trying
-            </p>
-            <h2 className="text-2xl font-bold text-darkTextColor">
-              Met minim Mollie non desert Alamo est sit cliquey dolor do met
-              sent.
-            </h2>
-          </div>
-          <p className="text-sm font-normal text-secondTextColor w-[545px]">
-            Problems trying to resolve the conflict between the two major realms
-            of Classical physics: Newtonian mechanics{" "}
-          </p>
-        </div>
-      </section>
-
-      <section className="flex justify-center items-center bg-ightTextColor py-20 w-full">
-        <div className="flex flex-row items-start gap-8 ">
-          <div className="flex flex-col w-[238px] items-center">
-            <h2 className="text-5xl font-bold text-darkTextColor text-center">
-              15K
-            </h2>
-            <h5 className="text-base font-bold text-secondTextColor text-center">
-              Happy Customers
-            </h5>
-          </div>
-
-          <div className="flex flex-col w-[238px] items-center">
-            <h2 className="text-5xl font-bold text-darkTextColor text-center">
-              150K
-            </h2>
-            <h5 className="text-base font-bold text-secondTextColor text-center">
-              Monthly Visitors
-            </h5>
-          </div>
-
-          <div className="flex flex-col w-[238px] items-center">
-            <h2 className="text-5xl font-bold text-darkTextColor text-center">
-              15
-            </h2>
-            <h5 className="text-base font-bold text-secondTextColor text-center">
-              Countries Worldwide
-            </h5>
-          </div>
-
-          <div className="flex flex-col w-[238px] items-center">
-            <h2 className="text-5xl font-bold text-darkTextColor text-center">
-              100+
-            </h2>
-            <h5 className="text-base font-bold text-secondTextColor text-center">
-              Top Partners
-            </h5>
-          </div>
-        </div>
-      </section>
-
+      <Stats />
       <VideoCard />
       <TeamCard />
       <Client />
