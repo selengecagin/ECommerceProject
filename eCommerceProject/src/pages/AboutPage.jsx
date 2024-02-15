@@ -169,24 +169,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-6 px-48 justify-center items-center bg-lightGray1">
-        <div className="flex flex-col py-20 gap-6 items-center shrink-0">
-          <div className="flex flex-col items-center gap-7 w-[864px] ">
-            <h2 className="text-4xl font-bold text-darkTextColor">
-              Big Companies Are Here
-            </h2>
-            <p className="text-sm font-normal text-center text-secondTextColor w-[547px]">
-              Problems trying to resolve the conflict between <br /> the two
-              major realms of Classical physics: Newtonian mechanics{" "}
-            </p>
-          </div>
-          <Client />
-        </div>
-      </section>
-      <section>
-        <Testimonials />
-      </section>
-
+      <Client />
+      <Testimonials />
       <Footer />
     </main>
   );
