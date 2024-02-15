@@ -5,12 +5,13 @@ import ProductListPage from "../pages/ProductListPage";
 import AboutPage from "../pages/AboutPage";
 import TeamPage from "../pages/TeamPage";
 import ContactPage from "../pages/ContactPage";
+import ProductPage from "../pages/ProductPage";
 
 export default function PageContent() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<ContactPage />}></Route>
+        <Route path="/" element={<ProductPage/>}></Route>
 
         <Route path="/ad" element={<AboutPage />}></Route>
 
