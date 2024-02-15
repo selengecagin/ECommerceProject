@@ -17,6 +17,7 @@ export default function TeamCard() {
             <br /> the two major realms of Classical physics: Newtonian
             mechanics
           </p>
+
         </div>
         <div className="flex">
           <div>
@@ -65,6 +66,8 @@ export default function TeamCard() {
             </div>
           </div>
         </div>
+
+        
       </div>
     </section>
   );

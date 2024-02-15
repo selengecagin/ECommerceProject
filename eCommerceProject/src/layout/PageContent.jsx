@@ -3,14 +3,15 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import ProductListPage from "../pages/ProductListPage";
 import AboutPage from "../pages/AboutPage";
+import TeamPage from "../pages/TeamPage";
 
 export default function PageContent() {
   return (
     <div>
       <Routes>
-        <Route path="/sda" element={<ProductListPage />}></Route>
+        <Route path="/" element={<TeamPage />}></Route>
 
-        <Route path="/" element={<AboutPage />}></Route>
+        <Route path="/ad" element={<AboutPage />}></Route>
 
         <Route path="/sadcs" element={<HomePage />}></Route>
 
