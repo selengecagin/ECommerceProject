@@ -78,7 +78,7 @@ export default function AboutPage() {
                 We know how large objects will act, but things on a small scale
               </p>
               <div className="gap-2.5 flex-start">
-                <button className="flex flex-col py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
+                <button className="py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
                   Get Quote Now
                 </button>
               </div>
