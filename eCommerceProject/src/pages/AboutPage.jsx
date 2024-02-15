@@ -77,7 +77,11 @@ export default function AboutPage() {
               <p className="text-xl font-normal text-secondTextColor w-[315px]">
                 We know how large objects will act, but things on a small scale
               </p>
-              <button className="">Get Quote Now</button>
+              <div className="gap-2.5 flex-start">
+                <button className="flex flex-col py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
+                  Get Quote Now
+                </button>
+              </div>
             </div>
           </div>
         </div>
