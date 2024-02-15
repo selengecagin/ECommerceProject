@@ -150,7 +150,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section><TeamCard/></section>
+      <section className="flex w-full max-w-[1440px] px-48 items-center justify-center bg-lightTextColor">
+        <div className="flex flex-col py-28 gap-28 shrink-0">
+          <div className="flex flex-col items-center justify-center gap-2.5 width-[607px]">
+            <h2 className="text-4xl font-bold text-darkTextColor ">
+              Meet Our Team
+            </h2>
+            <p className="text-sm font-normal text-secondTextColor text-center">
+              Problems trying to resolve the conflict between
+              <br /> the two major realms of Classical physics: Newtonian
+              mechanics
+            </p>
+          </div>
+          <TeamCard />
+        </div>
+      </section>
     </main>
   );
 }

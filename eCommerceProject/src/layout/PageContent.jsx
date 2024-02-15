@@ -8,9 +8,9 @@ export default function PageContent() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<ProductListPage />}></Route>
+        <Route path="/sda" element={<ProductListPage />}></Route>
 
-        <Route path="/sdas" element={<AboutPage />}></Route>
+        <Route path="/" element={<AboutPage />}></Route>
 
         <Route path="/sadcs" element={<HomePage />}></Route>
 
