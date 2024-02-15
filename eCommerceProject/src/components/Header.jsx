@@ -28,7 +28,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="flex flex-col justify-start ">
+    <header className="flex flex-col flex-wrap justify-start ">
       <section className=" flex  justify-between h-[58px] px-[3%] items-center text-lightTextColor font-bold bg-darkBackgroundColor">
         <div className="flex items-center gap-8 ">
           <div className="flex items-center gap-2 ">

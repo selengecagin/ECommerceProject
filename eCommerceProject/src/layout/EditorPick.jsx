@@ -5,7 +5,6 @@ import editorsPick2 from "../assets/images/editorsPick2.png";
 import editorsPick3 from "../assets/images/editorsPick3.png";
 import editorsPick4 from "../assets/images/editorsPick4.png";
 
-
 export default function EditorPick() {
   return (
     <main className="flex flex-col  py-20 gap-12 bg-[#FAFAFA] items-center justify-center ">
@@ -23,7 +22,7 @@ export default function EditorPick() {
             alt="Editors pick for mens"
             className="w-full"
           />
-          <div className="absolute bottom-0 transform -translate-x-1/2  w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
+          <div className="flex absolute top-[426px] left-[30px] bottom-[26px] right-[340px] w-[170px] h-12 items-center justify-center bg-white">
             <div className="text-center">
               <Link to="/men" className="text-darkTextColor font-bold ">
                 MEN
@@ -34,7 +33,7 @@ export default function EditorPick() {
 
         <div className="relative">
           <img src={editorsPick2} alt="Editors pick for women" />
-          <div className="absolute flex items-center justify-center bg-white w-[136px]">
+          <div className="flex absolute top-[434px] left-[20px] bottom-[18px] right-[83px] items-center justify-center bg-white w-[136px]">
             <div className="text-center">
               <Link
                 to="/women"
@@ -53,7 +52,7 @@ export default function EditorPick() {
               alt="Editors pick for accessories"
               className="w-full"
             />
-            <div className=" absolute w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
+            <div className="flex absolute top-[171px] left-[13px] bottom-[23px] right-[56px]  w-[170px] h-12 items-center justify-center bg-white">
               <div className="text-center">
                 <Link
                   to="/accessories"
@@ -71,7 +70,7 @@ export default function EditorPick() {
               alt="Editors pick for kids"
               className="w-full"
             />
-            <div className=" absolute  w-[170px] h-12 inset-0 flex items-center justify-center bg-white">
+            <div className="flex absolute top-[176px] left-[17px] bottom-[18px] right-[102px] w-[120px] h-12  items-center justify-center bg-white">
               <div className="text-center">
                 <Link to="/kids" className="text-darkTextColor font-bold ">
                   KIDS
