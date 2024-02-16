@@ -28,7 +28,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="flex flex-col justify-start w-full ">
+    <header className="flex flex-col justify-start w-full">
+
       <section className="flex justify-between items-center h-[58px]  px-[10%] text-lightTextColor font-bold bg-darkBackgroundColor">
         <div className="flex items-center gap-8 ">
           <div className="flex items-center gap-2 ">
@@ -74,6 +75,7 @@ export default function Header() {
         </div>
       </section>
 
+
       <nav className="flex  justify-between h-[76px] px-[10%] py-2.5 items-center bg-white ">
         <div>
           <Link to="/" className="text-darkTextColor text-2xl font-bold pt-0">
@@ -88,26 +90,26 @@ export default function Header() {
             </Link>
           </div>
           <div className="flex items-center">
-            <Link to="/shop" className="text-secondTextColor text-sm font-bold">
+            <Link to="/product-list-page" className="text-secondTextColor text-sm font-bold">
               Shop
             </Link>
           </div>
           <div className="flex items-center">
             <Link
-              to="/about"
+              to="/about-page"
               className="text-secondTextColor text-sm font-bold"
             >
               About
             </Link>
           </div>
           <div className="flex items-center">
-            <Link to="/blog" className="text-secondTextColor text-sm font-bold">
+            <Link to="/team-page" className="text-secondTextColor text-sm font-bold">
               Blog
             </Link>
           </div>
           <div className="flex items-center">
             <Link
-              to="/contact"
+              to="/contact-page"
               className="text-secondTextColor text-sm font-bold"
             >
               Contact
@@ -172,6 +174,7 @@ export default function Header() {
           </div>
         </div>
       </nav>
+      
     </header>
   );
 }

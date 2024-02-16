@@ -3,7 +3,7 @@ import testimonial from "../assets/images/testimonial.png";
 
 export default function Testimonials() {
   return (
-    <section className="relative bg-hoverColor w-[1440px] h-[636px]">
+    <section className="relative bg-hoverColor max-w-[1440px] h-[636px]">
       <div className="inline-flex pl-[850px] justify-end items-center bg-cover bg-no-repeat">
         <img src={testimonial} />
       </div>

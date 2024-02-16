@@ -14,61 +14,19 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 export default function ContactPage() {
   return (
     <main className="flex flex-col items-center w-full">
+      <Header/>
       <section className=" relative bg-white">
-        <div className="flex py-4 px-44 items-center justify-center gap-10 shrink-0 ">
-          <div className="flex h-[58px] pr-16 py-3.5 items-center  ">
-            <p className="text-2xl font-bold text-darkTextColor">Bandage</p>
-          </div>
-
-          <div className="flex justify-center items-center gap-60 py-1">
-            <nav className="flex gap-4 items-center">
-              <div className="flex items-center">
-                <Link to="/" className="text-secondTextColor text-sm font-bold">
-                  Home
-                </Link>
-              </div>
-
-              <div className="flex items-center">
-                <Link to="/" className="text-secondTextColor text-sm font-bold">
-                  Product
-                </Link>
-              </div>
-
-              <div className="flex items-center">
-                <Link to="/" className="text-secondTextColor text-sm font-bold">
-                  Pricing
-                </Link>
-              </div>
-
-              <div className="flex items-center">
-                <Link to="/" className="text-secondTextColor text-sm font-bold">
-                  Contact
-                </Link>
-              </div>
-            </nav>
-
-            <div className="flex flex-row gap-11 items-center ">
-              <button className="text-sm text-primaryColor font-bold text-center">
-                Login
-              </button>
-              <div className="flex">
-                <button className="items-center gap-3.5 px-6 py-4 bg-primaryColor text-white rounded">
-                  Become a member
-                </button>
-                <img src={rightArrow} alt="Right Arrow Icon" />
-              </div>
-            </div>
-          </div>
-        </div>
+     
 
         <div className="inline-flex top-[117px] right-[66px] bottom-[124px] left-[742px] justify-end items-center bg-cover bg-no-repeat">
           <img src={ContactHero} />
         </div>
 
-        <div className="absolute left-[195px] right-[646px] top-[200px] flex flex-col py-28 gap-20 items-center">
+        <div className="absolute left-[195px] right-[646px] top-[100px] flex flex-col py-28 gap-20 items-center">
           <div className=" flex flex-col w-[600px] gap-9 flex-start">
             <p className="text-base font-bold text-darkTextColor ">
               CONTACT US
@@ -77,10 +35,10 @@ export default function ContactPage() {
               Get in touch today!
             </h1>
             <p className="text-xl font-normal text-secondTextColor w-[315px]">
-              We know how large objects will act, but things on a small scale{" "}
+              We know how large objects will act, but things on a small scale
             </p>
             <p className="text-2xl font-bold text-darkTextColor">
-              Phone ; +451 215 215{" "}
+              Phone ; +451 215 215
             </p>
             <p className="text-2xl font-bold text-darkTextColor">
               Fax : +451 215 215

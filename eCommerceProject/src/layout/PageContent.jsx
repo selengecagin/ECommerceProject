@@ -11,17 +11,17 @@ export default function PageContent() {
   return (
     <div>
       <Routes>
-        <Route path="/sdec" element={<HomePage/>}></Route>
+        <Route path="/" element={<HomePage />}></Route>
 
-        <Route path="/" element={<ProductListPage />}></Route>
+        <Route path="/about-page" element={<AboutPage />}></Route>
 
-        <Route path="/sadcs" element={<HomePage />}></Route>
+        <Route path="/product-list-page" element={<ProductListPage />}></Route>
 
-        <Route path="/blog" element={<HomePage />}></Route>
+        <Route path="/team-page" element={<TeamPage />}></Route>
 
-        <Route path="/contact" element={<HomePage />}></Route>
+        <Route path="/contact-page" element={< ContactPage/>}></Route>
 
-        <Route path="/pages" element={<HomePage />}></Route>
+        <Route path="/pages" element={<ProductPage />}></Route>
 
         <Route path="/sign-in" element={<HomePage />}></Route>
 
