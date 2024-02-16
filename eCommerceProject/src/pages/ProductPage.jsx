@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import RightArrow from "../assets/images/rightArrowXs.png";
 import star from "../assets/images/star.svg";
 
@@ -18,7 +19,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ProductCard from "../components/ProductCard";
 import Client from "../components/Client";
-import Footer from "../components/Footer";
 
 export default function ProductPage() {
   return (
@@ -199,9 +199,9 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="bestSellerProducts flex px-48 items-center bg-lightGray1">
-        <div className="flex flex-col max-w-[1124px] py-12 gap-6">
-          <div className="flex flex-col items-start max-w[1040px] text-darkTextColor">
+      <section className="bestSellerProducts flex px-48 items-center justify-center bg-lightGray1">
+        <div className="flex flex-col items-start max-w-[1124px] py-12 gap-6">
+          <div className="flex flex-col max-w[1040px] text-darkTextColor">
             <h3 className="text-2xl font-bold text-center ">
               BESTSELLER PRODUCTS
             </h3>
