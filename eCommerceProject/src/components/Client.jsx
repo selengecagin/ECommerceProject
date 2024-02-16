@@ -33,7 +33,7 @@ export default function Client() {
   ];
 
   return (
-    <section className="flex flex-col gap-6 px-48 justify-center items-center bg-lightGray1">
+    <section className="flex flex-col gap-6 px-48 w-full justify-center items-center bg-lightGray1">
       <div className="flex flex-col gap-6 py-20 shrink-0 items-center">
         <h2 className="text-4xl font-bold text-darkTextColor">
           Big Companies Are Here

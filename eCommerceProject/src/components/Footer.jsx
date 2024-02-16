@@ -3,8 +3,8 @@ import SocialMediaContainer from "./SocialMediaContainer";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col">
-      <section className="footer-1 flex flex-row h-[142px]  justify-between items-center px-48 gap-[305px]">
+    <footer className="flex flex-col w-full">
+      <section className="footer-1 flex flex-row h-[142px] justify-between items-center px-48 gap-[305px]">
         <h3 className="text-darkTextColor font-bold text-2xl pb-2.5">
           Bandage
         </h3>

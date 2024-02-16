@@ -1,13 +1,5 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
-import img1 from "../assets/images/bestSellerProducts1.png";
-import img2 from "../assets/images/bestSellerProducts2.png";
-import img3 from "../assets/images/bestSellerProducts3.png";
-import img4 from "../assets/images/bestSellerProducts4.png";
-import img5 from "../assets/images/bestSellerProducts5.png";
-import img6 from "../assets/images/bestSellerProducts6.png";
-import img7 from "../assets/images/bestSellerProducts7.png";
-import img8 from "../assets/images/bestSellerProducts8.png";
 
 export default function BestSellerProducts() {
   return (
@@ -25,60 +17,21 @@ export default function BestSellerProducts() {
           </p>
         </div>
 
-        <div className="productCard flex flex-col flex-wrap gap-y-20 justify-center  pt-14">
+        <div className="productCard flex flex-col flex-wrap gap-y-20 justify-center">
           <div className="flex gap-8">
-            <div>
-              <img src={img1} alt="Description of image 1"></img>
-              <ProductCard />
-            </div>
-
-            <div>
-              <img src={img2} alt="Description of image 2"></img>
-              <ProductCard />
-            </div>
-
-            <div>
-              <img src={img3} alt="Description of image 3"></img>
-              <ProductCard />
-            </div>
-
-            <div>
-              <img src={img4} alt="Description of image 4"></img>
-              <ProductCard />
-            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </div>
           <div className="flex gap-8">
-            <div>
-              <img src={img5} alt="Description of image 5"></img>
-              <ProductCard />
-            </div>
-            <div>
-              <img src={img6} alt="Description of image 6"></img>
-              <ProductCard />
-            </div>
-            <div>
-              <img src={img7} alt="Description of image 7"></img>
-              <ProductCard />
-            </div>
-            <div>
-              <img src={img8} alt="Description of image 8"></img>
-              <ProductCard />
-            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </div>
         </div>
       </div>
     </section>
   );
-}
-
-{
-  // const productImages = [img1, img2, img3, img4, img5, img6, img7, img8];
-  /* {productImages.map((img, index) => {
-            return (
-              <div key={index}>
-                <img src={img} alt={`Product ${index + 1}`} />
-                <ProductCard />
-              </div>
-            );
-          })} */
 }
