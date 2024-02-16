@@ -1,8 +1,6 @@
 import React from "react";
 import ContentCard from "../components/ContentCard";
-import FP1 from "../assets/images/featuredPosts1.png";
-import FP2 from "../assets/images/featuredPosts2.png";
-import FP3 from "../assets/images/featuredPosts3.png";
+
 export default function FeaturedPosts() {
   return (
     <main className="flex flex-col items-center py-28 w-full gap-20 ">
@@ -20,19 +18,9 @@ export default function FeaturedPosts() {
       </section>
 
       <section className="flex flex-row gap-8 flex-wrap">
-        <div>
-          <img src={FP1} alt="Featured Posts Image 1" />
-          <ContentCard />
-        </div>
-
-        <div>
-          <img src={FP2} alt="Featured Posts Image 2" />
-          <ContentCard />
-        </div>
-        <div>
-          <img src={FP3} alt="Featured Posts Image 3" />
-          <ContentCard />
-        </div>
+        <ContentCard />
+        <ContentCard />
+        <ContentCard />
       </section>
     </main>
   );
