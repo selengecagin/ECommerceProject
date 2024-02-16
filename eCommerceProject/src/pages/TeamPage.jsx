@@ -1,31 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import teamHero1 from "../assets/images/teamHero1.png";
 import teamHero2 from "../assets/images/teamHero2.png";
 import teamHero3 from "../assets/images/teamHero3.png";
 import teamHero4 from "../assets/images/teamHero4.png";
 import teamHero5 from "../assets/images/teamHero5.png";
 
-import teamBody1 from "../assets/images/teamBody1.jpg";
-import teamBody2 from "../assets/images/teamBody2.jpg";
-import teamBody3 from "../assets/images/teamBody3.jpg";
-import teamBody4 from "../assets/images/teamBody4.jpg";
-import teamBody5 from "../assets/images/teamBody5.jpg";
-import teamBody6 from "../assets/images/teamBody6.jpg";
-import teamBody7 from "../assets/images/teamBody7.jpg";
-import teamBody8 from "../assets/images/teamBody8.jpg";
-import teamBody9 from "../assets/images/teamBody9.jpg";
-
 import teamFacebookLogo from "../assets/images/teamFacebookLogo.svg";
 import teamTwitterLogo from "../assets/images/teamTwitterLogo.svg";
 import teamInstagramLogo from "../assets/images/teamInstagramLogo.svg";
 import teamLinkedinLogo from "../assets/images/teamLinkedinLogo.svg";
 import greyRightArrow from "../assets/images/greyRightArrow.svg";
-import SocialMediaContainer from "../components/SocialMediaContainer";
+
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import TeamCard from "../layout/TeamCard";
 
 export default function TeamPage() {
+
+  const socialMediaData =[]
+
   return (
     <main className="flex flex-col items-center w-full">
       <Header />
@@ -72,150 +66,10 @@ export default function TeamPage() {
             Meet Our Team
           </h2>
 
-          <div>
-            <div className="flex items-center gap-10">
-              <div>
-                <img src={teamBody1}></img>
-                <div className="flex flex-col items-center gap-2.5 p-7">
-                  <h5 className="text-base font-bold text-darkTextColor">
-                    Username
-                  </h5>
-                  <p className="text-sm font-bold text-secondTextColor">
-                    Profession
-                  </p>
-                  <div className="flex gap-5">
-                    <SocialMediaContainer />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <img src={teamBody2}></img>
-                <div className=" flex flex-col items-center gap-2.5 p-7">
-                  <h5 className="text-base font-bold text-darkTextColor">
-                    Username
-                  </h5>
-                  <p className="text-sm font-bold text-secondTextColor">
-                    Profession
-                  </p>
-                  <div className="flex gap-5">
-                    <SocialMediaContainer />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <img src={teamBody3}></img>
-                <div className=" flex flex-col items-center gap-2.5 p-7">
-                  <h5 className="text-base font-bold text-darkTextColor">
-                    Username
-                  </h5>
-                  <p className="text-sm font-bold text-secondTextColor">
-                    Profession
-                  </p>
-
-                  <div className="flex gap-5">
-                    <SocialMediaContainer />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-10">
-              <div>
-                <img src={teamBody4}></img>
-                <div className="flex flex-col items-center gap-2.5 p-7">
-                  <h5 className="text-base font-bold text-darkTextColor">
-                    Username
-                  </h5>
-                  <p className="text-sm font-bold text-secondTextColor">
-                    Profession
-                  </p>
-                  <div className="flex gap-5">
-                    <SocialMediaContainer />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <img src={teamBody5}></img>
-                <div className=" flex flex-col items-center gap-2.5 p-7">
-                  <h5 className="text-base font-bold text-darkTextColor">
-                    Username
-                  </h5>
-                  <p className="text-sm font-bold text-secondTextColor">
-                    Profession
-                  </p>
-                  <div className="flex gap-5">
-                    <SocialMediaContainer />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <img src={teamBody6}></img>
-                <div className=" flex flex-col items-center gap-2.5 p-7">
-                  <h5 className="text-base font-bold text-darkTextColor">
-                    Username
-                  </h5>
-                  <p className="text-sm font-bold text-secondTextColor">
-                    Profession
-                  </p>
-
-                  <div className="flex gap-5">
-                    <SocialMediaContainer />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-10">
-              <div>
-                <img src={teamBody7}></img>
-                <div className="flex flex-col items-center gap-2.5 p-7">
-                  <h5 className="text-base font-bold text-darkTextColor">
-                    Username
-                  </h5>
-                  <p className="text-sm font-bold text-secondTextColor">
-                    Profession
-                  </p>
-                  <div className="flex gap-5">
-                    <SocialMediaContainer />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <img src={teamBody8}></img>
-                <div className=" flex flex-col items-center gap-2.5 p-7">
-                  <h5 className="text-base font-bold text-darkTextColor">
-                    Username
-                  </h5>
-                  <p className="text-sm font-bold text-secondTextColor">
-                    Profession
-                  </p>
-                  <div className="flex gap-5">
-                    <SocialMediaContainer />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <img src={teamBody9}></img>
-                <div className=" flex flex-col items-center gap-2.5 p-7">
-                  <h5 className="text-base font-bold text-darkTextColor">
-                    Username
-                  </h5>
-                  <p className="text-sm font-bold text-secondTextColor">
-                    Profession
-                  </p>
-
-                  <div className="flex gap-5">
-                    <SocialMediaContainer />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-col items-center gap-10">
+            <TeamCard />
+            <TeamCard />
+            <TeamCard />
           </div>
         </div>
       </section>
@@ -232,6 +86,7 @@ export default function TeamPage() {
           <button className="flex flex-col py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
             Try it free now
           </button>
+
           <div className="flex p-2.5 items-start gap-8">
             <a
               href="https://twitter.com"
@@ -240,6 +95,7 @@ export default function TeamPage() {
             >
               <img src={teamTwitterLogo}></img>
             </a>
+
             <a
               href="https://facebook.com"
               target="_blank"
@@ -247,6 +103,7 @@ export default function TeamPage() {
             >
               <img src={teamFacebookLogo}></img>
             </a>
+
             <a
               href="https://instagram.com"
               target="_blank"
@@ -254,6 +111,7 @@ export default function TeamPage() {
             >
               <img src={teamInstagramLogo}></img>
             </a>
+
             <a
               href="https://linkedin.com"
               target="_blank"
