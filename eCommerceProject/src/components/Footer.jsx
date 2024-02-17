@@ -1,5 +1,6 @@
 import React from "react";
 import SocialMediaContainer from "./SocialMediaContainer";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const footerData = [
@@ -30,7 +31,9 @@ export default function Footer() {
     <footer className="flex flex-col w-full">
       <section className="footer-1 flex flex-row h-[142px] justify-between items-center px-48 gap-[305px]">
         <h3 className="text-darkTextColor font-bold text-2xl pb-2.5">
-          Bandage
+          <Link to="/" className="text-darkTextColor text-2xl font-bold pt-0">
+            BrandName
+          </Link>
         </h3>
 
         <div className="flex flex-row gap-2.5">
