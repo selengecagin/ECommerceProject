@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-import rightArrow from "../assets/images/rightArrowIconAboutPage.svg";
 import aboutUsHero from "../assets/images/aboutUsHero.png";
 import Header from "../components/Header";
 import TeamCard from "../layout/TeamCard";

@@ -20,15 +20,9 @@ export default function ProductCard() {
             <p className="text-mutedColor text-sm">$16.48</p>
             <p className="text-secondaryColor text-sm">$6.48</p>
           </div>
-          <img
-            src={productColors}
-            alt="product-colors-ellipses"
-            className=""
-          ></img>
+          <img src={productColors} alt="product-colors-ellipses"></img>
         </div>
       </div>
     </section>
   );
 }
-
-// belki maine max-width vermek gerekebilir?

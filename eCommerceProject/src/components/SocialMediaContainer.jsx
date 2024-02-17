@@ -4,11 +4,9 @@ import {
   faFacebook,
   faInstagram,
   faTwitter,
-  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 export default function SocialMediaContainer() {
   const socialMediaLinks = [
-  
     { icon: faFacebook, url: "https://www.facebook.com/", label: "Facebook" },
     {
       icon: faInstagram,

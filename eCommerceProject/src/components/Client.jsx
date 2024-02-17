@@ -50,7 +50,7 @@ export default function Client() {
                 <a href={data.url} target="_blank" rel="noopener noreferrer">
                   <img
                     src={data.img}
-                    alt={data.clientName}
+                    alt={`${data.clientName} logo`}
                     className="cursor-pointer hover:drop-shadow-xl hover:scale-105"
                   />
                 </a>

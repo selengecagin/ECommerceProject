@@ -8,7 +8,7 @@ import blackEllipse from "../assets/images/blackEllipse.svg";
 import orangeEllipse from "../assets/images/orangeEllipse.svg";
 import greenEllipse from "../assets/images/greenEllipse.svg";
 import blueEllipse from "../assets/images/blueEllipse.svg";
-import pImg from "../assets/images/productPageProductImg.png";
+
 
 import pDescp from "../assets/images/productPageDescription.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -208,46 +208,22 @@ export default function ProductPage() {
           </div>
 
           <div className="flex items-start gap-8">
-            <div>
-              <img src={pImg}></img>
-              <ProductCard />
-            </div>
-            <div>
-              <img src={pImg}></img>
-              <ProductCard />
-            </div>
-            <div>
-              <img src={pImg}></img>
-              <ProductCard />
-            </div>
-            <div>
-              <img src={pImg}></img>
-              <ProductCard />
-            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </div>
           <div className="flex items-start gap-8">
-            <div>
-              <img src={pImg}></img>
-              <ProductCard />
-            </div>
-            <div>
-              <img src={pImg}></img>
-              <ProductCard />
-            </div>
-            <div>
-              <img src={pImg}></img>
-              <ProductCard />
-            </div>
-            <div>
-              <img src={pImg}></img>
-              <ProductCard />
-            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </div>
         </div>
       </section>
 
-      <Client/>
-      <Footer/>
+      <Client />
+      <Footer />
     </main>
   );
 }

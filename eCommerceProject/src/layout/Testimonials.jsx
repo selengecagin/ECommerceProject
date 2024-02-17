@@ -17,7 +17,7 @@ export default function Testimonials() {
             </h2>
             <p className="text-sm font-normal text-white">
               The gradual accumulation of information about atomic and
-              small-scale behavior during the first quarter of the 20th{" "}
+              small-scale behavior during the first quarter of the 20th
             </p>
             <button className="flex flex-col rounded  border border-solid border-lightGray1 items-center gap-2.5 px-10 py-4 text-sm font-bold text-white">
               Button

@@ -2,6 +2,30 @@ import React from "react";
 import SocialMediaContainer from "./SocialMediaContainer";
 
 export default function Footer() {
+  const footerData = [
+    {
+      key: "Company Info",
+      opts: ["Legal", "Features", "Resources", "Get In Touch"],
+    },
+    {
+      key: "Legal",
+      opts: ["Legal", "Features", "Resources", "Get In Touch"],
+    },
+    {
+      key: "Features",
+      opts: [
+        "Business Marketing",
+        "User Analytic",
+        "Live Chat",
+        "Unlimited Support",
+      ],
+    },
+    {
+      key: "Resources",
+      opts: ["IOS & Android", "Watch a Demo", "Customers", "API"],
+    },
+  ];
+
   return (
     <footer className="flex flex-col w-full">
       <section className="footer-1 flex flex-row h-[142px] justify-between items-center px-48 gap-[305px]">
@@ -16,162 +40,29 @@ export default function Footer() {
 
       <section className="footer-2 h-[272px] py-12 bg-white items-center px-48">
         <div className="flex flex-row gap-20">
-          <div className="flex flex-col items-start gap-5">
-            <h5 className="text-darkTextColor text-base font-bold">
-              Company Info
-            </h5>
-            <div className="flex flex-col gap-2.5">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                About Us
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                Carrier
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                We are hiring
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                Blog
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-5">
-            <h5 className="text-darkTextColor text-base font-bold">Legal</h5>
-            <div className="flex flex-col gap-2.5">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                About Us
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                Carrier
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                We are hiring
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                Blog
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-5">
-            <h5 className="text-darkTextColor text-base font-bold">Features</h5>
-            <div className="flex flex-col gap-2.5">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                Business Marketing
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                User Analytic
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                Live Chat
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                Unlimited Support
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-5">
-            <h5 className="text-darkTextColor text-base font-bold">
-              Resources
-            </h5>
-            <div className="flex flex-col gap-2.5">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                IOS & Android
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                Watch a Demo
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                Customers
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondTextColor text-sm font-bold"
-              >
-                API
-              </a>
-            </div>
-          </div>
-
+          {footerData.map((data, index) => {
+            return (
+              <div className="flex flex-col items-start gap-5" key={index}>
+                <h5 className="text-darkTextColor text-base font-bold">
+                  {data.key}
+                </h5>
+                {data.opts.map((opt, index) => {
+                  return (
+                    <div className="flex flex-col gap-2.5" key={index}>
+                      <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-secondTextColor text-sm font-bold"
+                      >
+                        {opt}
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
           <div className="flex flex-col items-start gap-5 ">
             <h5 className="text-darkTextColor font-bold ">Get In Touch</h5>
 

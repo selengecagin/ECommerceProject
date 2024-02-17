@@ -17,7 +17,7 @@ export default function CategoryCard() {
           <Link to={`/pages`} className="relative block" key={index}>
             <img
               src={data.img}
-              alt={data.catName}
+              alt="Category Image"
               className="cursor-pointer duration-200 transition opacity-100 hover:opacity-60 w-[205px] shrink-0"
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
