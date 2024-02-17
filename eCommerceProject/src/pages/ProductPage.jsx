@@ -35,7 +35,7 @@ export default function ProductPage() {
       <section className="productCards flex px-48 justify-center items-center self-stretch bg-lightGray1">
         <div className="flex flex-col pb-12 items-start">
           <div className="flex items-start gap-8">
-            <div className="flex"> Carosel</div>
+            <div className="flex"> Carousel</div>
 
             <div className=" flex flex-col max-w-[510px] h-[471px] gap-6">
               <h4 className="text-xl font-normal text-darkTextColor">

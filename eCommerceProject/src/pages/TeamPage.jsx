@@ -17,8 +17,24 @@ import Header from "../components/Header";
 import TeamCard from "../layout/TeamCard";
 
 export default function TeamPage() {
-
-  const socialMediaData =[]
+  const socialMediaData = [
+    {
+      logo: teamTwitterLogo,
+      url: "https://twitter.com",
+    },
+    {
+      logo: teamFacebookLogo,
+      url: "https://facebook.com",
+    },
+    {
+      logo: teamInstagramLogo,
+      url: "https://instagram.com",
+    },
+    {
+      logo: teamLinkedinLogo,
+      url: "https://linkedin.com",
+    },
+  ];
 
   return (
     <main className="flex flex-col items-center w-full">
@@ -88,37 +104,18 @@ export default function TeamPage() {
           </button>
 
           <div className="flex p-2.5 items-start gap-8">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={teamTwitterLogo}></img>
-            </a>
-
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={teamFacebookLogo}></img>
-            </a>
-
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={teamInstagramLogo}></img>
-            </a>
-
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={teamLinkedinLogo}></img>
-            </a>
+            {socialMediaData.map((data, index) => {
+              return (
+                <a
+                  href={data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={index}
+                >
+                  <img src={data.logo}></img>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>

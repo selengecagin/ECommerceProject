@@ -103,8 +103,8 @@ export default function Header() {
                 <Link
                   to={data.linkTo}
                   className="text-secondTextColor text-sm font-bold"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  // target="_blank"
+                  // rel="noopener noreferrer"
                 >
                   {data.key}
                 </Link>
