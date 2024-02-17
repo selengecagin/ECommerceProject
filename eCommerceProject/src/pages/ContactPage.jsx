@@ -1,6 +1,6 @@
 import React from "react";
 import ContactHero from "../assets/images/contactHero.png";
-import rightArrow from "../assets/images/rightArrow.svg";
+
 import phone from "../assets/images/contactPagePhone.svg";
 import mail from "../assets/images/contactPageMail.svg";
 import arrow from "../assets/images/contactPageArrow.svg";
@@ -12,7 +12,7 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 export default function ContactPage() {
@@ -45,6 +45,7 @@ export default function ContactPage() {
             </p>
 
             <div className="flex p-2.5 items-start gap-8">
+
               <a
                 href="https://twitter.com"
                 target="_blank"
@@ -73,6 +74,7 @@ export default function ContactPage() {
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2xl" />
               </a>
+
             </div>
           </div>
         </div>
