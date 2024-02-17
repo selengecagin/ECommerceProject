@@ -27,6 +27,16 @@ export default function Header() {
     { icon: faTwitter, url: "https://twitter.com", label: "Twitter" },
   ];
 
+  const routeData = [
+    { key: "Home", linkTo: "/" },
+    { key: "Shop", linkTo: "/product-list-page" },
+    { key: "About", linkTo: "/about-page" },
+    { key: "Blog", linkTo: "/blog-page" },
+    { key: "Team", linkTo: "/team-page" },
+    { key: "Contact", linkTo: "/contact-page" },
+    { key: "Pages", linkTo: "/pages" },
+  ];
+
   return (
     <header className="flex flex-col justify-start w-full">
       <section className="flex justify-between items-center h-[58px]  px-[10%] text-lightTextColor font-bold bg-darkBackgroundColor">
@@ -82,59 +92,18 @@ export default function Header() {
         </div>
 
         <div className="flex gap-4">
-          <div className="flex items-center">
-            <Link to="/" className="text-secondTextColor text-sm font-bold">
-              Home
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <Link
-              to="/product-list-page"
-              className="text-secondTextColor text-sm font-bold"
-            >
-              Shop
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <Link
-              to="/about-page"
-              className="text-secondTextColor text-sm font-bold"
-            >
-              About
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <Link
-              to="/blog-page"
-              className="text-secondTextColor text-sm font-bold"
-            >
-              Blog
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <Link
-              to="/team-page"
-              className="text-secondTextColor text-sm font-bold"
-            >
-              Team
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <Link
-              to="/contact-page"
-              className="text-secondTextColor text-sm font-bold"
-            >
-              Contact
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <Link
-              to="/pages"
-              className="text-secondTextColor text-sm font-bold"
-            >
-              Pages
-            </Link>
-          </div>
+          {routeData.map((data, index) => {
+            return (
+              <div className="flex items-center" key={index}>
+                <Link
+                  to={data.linkTo}
+                  className="text-secondTextColor text-sm font-bold"
+                >
+                  {data.key}
+                </Link>
+              </div>
+            );
+          })}
         </div>
 
         <div className="flex  gap-6 text-primaryColor items-center">
@@ -145,7 +114,7 @@ export default function Header() {
                 style={{ color: "primaryColor" }}
               />
             </Link>
-            <Link to="/sign-ip" className="text-primaryColor">
+            <Link to="/sign-in" className="text-primaryColor">
               Login
             </Link>
             <p className="text-primaryColor">/</p>
