@@ -1,6 +1,7 @@
-import { Carousel, Typography} from "@material-tailwind/react";
+import { Carousel, Typography } from "@material-tailwind/react";
 import React from "react";
 import slide1 from "../assets/images/slide1.jpg";
+import { Link } from "react-router-dom";
 export default function Carousel1() {
   return (
     <main>
@@ -54,9 +55,14 @@ export default function Carousel1() {
               </Typography>
 
               <div className="bg-[#2DC071] w-[221px] h-[61px] cursor-pointer flex justify-center gap-2 rounded-md hover:scale-110 transition duration-200">
-                <p className="flex text-white text-2xl font-bold items-center">
+                <Link
+                  to="/product-list-page"
+                  className="flex text-white text-2xl font-bold items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   SHOP NOW
-                </p>
+                </Link>
               </div>
             </div>
           </div>

@@ -47,6 +47,8 @@ export default function ContentCard() {
           <Link
             to="/blog-page"
             className="flex flex-row gap-1.5 text-secondTextColor text-sm font-bold "
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Learn More
             <img src={rightArrow} alt="right-arrow-icon" />

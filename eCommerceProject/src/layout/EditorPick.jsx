@@ -24,7 +24,12 @@ export default function EditorPick() {
           />
           <div className="flex absolute top-[426px] left-[30px] bottom-[26px] right-[340px] w-[170px] h-12 items-center justify-center bg-white">
             <div className="text-center">
-              <Link to="/men" className="text-darkTextColor font-bold ">
+              <Link
+                to="/men"
+                className="text-darkTextColor font-bold "
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 MEN
               </Link>
             </div>
@@ -38,6 +43,8 @@ export default function EditorPick() {
               <Link
                 to="/women"
                 className="text-darkTextColor font-bold text-base"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 WOMEN
               </Link>
@@ -57,6 +64,8 @@ export default function EditorPick() {
                 <Link
                   to="/accessories"
                   className="text-darkTextColor font-bold "
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   ACCESSORIES
                 </Link>
@@ -72,7 +81,12 @@ export default function EditorPick() {
             />
             <div className="flex absolute top-[176px] left-[17px] bottom-[18px] right-[102px] w-[120px] h-12  items-center justify-center bg-white">
               <div className="text-center">
-                <Link to="/kids" className="text-darkTextColor font-bold ">
+                <Link
+                  to="/kids"
+                  className="text-darkTextColor font-bold "
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   KIDS
                 </Link>
               </div>

@@ -30,11 +30,14 @@ export default function Footer() {
   return (
     <footer className="flex flex-col w-full">
       <section className="footer-1 flex flex-row h-[142px] justify-between items-center px-48 gap-[305px]">
-        <h3 className="text-darkTextColor font-bold text-2xl pb-2.5">
-          <Link to="/" className="text-darkTextColor text-2xl font-bold pt-0">
-            BrandName
-          </Link>
-        </h3>
+        <Link
+          to="/"
+          className="text-darkTextColor text-2xl font-bold pb-2.5"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          BrandName
+        </Link>
 
         <div className="flex flex-row gap-2.5">
           <SocialMediaContainer />

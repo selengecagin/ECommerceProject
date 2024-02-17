@@ -14,7 +14,13 @@ export default function CategoryCard() {
     <section className="flex gap-2 flex-row pb-8 justify-center bg-[#FAFAFA]">
       {categoryData.map((data, index) => {
         return (
-          <Link to={`/pages`} className="relative block" key={index}>
+          <Link
+            to={`/pages`}
+            className="relative block"
+            target="_blank"
+            rel="noopener noreferrer"
+            key={index}
+          >
             <img
               src={data.img}
               alt="Category Image"

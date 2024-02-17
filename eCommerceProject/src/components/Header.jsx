@@ -86,7 +86,12 @@ export default function Header() {
 
       <nav className="flex  justify-between h-[76px] px-[10%] py-2.5 items-center bg-white ">
         <div>
-          <Link to="/" className="text-darkTextColor text-2xl font-bold pt-0">
+          <Link
+            to="/"
+            className="text-darkTextColor text-2xl font-bold pt-0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             BrandName
           </Link>
         </div>
@@ -98,6 +103,8 @@ export default function Header() {
                 <Link
                   to={data.linkTo}
                   className="text-secondTextColor text-sm font-bold"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {data.key}
                 </Link>
@@ -108,24 +115,34 @@ export default function Header() {
 
         <div className="flex  gap-6 text-primaryColor items-center">
           <div className="flex gap-2 text-primaryColor">
-            <Link to="/profile">
+            <Link to="/profile" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon
                 icon={faUser}
                 style={{ color: "primaryColor" }}
               />
             </Link>
-            <Link to="/sign-in" className="text-primaryColor">
+            <Link
+              to="/sign-in"
+              className="text-primaryColor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Login
             </Link>
             <p className="text-primaryColor">/</p>
-            <Link to="/sign-up" className="text-primaryColor">
+            <Link
+              to="/sign-up"
+              className="text-primaryColor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Register
             </Link>
           </div>
 
           <div className="flex gap-5 ">
             <div className="flex gap-2">
-              <Link to="/search">
+              <Link to="/search" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
                   style={{ color: "primaryColor" }}
@@ -134,7 +151,7 @@ export default function Header() {
             </div>
 
             <div className="flex gap-2">
-              <Link to="/basket">
+              <Link to="/basket" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon
                   icon={faCartShopping}
                   style={{ color: "primaryColor" }}
@@ -144,7 +161,7 @@ export default function Header() {
             </div>
 
             <div className="flex gap-2">
-              <Link to="/favorites">
+              <Link to="/favorites" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon
                   icon={faHeart}
                   style={{ color: "primaryColor" }}
