@@ -6,16 +6,17 @@ import { Link } from "react-router-dom";
 
 export default function ProductInformation() {
   return (
-    <main className="flex flex-row w-full  justify-center items-center gap-8 px-48  ">
-      <section className="flex justify-center">
+    <main className="flex flex-row w-full gap-8 px-48  ">
+
+      <section className="flex justify-end items-start basis-1/2">
         <img
           src={pInfo}
           alt="Product image description"
-          className="flex-shrink-0"
+          className="flex shrink-0"
         />
       </section>
 
-      <section className="flex flex-col gap-8">
+      <section className="flex flex-col gap-8 basis-1/2 justify-center">
         <h3 className="text-base font-bold text-mutedColor">SUMMER 2020</h3>
         <h1 className="text-4xl font-bold text-darkTextColor">
           Part of the Neural Universe

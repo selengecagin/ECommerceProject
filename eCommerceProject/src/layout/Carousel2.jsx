@@ -1,6 +1,8 @@
 import { Carousel, Typography } from "@material-tailwind/react";
 import React from "react";
-import slide1 from "../assets/images/slide1.jpg";
+import carouselImg2 from "../assets/images/carouselImg2.png";
+import { Link } from "react-router-dom";
+
 export default function Carousel1() {
   return (
     <main>
@@ -19,65 +21,98 @@ export default function Carousel1() {
           </div>
         )}
       >
-        <div className="img1 relative h-full w-full">
-          <img
-            src={slide1}
-            alt="image 1"
-            className="h-full w-full object-cover"
-          />
-
-          <div className=" absolute -left-0 xl:-left-[10%] inset-0 grid h-full w-full place-items-center">
-            <div className="w-3/4 text-center md:w-2/4">
-              <Typography
-                variant="paragraph"
-                color="white"
-                className="mb-9 text-base text-start text-[#FFFFFF] font-bold"
-              >
-                SUMMER 2020
-              </Typography>
-
-              <Typography
-                variant="h1"
-                color="white"
-                className="mb-9 text-start text-[#FFFFFF] font-bold text-[55px]"
-              >
-                NEW COLLECTION
-              </Typography>
-
-              <Typography
-                variant="paragraph"
-                color="white"
-                className="mb-9 text-xl text-start text-[#FFFFFF] font-normal"
-              >
-                We know how large objects will act, <br /> but things on a small
-                scale.
-              </Typography>
-
-              <div className="bg-[#2DC071] w-[221px] h-[61px] cursor-pointer flex justify-center gap-2 rounded-md hover:scale-110 transition duration-200">
-                <p className="flex text-white text-2xl font-bold items-center">
-                  SHOP NOW
+        <section className=" relative  bg-[#23856D]">
+          <div className="absolute left-[400px] right-[646px] top-[50px] flex flex-col items-start py-28 gap-20">
+            <div className="flex items-center gap-7.5">
+              <div className=" flex flex-col  gap-9 flex-start">
+                <p className="text-base font-bold text-white ">SUMMER 2020</p>
+                <h1 className="text-[58px] font-bold text-white ">
+                  Vita Classic Product
+                </h1>
+                <p className="text-xl font-normal text-white w-[315px]">
+                  We know how large objects will act, We know how are objects
+                  will act, We know
                 </p>
+                <div className=" flex flex-row justify-start items-center gap-8 flex-start">
+                  <p className="text-2xl text-center text-white font-bold">
+                    $16.48
+                  </p>
+
+                  <button className="py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
+                    ADD TO CART
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="img2 relative h-full w-full">
-          <img
-            src={slide1}
-            alt="image 2"
-            className="h-full w-full object-cover"
-          />
-        </div>
+          <div className="flex justify-end items-center bg-cover bg-no-repeat pr-[400px] pt-[121px]">
+            <img src={carouselImg2} />
+          </div>
+        </section>
 
-        <div className="img3 relative h-full w-full">
-          <img
-            src={slide1}
-            alt="image 3"
-            className="h-full w-full object-cover"
-          />
-        </div>
+        <section className=" relative  bg-[#23856D]">
+          <div className="absolute left-[400px] right-[646px] top-[50px] flex flex-col items-start py-28 gap-20">
+            <div className="flex items-center gap-7.5">
+              <div className=" flex flex-col  gap-9 flex-start">
+                <p className="text-base font-bold text-white ">SUMMER 2020</p>
+                <h1 className="text-[58px] font-bold text-white ">
+                  Vita Classic Product
+                </h1>
+                <p className="text-xl font-normal text-white w-[315px]">
+                  We know how large objects will act, We know how are objects
+                  will act, We know
+                </p>
+                <div className=" flex flex-row justify-start items-center gap-8 flex-start">
+                  <p className="text-2xl text-center text-white font-bold">
+                    $16.48
+                  </p>
+
+                  <button className="py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
+                    ADD TO CART
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-end items-center bg-cover bg-no-repeat pr-[400px] pt-[121px]">
+            <img src={carouselImg2} />
+          </div>
+        </section>
+        
       </Carousel>
     </main>
   );
 }
+
+//  <section className="border border-solid bg-[#23856D] w-full h-[709px]">
+//    <div className="flex flex-col items-start gap-20 shrink-0 py-28 ">
+//      <div clasName="flex items-start gap-8 shrink-0">
+//        <div className="flex flex-col items-start gap-8 pt-15 w-[509px] ">
+//          <p>SUMMER 2020</p>
+//          <h2>Vita Classic Product</h2>
+//          <p>
+//            We know how large objects will act, We know how are objects will
+//            act, We know
+//          </p>
+//          <div>
+//            <p>$16.48</p>
+//            <div className="bg-[#2DC071] cursor-pointer flex justify-center gap-2 py-4 px-10 rounded-md hover:scale-110 transition duration-200">
+//              <Link
+//                to="/product-list-page"
+//                className="flex text-white text-sm font-bold items-center"
+//                target="_blank"
+//                rel="noopener noreferrer"
+//              >
+//                BUY NOW
+//              </Link>
+//            </div>
+//          </div>
+//        </div>
+//      </div>
+//      <div>
+//        <img src={carouselImg2} />
+//      </div>
+//    </div>
+//  </section>;

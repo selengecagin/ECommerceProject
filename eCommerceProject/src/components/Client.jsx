@@ -1,33 +1,24 @@
 import React from "react";
-
-import hooli from "../assets/images/hooli.png";
-import lyft from "../assets/images/lyft.png";
-import vector from "../assets/images/vector.png";
-import stripe from "../assets/images/stripe.png";
-import aws from "../assets/images/aws.png";
-import reddit from "../assets/images/reddit.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAws, faHooli, faLyft, faPiedPiperHat, faRedditAlien, faStripe } from "@fortawesome/free-brands-svg-icons";
 
 export default function Client() {
+
   const clientData = [
-    { img: hooli, clientName: "hooli", id: "1", url: "http://www.hooli.xyz/" },
-    { img: lyft, clientName: "lyft", id: "2", url: "https://www.lyft.com/" },
+    { logoId: faHooli, url: "http://www.hooli.xyz/" },
+    { logoId: faLyft, url: "https://www.lyft.com/" },
     {
-      img: vector,
-      clientName: "vector",
-      id: "3",
+      logoId: faPiedPiperHat,
       url: "https://vectortechnologies.com/",
     },
-    { img: stripe, clientName: "stripe", id: "4", url: "https://stripe.com/" },
+    { logoId: faStripe, url: "https://stripe.com/" },
     {
-      img: aws,
-      clientName: "aws",
-      id: "5",
+      logoId: faAws,
+
       url: "https://aws.amazon.com/",
     },
     {
-      img: reddit,
-      clientName: "reddit",
-      id: "6",
+      logoId: faRedditAlien,
       url: "https://www.reddit.com/",
     },
   ];
@@ -47,11 +38,15 @@ export default function Client() {
           {clientData.map((data, index) => {
             return (
               <div className="flex flex-col w-[146px] items-center" key={index}>
-                <a href={data.url} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={data.img}
-                    alt={`${data.clientName} logo`}
-                    className="cursor-pointer hover:drop-shadow-xl hover:scale-105"
+                <a
+                  href={data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer hover:drop-shadow-xl hover:scale-105 text-7xl"
+                >
+                  <FontAwesomeIcon
+                    icon={data.logoId}
+                    style={{ color: "#737373" }}
                   />
                 </a>
               </div>

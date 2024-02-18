@@ -121,28 +121,18 @@ export default function Header() {
                 style={{ color: "primaryColor" }}
               />
             </Link>
-            <Link
-              to="/sign-in"
-              className="text-primaryColor"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link to="/sign-in" className="text-primaryColor">
               Login
             </Link>
             <p className="text-primaryColor">/</p>
-            <Link
-              to="/sign-up"
-              className="text-primaryColor"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link to="/sign-up" className="text-primaryColor">
               Register
             </Link>
           </div>
 
           <div className="flex gap-5 ">
             <div className="flex gap-2">
-              <Link to="/search" target="_blank" rel="noopener noreferrer">
+              <Link to="/search-page">
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
                   style={{ color: "primaryColor" }}
@@ -151,7 +141,7 @@ export default function Header() {
             </div>
 
             <div className="flex gap-2">
-              <Link to="/basket" target="_blank" rel="noopener noreferrer">
+              <Link to="/basket-page">
                 <FontAwesomeIcon
                   icon={faCartShopping}
                   style={{ color: "primaryColor" }}
@@ -161,7 +151,7 @@ export default function Header() {
             </div>
 
             <div className="flex gap-2">
-              <Link to="/favorites" target="_blank" rel="noopener noreferrer">
+              <Link to="/favorites-page">
                 <FontAwesomeIcon
                   icon={faHeart}
                   style={{ color: "primaryColor" }}
