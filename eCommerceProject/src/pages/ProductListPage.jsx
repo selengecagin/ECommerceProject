@@ -16,10 +16,12 @@ export default function ProductListPage() {
   return (
     <main>
       <Header />
-      <FilterMenu />
-      <CategoryCard />
-      <section className="filter-row flex items-center justify-center self-stretch bg-[#FFF] ">
-        <div className="container flex flex-col py-6 items-center gap-20 w-[1050px] ">
+      {/* <FilterMenu /> */}
+      {/* <CategoryCard /> */}
+      
+      {/* <section className="filter-row flex items-center justify-center self-stretch bg-[#FFF] ">
+
+        <div className="flex flex-col py-6 items-center gap-20 w-[1050px] ">
           <div className="row flex w-[1049px] justify-between items-center ">
             <div className="flex px-px items-center gap-4 text-[#737373]">
               <h2 className="text-sm font-bold text-[#737373] ">
@@ -56,21 +58,22 @@ export default function ProductListPage() {
           </div>
         </div>
       </section>
-      <section className="flex justify-center items-center px-40 bg-[#fff]">
+
+      <section className="flex flex-wrap justify-center items-center px-40 bg-[#fff]">
         <div className="flex flex-col py-12 gap-12 items-center">
-          <div className="img-container-1 flex gap-8 items-start">
+          <div className="img-container-1 flex flex-wrap gap-8 items-start">
             <ProductCard />
             <ProductCard />
             <ProductCard />
             <ProductCard />
           </div>
-          <div className="img-container-2 flex gap-8 items-start">
+          <div className="img-container-2 flex flex-wrap gap-8 items-start sm:hidden">
             <ProductCard />
             <ProductCard />
             <ProductCard />
             <ProductCard />
           </div>
-          <div className="img-container-3 flex gap-8 items-start">
+          <div className="img-container-3 flex flex-wrap gap-8 items-start sm:hidden">
             <ProductCard />
             <ProductCard />
             <ProductCard />
@@ -80,7 +83,7 @@ export default function ProductListPage() {
         </div>
       </section>
       <Client />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }

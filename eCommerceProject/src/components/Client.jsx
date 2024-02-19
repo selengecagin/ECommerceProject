@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAws, faHooli, faLyft, faPiedPiperHat, faRedditAlien, faStripe } from "@fortawesome/free-brands-svg-icons";
 
 export default function Client() {
-
   const clientData = [
     { logoId: faHooli, url: "http://www.hooli.xyz/" },
     { logoId: faLyft, url: "https://www.lyft.com/" },
@@ -22,7 +21,6 @@ export default function Client() {
       url: "https://www.reddit.com/",
     },
   ];
-
   return (
     <section className="flex flex-col gap-6 px-48 w-full justify-center items-center bg-lightGray1">
       <div className="flex flex-col gap-6 py-20 shrink-0 items-center">

@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 export default function ProductInformation() {
   return (
     <main className="flex flex-row w-full gap-8 px-48  ">
-
-      <section className="flex justify-end items-start basis-1/2">
+      <section className="flex justify-center items-start basis-1/2">
         <img
           src={pInfo}
           alt="Product image description"
@@ -21,10 +20,8 @@ export default function ProductInformation() {
         <h1 className="text-4xl font-bold text-darkTextColor">
           Part of the Neural Universe
         </h1>
-        <p className="flex flex-wrap text-xl font-normal text-secondTextColor">
-          We know how large objects will act,
-          <br />
-          but things on a small scale.
+        <p className="flex flex-wrap text-xl font-normal text-secondTextColor w-[325px]">
+          We know how large objects will act, but things on a small scale.
         </p>
 
         <div className="flex flex-row gap-2.5 ">

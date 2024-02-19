@@ -22,6 +22,16 @@ export default withMT({
       greenBg: "#23856D",
       borderColor: "#E8E8E8",
     },
+    screens: {
+      lg: { max: "1440px" },
+      // => @media (max-width: 1023px) { ... }
+
+      md: { max: "960px" },
+      // => @media (max-width: 767px) { ... }
+
+      sm: { max: "576px" },
+      // => @media (max-width: 639px) { ... }
+    },
   },
   plugins: [],
 });

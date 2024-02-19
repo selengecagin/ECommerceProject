@@ -11,14 +11,12 @@ export default function CategoryCard() {
   ];
 
   return (
-    <section className="flex gap-2 flex-row pb-8 justify-center bg-[#FAFAFA]">
+    <section className="flex lg:flex-row sm:flex-col flex-wrap gap-2 pb-8 justify-center bg-[#FAFAFA]">
       {categoryData.map((data, index) => {
         return (
           <Link
             to={`/pages`}
-            className="relative block"
-            target="_blank"
-            rel="noopener noreferrer"
+            className=" flex relative "
             key={index}
           >
             <img
@@ -26,7 +24,7 @@ export default function CategoryCard() {
               alt="Category Image"
               className="cursor-pointer duration-200 transition opacity-100 hover:opacity-60 w-[205px] shrink-0"
             />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+            <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
               <p className="text-base font-bold text-white ">{data.catName}</p>
               <p className="text-base font-bold">{data.itemNum}</p>
             </div>

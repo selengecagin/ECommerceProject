@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function ContentCard() {
   return (
-    <section className="flex flex-col items-start w-[348px] bg-white shadow-lg hover">
+    <section className="flex flex-col items-start w-[348px] bg-white shadow-lg hover:scale-110 transition duration-200">
       <div className="imgArea">
         <img src={featuredPostImg} alt="Featured Posts Image" />
       </div>
@@ -43,7 +43,7 @@ export default function ContentCard() {
             </p>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex ">
           <Link
             to="/blog-page"
             className="flex flex-row gap-1.5 text-secondTextColor text-sm font-bold "

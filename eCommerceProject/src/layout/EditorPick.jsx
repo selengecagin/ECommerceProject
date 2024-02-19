@@ -22,7 +22,7 @@ export default function EditorPick() {
             alt="Editors pick for mens"
             className="w-full"
           />
-          <div className="flex absolute top-[426px] left-[30px] bottom-[26px] right-[340px] w-[170px] h-12 items-center justify-center bg-white">
+          <div className="flex absolute top-[426px] left-[30px] bottom-[26px] right-[340px] w-[170px] h-12 items-center justify-center bg-white hover:scale-110 transition duration-200">
             <div className="text-center">
               <Link
                 to="/men"
@@ -38,7 +38,7 @@ export default function EditorPick() {
 
         <div className="relative">
           <img src={editorsPick2} alt="Editors pick for women" />
-          <div className="flex absolute top-[434px] left-[20px] bottom-[18px] right-[83px] items-center justify-center bg-white w-[136px]">
+          <div className="flex absolute top-[434px] left-[20px] bottom-[18px] right-[83px] items-center justify-center bg-white w-[136px] hover:scale-110 transition duration-200">
             <div className="text-center">
               <Link
                 to="/women"
@@ -59,7 +59,7 @@ export default function EditorPick() {
               alt="Editors pick for accessories"
               className="w-full"
             />
-            <div className="flex absolute top-[171px] left-[13px] bottom-[23px] right-[56px]  w-[170px] h-12 items-center justify-center bg-white">
+            <div className="flex absolute top-[171px] left-[13px] bottom-[23px] right-[56px]  w-[170px] h-12 items-center justify-center bg-white hover:scale-110 transition duration-200">
               <div className="text-center">
                 <Link
                   to="/accessories"
@@ -79,7 +79,7 @@ export default function EditorPick() {
               alt="Editors pick for kids"
               className="w-full"
             />
-            <div className="flex absolute top-[176px] left-[17px] bottom-[18px] right-[102px] w-[120px] h-12  items-center justify-center bg-white">
+            <div className="flex absolute top-[176px] left-[17px] bottom-[18px] right-[102px] w-[120px] h-12  items-center justify-center bg-white hover:scale-110 transition duration-200">
               <div className="text-center">
                 <Link
                   to="/kids"

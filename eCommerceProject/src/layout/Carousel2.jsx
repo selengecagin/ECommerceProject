@@ -1,7 +1,6 @@
 import { Carousel, Typography } from "@material-tailwind/react";
 import React from "react";
 import carouselImg2 from "../assets/images/carouselImg2.png";
-import { Link } from "react-router-dom";
 
 export default function Carousel1() {
   return (
@@ -22,7 +21,7 @@ export default function Carousel1() {
         )}
       >
         <section className=" relative  bg-[#23856D]">
-          <div className="absolute left-[400px] right-[646px] top-[50px] flex flex-col items-start py-28 gap-20">
+          <div className="absolute left-[600px] right-[646px] top-[50px] flex flex-col items-start py-28 gap-20">
             <div className="flex items-center gap-7.5">
               <div className=" flex flex-col  gap-9 flex-start">
                 <p className="text-base font-bold text-white ">SUMMER 2020</p>
@@ -38,7 +37,7 @@ export default function Carousel1() {
                     $16.48
                   </p>
 
-                  <button className="py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
+                  <button className="py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded hover:scale-110 transition duration-200">
                     ADD TO CART
                   </button>
                 </div>
@@ -46,13 +45,13 @@ export default function Carousel1() {
             </div>
           </div>
 
-          <div className="flex justify-end items-center bg-cover bg-no-repeat pr-[400px] pt-[121px]">
+          <div className="flex justify-end items-center bg-cover bg-no-repeat pr-[600px] pt-[121px]">
             <img src={carouselImg2} />
           </div>
         </section>
 
         <section className=" relative  bg-[#23856D]">
-          <div className="absolute left-[400px] right-[646px] top-[50px] flex flex-col items-start py-28 gap-20">
+          <div className="absolute left-[600px] right-[646px] top-[50px] flex flex-col items-start py-28 gap-20">
             <div className="flex items-center gap-7.5">
               <div className=" flex flex-col  gap-9 flex-start">
                 <p className="text-base font-bold text-white ">SUMMER 2020</p>
@@ -68,7 +67,7 @@ export default function Carousel1() {
                     $16.48
                   </p>
 
-                  <button className="py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
+                  <button className="py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded hover:scale-110 transition duration-200">
                     ADD TO CART
                   </button>
                 </div>
@@ -76,11 +75,10 @@ export default function Carousel1() {
             </div>
           </div>
 
-          <div className="flex justify-end items-center bg-cover bg-no-repeat pr-[400px] pt-[121px]">
+          <div className="flex justify-end items-center bg-cover bg-no-repeat pr-[600px] pt-[121px]">
             <img src={carouselImg2} />
           </div>
         </section>
-        
       </Carousel>
     </main>
   );

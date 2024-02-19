@@ -37,9 +37,11 @@ export default function Header() {
     { key: "Pages", linkTo: "/pages" },
   ];
 
+  
   return (
-    <header className="flex flex-col justify-start w-full">
-      <section className="flex justify-between items-center h-[58px]  px-[10%] text-lightTextColor font-bold bg-darkBackgroundColor">
+    <header className="flex flex-col justify-start">
+      
+      <section className="flex justify-between items-center h-[58px] px-[10%] text-lightTextColor font-bold bg-darkBackgroundColor sm:hidden md:text-xs">
         <div className="flex items-center gap-8 ">
           <div className="flex items-center gap-2 ">
             <FontAwesomeIcon
@@ -72,7 +74,7 @@ export default function Header() {
                 target="_blank"
                 aria-label={`Follow us on ${link.label}`}
                 rel="noopener noreferrer"
-                className="text-lightTextColor"
+                className="text-lightTextColor hover:scale-110 transition duration-200"
               >
                 <FontAwesomeIcon
                   icon={link.icon}
@@ -84,27 +86,21 @@ export default function Header() {
         </div>
       </section>
 
-      <nav className="flex  justify-between h-[76px] px-[10%] py-2.5 items-center bg-white ">
-        <div>
-          <Link
-            to="/"
-            className="text-darkTextColor text-2xl font-bold pt-0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      <nav className="flex sm:flex-col justify-between h-[76px] px-[10%] py-2.5 items-center bg-white ">
+
+        <div className="sm:pr-60 sm:pb-8 hover:scale-110 transition duration-200">
+          <Link to="/" className="text-darkTextColor lg:text-2xl sm:text-sm font-bold" >
             BrandName
           </Link>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex sm:flex-col gap-4">
           {routeData.map((data, index) => {
             return (
               <div className="flex items-center" key={index}>
                 <Link
                   to={data.linkTo}
-                  className="text-secondTextColor text-sm font-bold"
-                  // target="_blank"
-                  // rel="noopener noreferrer"
+                  className="text-secondTextColor lg:text-sm lg:font-bold sm:text-sm sm:font-normal"
                 >
                   {data.key}
                 </Link>
@@ -113,8 +109,9 @@ export default function Header() {
           })}
         </div>
 
-        <div className="flex  gap-6 text-primaryColor items-center">
+        <div className="flex sm:flex-col sm:pt-4 gap-6 text-primaryColor items-center">
           <div className="flex gap-2 text-primaryColor">
+
             <Link to="/profile" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon
                 icon={faUser}
@@ -130,7 +127,8 @@ export default function Header() {
             </Link>
           </div>
 
-          <div className="flex gap-5 ">
+          <div className="flex sm:flex-col gap-5 ">
+
             <div className="flex gap-2">
               <Link to="/search-page">
                 <FontAwesomeIcon
@@ -157,6 +155,7 @@ export default function Header() {
                   style={{ color: "primaryColor" }}
                 />
               </Link>
+
               <p className="text-primaryColor">1</p>
             </div>
           </div>
