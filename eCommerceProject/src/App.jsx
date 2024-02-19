@@ -8,6 +8,7 @@ import TeamPage from "./pages/TeamPage";
 import ContactPage from "./pages/ContactPage";
 import ProductPage from "./pages/ProductPage";
 import BlogPage from "./pages/BlogPage";
+import SignUpPage from "./pages/SignUpPage";
 function App() {
   return (
     <>
@@ -28,7 +29,7 @@ function App() {
 
         <Route path="/sign-in" element={<HomePage />}></Route>
 
-        <Route path="/sign-up" element={<HomePage />}></Route>
+        <Route path="/signup" element={<SignUpPage />}></Route>
 
         <Route path="*" element={<h1>404 Not Found Page</h1>} />
       </Routes>
