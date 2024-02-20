@@ -35,12 +35,11 @@ export default function Header() {
     { key: "Team", linkTo: "/team-page" },
     { key: "Contact", linkTo: "/contact-page" },
     { key: "Pages", linkTo: "/pages" },
+    { key: "SignUp", linkTo: "/signup" },
   ];
 
-  
   return (
     <header className="flex flex-col justify-start">
-      
       <section className="flex justify-between items-center h-[58px] px-[10%] text-lightTextColor font-bold bg-darkBackgroundColor sm:hidden md:text-xs">
         <div className="flex items-center gap-8 ">
           <div className="flex items-center gap-2 ">
@@ -87,9 +86,11 @@ export default function Header() {
       </section>
 
       <nav className="flex sm:flex-col justify-between h-[76px] px-[10%] py-2.5 items-center bg-white ">
-
         <div className="sm:pr-60 sm:pb-8 hover:scale-110 transition duration-200">
-          <Link to="/" className="text-darkTextColor lg:text-2xl sm:text-sm font-bold" >
+          <Link
+            to="/"
+            className="text-darkTextColor lg:text-2xl sm:text-sm font-bold"
+          >
             BrandName
           </Link>
         </div>
@@ -111,7 +112,6 @@ export default function Header() {
 
         <div className="flex sm:flex-col sm:pt-4 gap-6 text-primaryColor items-center">
           <div className="flex gap-2 text-primaryColor">
-
             <Link to="/profile" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon
                 icon={faUser}
@@ -128,7 +128,6 @@ export default function Header() {
           </div>
 
           <div className="flex sm:flex-col gap-5 ">
-
             <div className="flex gap-2">
               <Link to="/search-page">
                 <FontAwesomeIcon
