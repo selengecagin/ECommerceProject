@@ -1,18 +1,15 @@
 import React from "react";
 
 import aboutUsHero from "../assets/images/aboutUsHero.png";
-import Header from "../components/Header";
 import TeamCard from "../layout/TeamCard";
 import Client from "../components/Client";
 import Testimonials from "../layout/Testimonials";
-import Footer from "../components/Footer";
 import VideoCard from "../layout/VideoCard";
 import Stats from "../components/Stats";
 
 export default function AboutPage() {
   return (
     <main className="flex flex-col items-center ">
-      <Header />
       <section className="relative bg-white">
         <div>
           <div className="absolute left-[195px] right-[646px] top-[50px] flex flex-col items-start py-28 gap-20">
@@ -36,7 +33,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-           <div className="inline-flex pl-[850px] justify-end items-center bg-cover bg-no-repeat">
+          <div className="inline-flex pl-[850px] justify-end items-center bg-cover bg-no-repeat">
             <img src={aboutUsHero} />
           </div>
         </div>
@@ -63,7 +60,6 @@ export default function AboutPage() {
 
       <Client />
       <Testimonials />
-      <Footer />
     </main>
   );
 }

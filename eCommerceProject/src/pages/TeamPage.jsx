@@ -12,8 +12,6 @@ import teamInstagramLogo from "../assets/images/teamInstagramLogo.svg";
 import teamLinkedinLogo from "../assets/images/teamLinkedinLogo.svg";
 import greyRightArrow from "../assets/images/greyRightArrow.svg";
 
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import TeamCard from "../layout/TeamCard";
 
 export default function TeamPage() {
@@ -38,7 +36,6 @@ export default function TeamPage() {
 
   return (
     <main className="flex flex-col items-center w-full">
-      <Header />
       <section className="bg-white ">
         <div className="flex flex-col items-center py-12 gap-4">
           <div className="flex flex-col items-center gap-4">
@@ -119,7 +116,6 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </main>
   );
 }

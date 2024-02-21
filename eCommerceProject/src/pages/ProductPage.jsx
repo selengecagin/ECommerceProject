@@ -1,7 +1,5 @@
 import React from "react";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 import Client from "../components/Client";
 
@@ -18,11 +16,8 @@ import {
 import pDescp from "../assets/images/productPageDescription.png";
 
 export default function ProductPage() {
-
   return (
     <main>
-      <Header />
-
       <section className="navBar flex flex-row flex-wrap py-6 items-center justify-center">
         <div className="flex flex-row gap-4 w-[1033px]">
           <p className="text-center text-sm font-bold text-[#252B42]">Home</p>
@@ -72,8 +67,6 @@ export default function ProductPage() {
               <hr className="bg-mutedColor h-[1px]" />
 
               <div className="inline-flex items-center gap-2.5">
-            
-
                 <FontAwesomeIcon
                   icon={faCircle}
                   style={{ color: "#24a6f0" }}
@@ -265,7 +258,6 @@ export default function ProductPage() {
       </section>
 
       <Client />
-      <Footer />
     </main>
   );
 }

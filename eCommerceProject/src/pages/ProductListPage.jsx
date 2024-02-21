@@ -1,7 +1,5 @@
 import React from "react";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Client from "../components/Client";
 import Pagination from "../components/Pagination";
 import CategoryCard from "../components/CategoryCard";
@@ -15,12 +13,10 @@ import FilterMenu from "../components/FilterMenu";
 export default function ProductListPage() {
   return (
     <main>
-      <Header />
-      {/* <FilterMenu /> */}
-      {/* <CategoryCard /> */}
-      
-      {/* <section className="filter-row flex items-center justify-center self-stretch bg-[#FFF] ">
+      <FilterMenu />
+      <CategoryCard />
 
+      <section className="filter-row flex items-center justify-center self-stretch bg-[#FFF] ">
         <div className="flex flex-col py-6 items-center gap-20 w-[1050px] ">
           <div className="row flex w-[1049px] justify-between items-center ">
             <div className="flex px-px items-center gap-4 text-[#737373]">
@@ -83,7 +79,6 @@ export default function ProductListPage() {
         </div>
       </section>
       <Client />
-      <Footer /> */}
     </main>
   );
 }

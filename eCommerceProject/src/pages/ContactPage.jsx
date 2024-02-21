@@ -13,15 +13,10 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 export default function ContactPage() {
   return (
     <main className="flex flex-col items-center w-full">
-      <Header/>
       <section className=" relative bg-white">
-     
-
         <div className="inline-flex top-[117px] right-[66px] bottom-[124px] left-[742px] justify-end items-center bg-cover bg-no-repeat">
           <img src={ContactHero} />
         </div>
@@ -45,7 +40,6 @@ export default function ContactPage() {
             </p>
 
             <div className="flex p-2.5 items-start gap-8">
-
               <a
                 href="https://twitter.com"
                 target="_blank"
@@ -74,7 +68,6 @@ export default function ContactPage() {
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2xl" />
               </a>
-
             </div>
           </div>
         </div>
@@ -163,7 +156,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <Footer/>
     </main>
   );
 }
