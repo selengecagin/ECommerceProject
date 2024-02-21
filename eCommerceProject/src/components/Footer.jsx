@@ -1,177 +1,100 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faLocationDot,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import SocialMediaContainer from "./SocialMediaContainer";
+import { Link } from "react-router-dom";
+
 export default function Footer() {
+  const footerData = [
+    {
+      key: "Company Info",
+      opts: ["Legal", "Features", "Resources", "Get In Touch"],
+    },
+    {
+      key: "Legal",
+      opts: ["Legal", "Features", "Resources", "Get In Touch"],
+    },
+    {
+      key: "Features",
+      opts: [
+        "Business Marketing",
+        "User Analytic",
+        "Live Chat",
+        "Unlimited Support",
+      ],
+    },
+    {
+      key: "Resources",
+      opts: ["IOS & Android", "Watch a Demo", "Customers", "API"],
+    },
+  ];
+
   return (
-    <footer className="flex flex-col px-48 ">
-      <div className="footer-1 flex flex-row h-[142px] bg-[#FAFAFA] justify-between items-center px-48 gap-[305px]">
-        <div className="flex flex-col 10px gap-2.5">
-          <h3 className="text-[#252B42] font-bold text-2xl pb-2.5">
-            Consulting Agency For Your Business
-          </h3>
-          <p className="text-[#737373] text-sm	font-normal">
-            the quick fox jumps over the lazy dog
-          </p>
-        </div>
-        <div className="btn ">
-          <button className="bg-[#23A6F0] text-sm font-bold text-[#FFF] px-10	py-4	">
-            Contact Us
-          </button>
-        </div>
-      </div>
+    <footer className="flex flex-col w-full">
+      <section className="footer-1 flex flex-row h-[142px] justify-between items-center px-48 gap-[305px]">
+        <Link
+          to="/"
+          className="text-darkTextColor text-2xl font-bold pb-2.5"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          BrandName
+        </Link>
 
-      <div className="footer-2 h-[272px] w-[1050pxpx] py-12 bg-[#FFFFFF] items-center px-48">
+        <div className="flex flex-row gap-2.5">
+          <SocialMediaContainer />
+        </div>
+      </section>
+
+      <section className="footer-2 h-[272px] py-12 bg-white items-center px-48">
         <div className="flex flex-row gap-20">
-          <div className="flex flex-col items-start gap-5">
-            <h5 className="text-[#252B42] text-base font-bold">Company Info</h5>
-            <div className="flex flex-col gap-2.5">
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                About Us
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                Carrier
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                We are hiring
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                Blog
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-5">
-            <h5 className="text-[#252B42] text-base font-bold">Legal</h5>
-            <div className="flex flex-col gap-2.5">
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                About Us
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                Carrier
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                We are hiring
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                Blog
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-5">
-            <h5 className="text-[#252B42] text-base font-bold">Features</h5>
-            <div className="flex flex-col gap-2.5">
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                Business Marketing
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                User Analytic
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                Live Chat
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                Unlimited Support
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-5">
-            <h5 className="text-[#252B42] text-base font-bold">Resources</h5>
-            <div className="flex flex-col gap-2.5">
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                IOS & Android
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                Watch a Demo
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                Customers
-              </a>
-              <a href="#" className="text-[#737373] text-sm font-bold">
-                API
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-5">
-            <h5 className="text-[#252B42] text-base font-bold">Get In Touch</h5>
-            <div className="flex flex-col gap-2.5">
-              <div className="flex flex-row gap-2.5">
-                <FontAwesomeIcon
-                  icon={faPhone}
-                  style={{ color: "#23a6f0" }}
-                  size="lg"
-                />
-                <h6 className="text-[#737373] text-sm font-bold">
-                  (480) 555-0103
-                </h6>
+          {footerData.map((data, index) => {
+            return (
+              <div className="flex flex-col items-start gap-5" key={index}>
+                <h5 className="text-darkTextColor text-base font-bold">
+                  {data.key}
+                </h5>
+                {data.opts.map((opt, index) => {
+                  return (
+                    <div className="flex flex-col gap-2.5" key={index}>
+                      <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-secondTextColor text-sm font-bold"
+                      >
+                        {opt}
+                      </a>
+                    </div>
+                  );
+                })}
               </div>
-              <div className="flex flex-row gap-2.5">
-                <FontAwesomeIcon
-                  icon={faLocationDot}
-                  style={{ color: "#23a6f0" }}
-                  size="lg"
-                />
-                <h6 className="text-[#737373] text-sm font-bold">
-                  4517 Washington Ave.{" "}
-                </h6>
-              </div>
-              <div className="flex flex-row gap-2.5 ">
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  style={{ color: "#23a6f0" }}
-                  size="lg"
-                />
-                <h6 className="text-[#737373] text-sm font-bold">
-                  debra.holt@example.com
-                </h6>
-              </div>
+            );
+          })}
+          <div className="flex flex-col items-start gap-5 ">
+            <h5 className="text-darkTextColor font-bold ">Get In Touch</h5>
+
+            <div className="flex items-center">
+              <input
+                type="email"
+                placeholder="Your Email"
+                className=" px-[12px] h-[57px] rounded-l-md border border-solid border-lightBorderColor bg-lightBgColor"
+              />
+              <button className="bg-primaryColor text-white px-6 py-4  rounded-r-md  items-center shrink-0 border border-solid border-lightBorderColor">
+                Subscribe
+              </button>
             </div>
+
+            <p className="text-secondTextColor text-xs font-normal mt-[-12px] ">
+              Lore impsum dolor Amit
+            </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="footer-3 h-[74px] bg-[#FAFAFA] px-48 items-start py-6 ">
-        <div className="flex flex-row justify-between items-center">
-          <div className="text-[#737373] text-sm font-bold">
-            <p>Made With Love By Figmaland All Right Reserved </p>
-          </div>
-
-          <div className=" flex flex-row  gap-2.5">
-            <a href="https://www.facebook.com/" target="_blank">
-              <FontAwesomeIcon
-                icon={faFacebook}
-                style={{ color: "#23a6f0" }}
-                size="lg"
-              />
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-              <FontAwesomeIcon
-                icon={faInstagram}
-                style={{ color: "#23a6f0" }}
-                size="lg"
-              />
-            </a>
-            <a href="https://twitter.com" target="_blank">
-              <FontAwesomeIcon
-                icon={faTwitter}
-                style={{ color: "#23a6f0" }}
-                size="lg"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
+      <section className="footer-3 h-[74px] bg-lightGray1 px-48 items-start py-6">
+        <p className="text-secondTextColor text-sm font-bold">
+          Made With Love By Figmaland All Right Reserved
+        </p>
+      </section>
     </footer>
   );
 }
