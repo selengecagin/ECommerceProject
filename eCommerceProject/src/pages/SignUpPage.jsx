@@ -15,7 +15,12 @@ export default function SignUpPage() {
   const [defaultRole, setDefaultRole] = useState("");
 
   const onSubmit = (data) => {
-    let formattedData = { ...data };
+    let formattedData = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      role_id: data.role_id,
+    };
     console.log(data);
     setLoading(true);
     axios

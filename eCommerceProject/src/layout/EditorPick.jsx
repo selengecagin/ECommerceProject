@@ -7,7 +7,7 @@ import editorsPick4 from "../assets/images/editorsPick4.png";
 
 export default function EditorPick() {
   return (
-    <main className="flex flex-col  py-20 gap-12 bg-[#FAFAFA] items-center justify-center ">
+    <main className="flex flex-col items-center justify-center py-20 gap-12 bg-[#FAFAFA]">
       <section className="flex flex-col items-center gap-2.5 ">
         <h2 className="text-2xl font-bold text-darkTextColor">EDITOR’S PICK</h2>
         <p className="text-sm font-normal text-secondTextColor">
@@ -15,8 +15,8 @@ export default function EditorPick() {
         </p>
       </section>
 
-      <section className="flex gap-8 justify-center">
-        <div className="relative">
+      <section className="flex flex-col lg:flex-row gap-8 justify-center ">
+        <div className="relative w-[320px] lg:w-[510px]">
           <img
             src={editorsPick1}
             alt="Editors pick for mens"

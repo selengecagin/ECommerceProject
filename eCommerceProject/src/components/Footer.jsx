@@ -29,7 +29,7 @@ export default function Footer() {
 
   return (
     <footer className="flex flex-col w-full">
-      <section className="footer-1 flex flex-row h-[142px] justify-between items-center px-48 gap-[305px]">
+      <section className="footer-1 flex flex-col py-20 justify-start lg:flex-row  lg:justify-between lg:items-center px-48 lg:gap-[305px]">
         <Link
           to="/"
           className="text-darkTextColor text-2xl font-bold pb-2.5"
@@ -44,8 +44,8 @@ export default function Footer() {
         </div>
       </section>
 
-      <section className="footer-2 h-[272px] py-12 bg-white items-center px-48">
-        <div className="flex flex-row gap-20">
+      <section className="footer-2 py-12 bg-white items-center px-48">
+        <div className="flex flex-col md:flex-row flex-wrap gap-12 lg:gap-20">
           {footerData.map((data, index) => {
             return (
               <div className="flex flex-col items-start gap-5" key={index}>
@@ -69,6 +69,7 @@ export default function Footer() {
               </div>
             );
           })}
+
           <div className="flex flex-col items-start gap-5 ">
             <h5 className="text-darkTextColor font-bold ">Get In Touch</h5>
 
@@ -90,8 +91,8 @@ export default function Footer() {
         </div>
       </section>
 
-      <section className="footer-3 h-[74px] bg-lightGray1 px-48 items-start py-6">
-        <p className="text-secondTextColor text-sm font-bold">
+      <section className="footer-3 bg-lightGray1 px-48 justify-start md:items-start py-6  md:w-full">
+        <p className="text-secondTextColor text-sm font-bold w-[210px] md:w-full text-center md:text-start">
           Made With Love By Figmaland All Right Reserved
         </p>
       </section>
