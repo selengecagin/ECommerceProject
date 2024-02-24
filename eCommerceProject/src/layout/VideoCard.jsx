@@ -1,6 +1,5 @@
-import React from 'react'
-import playIcon from "../assets/images/playIcon.png";
-import videoImage from "../assets/images/videoImage.png";
+import React from "react";
+
 export default function VideoCard() {
   return (
     <section className="relative flex justify-center py-28">
