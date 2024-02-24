@@ -11,6 +11,7 @@ import BlogPage from "./pages/BlogPage";
 import SignUpPage from "./pages/SignUpPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 function App() {
   return (
     <>

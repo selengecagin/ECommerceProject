@@ -4,6 +4,7 @@ import {
   faCartShopping,
   faEnvelope,
   faHeart,
+  faList,
   faMagnifyingGlass,
   faPhone,
   faUser,
@@ -108,7 +109,7 @@ export default function Header() {
 
             <Link to="/basket">
               <FontAwesomeIcon
-                icon={faCartShopping}
+                icon={faList}
                 style={{ color: "primaryColor" }}
               />
             </Link>
@@ -142,7 +143,7 @@ export default function Header() {
               Login
             </Link>
             <p className="text-primaryColor">/</p>
-            <Link to="/sign-up" className="text-primaryColor">
+            <Link to="/signup" className="text-primaryColor">
               Register
             </Link>
           </div>

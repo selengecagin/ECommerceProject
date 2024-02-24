@@ -8,6 +8,7 @@ import editorsPick4 from "../assets/images/editorsPick4.png";
 export default function EditorPick() {
   return (
     <main className="flex flex-col items-center justify-center py-20 gap-12 bg-[#FAFAFA]">
+
       <section className="flex flex-col items-center gap-2.5 ">
         <h2 className="text-2xl font-bold text-darkTextColor">EDITOR’S PICK</h2>
         <p className="text-sm font-normal text-secondTextColor">
@@ -94,6 +95,7 @@ export default function EditorPick() {
           </div>
         </div>
       </section>
+      
     </main>
   );
 }
