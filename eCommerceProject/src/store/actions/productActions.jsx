@@ -1,4 +1,4 @@
-export const GlobalProductData = {
+export const GlobalProductActions = {
   setFetching: "FETCHING",
   setFetched: "FETCHED",
   setFailed: "FAILED",
@@ -6,21 +6,21 @@ export const GlobalProductData = {
 };
 
 export const fetchingActionCreator = (data) => ({
-  type: GlobalProductData.fetching,
+  type: GlobalProductActions.fetching,
   payload: data,
 });
 
 export const fetchedActionCreator = (data) => ({
-  type: GlobalProductData.setFetched,
+  type: GlobalProductActions.setFetched,
   payload: data,
 });
 
 export const failedActionCreator = (data) => ({
-  type: GlobalProductData.setFailed,
+  type: GlobalProductActions.setFailed,
   payload: data,
 });
 
 export const fetchMoreActionCreator = (data) => ({
-  type: GlobalProductData.setFetchMore,
+  type: GlobalProductActions.setFetchMore,
   payload: data,
 });

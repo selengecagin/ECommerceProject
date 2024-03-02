@@ -1,4 +1,4 @@
-import { GlobalProductData } from "../actions/productActions";
+import { GlobalProductActions } from "../actions/productActions";
 
 const initialState = {
   productList: [],
@@ -12,10 +12,10 @@ const initialState = {
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
     
-    case GlobalProductData.setFetching:
+    case GlobalProductActions.setFetching:
       return { ...state, loading: true };
 
-    case GlobalProductData.setFetched:
+    case GlobalProductActions.setFetched:
       return {
         ...state,
         totalProductCount: action.payload.total,
@@ -23,10 +23,10 @@ const productReducer = (state = initialState, action) => {
         fetchState: "FETCHED",
       };
 
-    case GlobalProductData.setFailed:
+    case GlobalProductActions.setFailed:
       return { ...state, loading: false, products: [], error: action.payload };
 
-    case GlobalProductData.setFailed:
+    case GlobalProductActions.setFailed:
       return {
         ...state,
         totalProductCount: action.payload.total,

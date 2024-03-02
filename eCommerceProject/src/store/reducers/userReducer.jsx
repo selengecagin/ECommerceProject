@@ -4,7 +4,7 @@ const initialState = { id: null, name: "", email: "" };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GlobalUserActions.loginSuccess:
+    case GlobalUserActions.setLoginSuccess:
       return {
         ...state,
         id: action.payload.id,
@@ -12,17 +12,17 @@ const userReducer = (state = initialState, action) => {
         email: action.payload.email,
       };
 
-    case GlobalUserActions.loginFailure:
+    case GlobalUserActions.setLoginFailure:
       return action.payload;
 
-    case GlobalUserActions.loginVerify:
+    case GlobalUserActions.setLoginVerify:
       return {
         id: action.payload.id,
         name: action.payload.name,
         email: action.payload.email,
       };
 
-    case GlobalUserActions.loginExit:
+    case GlobalUserActions.setLoginExit:
       // localStorage.removeItem("shoppingCart");
       return initialState;
 
