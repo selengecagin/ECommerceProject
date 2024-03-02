@@ -4,11 +4,11 @@ const initialState = {
   address: {},
 };
 
-const shoppingCardReducer = (state = initialState, action) => {
+const shoppingCartReducer = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default shoppingCardReducer;
+export default shoppingCartReducer;
