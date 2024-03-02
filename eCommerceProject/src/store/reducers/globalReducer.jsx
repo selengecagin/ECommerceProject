@@ -1,3 +1,5 @@
+import { GlobalActions } from "../actions/globalActions";
+
 const initialState = {
   roles: [],
   categories: [],
@@ -7,6 +9,14 @@ const initialState = {
 
 const globalReducer = (state = initialState, action) => {
   switch (action.type) {
+
+    case GlobalActions.setRole:
+        return{...state,}
+
+    case GlobalActions.setCategory:
+      return { ...state, categories: [...action.payload] };
+
+
     default:
       return state;
   }
