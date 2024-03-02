@@ -11,9 +11,7 @@ const initialState = {
 
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GlobalProductData.setFetching:
-    // return { ...state, loading: true };
-
+    
     case GlobalProductData.setFetching:
       return { ...state, loading: true };
 
