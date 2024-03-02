@@ -17,8 +17,8 @@ const storeReducer = (state = initialState, action) => {
 };
 
 export const setStore = (store) => ({
-  type: SET_STORE,
-  payload: store,
+    type: SET_STORE,
+    payload: store
 });
 
 export default storeReducer;
