@@ -1,7 +1,5 @@
 import React from "react";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 import Client from "../components/Client";
 
@@ -16,15 +14,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import pDescp from "../assets/images/productPageDescription.png";
+import Carousel3 from "../layout/Carosel3";
 
 export default function ProductPage() {
-
   return (
     <main>
-      <Header />
-
       <section className="navBar flex flex-row flex-wrap py-6 items-center justify-center">
-        <div className="flex flex-row gap-4 w-[1033px]">
+        <div className="flex flex-row gap-4 justify-center sm:justify-start w-[1033px]">
           <p className="text-center text-sm font-bold text-[#252B42]">Home</p>
           <FontAwesomeIcon icon={faAngleRight} style={{ color: "#737373" }} />
           <p className="text-center text-sm font-bold text-[#BDBDBD]">Shop</p>
@@ -32,11 +28,13 @@ export default function ProductPage() {
       </section>
 
       <section className="productCards flex px-48 justify-center items-center self-stretch bg-lightGray1">
-        <div className="flex flex-col pb-12 items-start">
-          <div className="flex items-start gap-10">
-            <div className="flex basis-1/2"> Carousel</div>
+        <div className="flex pb-12 items-start">
+          <div className="flex flex-col md:flex-row items-start gap-10">
+            <div className="flex justify-center items-center basis-1/2">
+              <Carousel3 />
+            </div>
 
-            <div className=" flex flex-col basis-1/2 gap-6">
+            <div className=" flex flex-col basis-1/2 gap-6 px-8 md:px-0">
               <h4 className="text-xl font-normal text-darkTextColor">
                 Floating Phone
               </h4>
@@ -72,8 +70,6 @@ export default function ProductPage() {
               <hr className="bg-mutedColor h-[1px]" />
 
               <div className="inline-flex items-center gap-2.5">
-            
-
                 <FontAwesomeIcon
                   icon={faCircle}
                   style={{ color: "#24a6f0" }}
@@ -96,7 +92,7 @@ export default function ProductPage() {
                 />
               </div>
 
-              <div className="flex items-start gap-2.5 pt-8">
+              <div className="flex justify-center md:justify-start items-center gap-2.5 pt-8">
                 <button className="py-4 px-7 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
                   Select Options
                 </button>
@@ -124,7 +120,7 @@ export default function ProductPage() {
               Description
             </a>
           </div>
-          <div className="inline-flex p-6 justify-center items-center gap-2">
+          <div className="inline-flex p-6 justify-center items-center gap-2 ">
             <a href="#" className="text-sm font-semibold text-secondTextColor">
               Additional Information
             </a>
@@ -138,10 +134,11 @@ export default function ProductPage() {
         </div>
 
         <div className="flex flex-col py-6 px-12 gap-8">
-          <div className="flex max-w-[1056px] items-start gap-8">
+          <div className="flex flex-col flex-wrap justify-center md:flex-row items-start gap-8">
             <div className="flex flex-col items-start shrink-0 w-[332px] h-[392px]">
               <img src={pDescp} className="shrink-0 rounded" />
             </div>
+
             <div className="flex flex-col items-start w-[332px] pb-6 gap-8">
               <h5 className="text-2xl font-bold text-darkTextColor">
                 the quick fox jumps over
@@ -241,31 +238,32 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="bestSellerProducts flex px-48 items-center justify-center bg-lightGray1">
-        <div className="flex flex-col items-start max-w-[1124px] py-12 gap-6">
-          <div className="flex flex-col max-w[1040px] text-darkTextColor">
+      <section className="bestSellerProducts flex items-center justify-center bg-lightGray1">
+        <div className="flex flex-col py-12 gap-6">
+          <div className="flex flex-col items-center justify-center md:items-start text-darkTextColor">
             <h3 className="text-2xl font-bold text-center ">
               BESTSELLER PRODUCTS
             </h3>
           </div>
 
-          <div className="flex items-start gap-8">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
-          <div className="flex items-start gap-8">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-8">
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+            </div>
+            <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-8">
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+            </div>
           </div>
         </div>
       </section>
 
       <Client />
-      <Footer />
     </main>
   );
 }

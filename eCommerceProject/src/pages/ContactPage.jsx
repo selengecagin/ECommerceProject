@@ -13,21 +13,12 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 export default function ContactPage() {
   return (
-    <main className="flex flex-col items-center w-full">
-      <Header/>
-      <section className=" relative bg-white">
-     
-
-        <div className="inline-flex top-[117px] right-[66px] bottom-[124px] left-[742px] justify-end items-center bg-cover bg-no-repeat">
-          <img src={ContactHero} />
-        </div>
-
-        <div className="absolute left-[195px] right-[646px] top-[100px] flex flex-col py-28 gap-20 items-center">
-          <div className=" flex flex-col w-[600px] gap-9 flex-start">
+    <main className="flex flex-col items-center w-full bg-lightGray1 sm:bg-white  ">
+      <section className="flex flex-col lg:flex-row items-center justify-cente bg-white w-full">
+        <div className="basis-1/2 flex flex-col items-center justify-center py-28">
+          <div className="flex items-center gap-7.5 flex-col gap-9 text-center md:text-start justify-center md:items-start">
             <p className="text-base font-bold text-darkTextColor ">
               CONTACT US
             </p>
@@ -45,7 +36,6 @@ export default function ContactPage() {
             </p>
 
             <div className="flex p-2.5 items-start gap-8">
-
               <a
                 href="https://twitter.com"
                 target="_blank"
@@ -74,14 +64,22 @@ export default function ContactPage() {
               >
                 <FontAwesomeIcon icon={faLinkedin} size="2xl" />
               </a>
-
             </div>
           </div>
         </div>
+
+        <div className="flex basis-1/2 justify-center items-center shrink-0 overflow-hidden">
+          //TODO fix picture orientation
+          <img
+            src={ContactHero}
+            className="mx-auto my-auto w-[800px]"
+            alt="About Us"
+          />
+        </div>
       </section>
 
-      <section className="flex px-48 justify-center items-center self-stretch ">
-        <div className="flex flex-col items-center gap-10 py-28 ">
+      <section className="flex px-48 justify-center items-center self-stretch bg-lightGray1 ">
+        <div className="flex flex-col items-center gap-10 py-20 sm:py-28 ">
           <div className="flex flex-col items-center gap-2.5">
             <p className="text-sm font-bold text-darkTextColor text-center">
               VISIT OUR OFFICE
@@ -91,8 +89,8 @@ export default function ContactPage() {
             </h2>
           </div>
 
-          <div className="flex items-center">
-            <div className="flex flex-col items-center gap-8 w-[328px] py-12 px-10 bg-white">
+          <div className="flex flex-col flex-wrap md:flex-row items-center justify-center gap-8 sm:gap-0">
+            <div className="flex flex-col items-center gap-8 w-[328px] py-12 bg-white shadow-lg hover:scale-110 transition duration-200">
               <img src={phone}></img>
               <div className="flex flex-col justify-center items-center">
                 <p className="text-sm font-bold text-darkTextColor">
@@ -110,7 +108,7 @@ export default function ContactPage() {
               </button>
             </div>
 
-            <div className="flex flex-col items-center gap-8 w-[328px] py-20 px-10 bg-darkTextColor">
+            <div className="flex flex-col items-center gap-8 w-[328px] py-20 bg-darkTextColor shadow-lg hover:scale-110 transition duration-200">
               <img src={location}></img>
               <div className="flex flex-col justify-center items-center">
                 <p className="text-sm font-bold text-white">
@@ -126,7 +124,7 @@ export default function ContactPage() {
               </button>
             </div>
 
-            <div className="flex flex-col items-center gap-8 w-[328px] py-12 px-10 bg-white">
+            <div className="flex flex-col items-center gap-8 w-[328px] py-12 bg-white shadow-lg hover:scale-110 transition duration-200">
               <img src={mail}></img>
               <div className="flex flex-col justify-center items-center">
                 <p className="text-sm font-bold text-darkTextColor">
@@ -163,7 +161,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <Footer/>
     </main>
   );
 }

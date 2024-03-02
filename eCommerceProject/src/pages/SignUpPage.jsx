@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+//TODO fix 500 error of admin and customer roles
 export default function SignUpPage() {
   const {
     register,
@@ -15,7 +16,12 @@ export default function SignUpPage() {
   const [defaultRole, setDefaultRole] = useState("");
 
   const onSubmit = (data) => {
-    let formattedData = { ...data };
+    let formattedData = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      role_id: data.role_id,
+    };
     console.log(data);
     setLoading(true);
     axios
@@ -60,86 +66,91 @@ export default function SignUpPage() {
         className="flex flex-col justify-center items-center gap-8 py-12"
       >
         <div className="flex flex-col gap-6">
-          <label htmlFor="name">
+          <label htmlFor="name" className="w-[450px]">
             <p className="pb-2 text-lg font-normal text-darkTextColor">Name</p>
             <input
               type="text"
-              placeholder="Enter your name"
+              placeholder="Your Full Name"
               className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm "
               {...register("name", {
-                required: "Name is required",
+                required: "Please enter your name.",
                 minLength: {
                   value: 3,
-                  message: "You must enter at least 3 characters",
+                  message: "Your name should be at least 3 characters long.",
                 },
               })}
             ></input>
-            <p>{errors.name?.message}</p>
+            <p className="text-red-500">{errors.name?.message}</p>
           </label>
 
-          <label htmlFor="email">
+          <label htmlFor="email" className="w-[450px]">
             <p className="pb-2 text-lg font-normal text-darkTextColor">Email</p>
             <input
               type="text"
-              placeholder="Email*"
+              placeholder="example@domain.com"
               className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm"
               {...register("email", {
-                required: "Email Address is required",
+                required: "Please enter your email address.",
                 pattern: {
                   value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-                  message: "Invalid email format",
+                  message:
+                    "Looks like this isn’t a valid email format. Please check and try again.",
                 },
               })}
             ></input>
-            <p>{errors.email?.message}</p>
+            <p className="text-red-500">{errors.email?.message}</p>
           </label>
 
-          <label htmlFor="password" className="passwordArea">
+          <label htmlFor="password" className="passwordArea w-[450px]">
             <p className="pb-2 text-lg font-normal text-darkTextColor">
               Password
             </p>
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Create a Password"
               className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm"
               {...register("password", {
-                required: "Password is required",
+                required: "Please create a password.",
                 pattern: {
                   value:
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
                   message:
-                    "Password needs to be minimum 8 character including numbers, lower case, upper case and special characters",
+                    "Your password should be at least 8 characters long and include uppercase letters, lowercase letters, numbers, and special characters (e.g., @, #, $).",
                 },
               })}
             ></input>
-            <p>{errors.password?.message}</p>
+            <p className="text-red-500">{errors.password?.message}</p>
           </label>
 
-          <label htmlFor="confirmPassword" className="confirmPasswordArea">
+          <label
+            htmlFor="confirmPassword"
+            className="confirmPasswordArea w-[450px]"
+          >
             <p className="pb-2 text-lg font-normal text-darkTextColor">
               Confirm Password
             </p>
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Confirm Password"
               className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm"
               {...register("confirmPassword", {
-                required: "Please confirm your password",
+                required: "Please confirm your password.",
                 validate: (value) =>
-                  value === watch("password") || "Passwords do not match",
+                  value === watch("password") ||
+                  "Passwords do not match. Try again.",
               })}
             ></input>
-            <p>{errors.confirmPassword?.message}</p>
+            <p className="text-red-500">{errors.confirmPassword?.message}</p>
           </label>
         </div>
 
         <div className="flex flex-col justify-start">
-          <label className="roleArea">
+          <label className="roleArea w-[450px]">
             <p className="pb-2 text-lg font-normal text-darkTextColor">Role</p>
             <select
               className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm"
               {...register("role_id", {
-                required: "Role is required",
+                required: "Please select your role from the list.",
               })}
             >
               {roleOptions.map((role) => (
@@ -148,11 +159,9 @@ export default function SignUpPage() {
                 </option>
               ))}
             </select>
-            <p>{errors.role_id?.message}</p>
+            <p className="text-red-500">{errors.role_id?.message}</p>
           </label>
         </div>
-
-        {/* eğer role id customer ise aşağıdaki div ekranda görünmeli */}
 
         {watch("role_id") === "2" && (
           <div className="flex flex-col gap-6 border border-solid rounded-md border-gray-400 p-4">
@@ -162,17 +171,17 @@ export default function SignUpPage() {
               </p>
               <input
                 type="text"
-                placeholder="Enter store name"
+                placeholder="Store Name"
                 className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm"
                 {...register("name", {
-                  required: "Store name is required",
+                  required: "Please enter your store name.",
                   minLength: {
                     value: 3,
-                    message: "You must enter at least 3 characters",
+                    message: "Store name should be at least 3 characters long.",
                   },
                 })}
               ></input>
-              <p>{errors.name?.message}</p>
+              <p className="text-red-500">{errors.name?.message}</p>
             </label>
 
             <label htmlFor="phone">
@@ -181,18 +190,18 @@ export default function SignUpPage() {
               </p>
               <input
                 type="text"
-                placeholder="Enter store phone"
+                placeholder="+0905XXXXXXXXX"
                 className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm"
                 {...register("phone", {
-                  required: "Store phone is required",
+                  required: "Please enter your store's phone number.",
                   pattern: {
                     value:
                       /^(?:\+90|0)?(?:\d{10}|\d{3}[\s-]?\d{3}[\s-]?\d{4})$/,
-                    message: "Invalid phone number format",
+                    message: "Please enter a valid phone number format.",
                   },
                 })}
               ></input>
-              <p>{errors.phone?.message}</p>
+              <p className="text-red-500">{errors.phone?.message}</p>
             </label>
 
             <label htmlFor="tax_no">
@@ -201,17 +210,18 @@ export default function SignUpPage() {
               </p>
               <input
                 type="text"
-                placeholder="Enter store tax id"
+                placeholder="Tax ID Format: T1234V567890"
                 className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm"
                 {...register("tax_no", {
-                  required: "Store tax id is required",
+                  required: "Please enter your store's tax ID.",
                   pattern: {
                     value: /^T\d{4}V\d{6}$/,
-                    message: "Invalid Tax Id format",
+                    message:
+                      "Invalid Tax ID format. Please check and try again.",
                   },
                 })}
               ></input>
-              <p>{errors.tax_no?.message}</p>
+              <p className="text-red-500">{errors.tax_no?.message}</p>
             </label>
 
             <label htmlFor="bank_account">
@@ -220,17 +230,18 @@ export default function SignUpPage() {
               </p>
               <input
                 type="text"
-                placeholder="Enter store bank account"
+                placeholder="Bank Account Number"
                 className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm"
                 {...register("bank_account", {
-                  required: "Store Bank account is required",
+                  required: "Please enter your store’s bank account number.",
                   pattern: {
                     value: /^TR\d{2}[0-9]{5}0[0-9A-Z]{16}$/,
-                    message: "Invalid bank account ",
+                    message:
+                      "Invalid bank account format. Please check and try again.",
                   },
                 })}
               ></input>
-              <p>{errors.bank_account?.message}</p>
+              <p className="text-red-500">{errors.bank_account?.message}</p>
             </label>
           </div>
         )}

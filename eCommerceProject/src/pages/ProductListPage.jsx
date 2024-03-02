@@ -1,7 +1,5 @@
 import React from "react";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Client from "../components/Client";
 import Pagination from "../components/Pagination";
 import CategoryCard from "../components/CategoryCard";
@@ -15,15 +13,13 @@ import FilterMenu from "../components/FilterMenu";
 export default function ProductListPage() {
   return (
     <main>
-      <Header />
-      {/* <FilterMenu /> */}
-      {/* <CategoryCard /> */}
-      
-      {/* <section className="filter-row flex items-center justify-center self-stretch bg-[#FFF] ">
+      <FilterMenu />
+      <CategoryCard />
 
-        <div className="flex flex-col py-6 items-center gap-20 w-[1050px] ">
-          <div className="row flex w-[1049px] justify-between items-center ">
-            <div className="flex px-px items-center gap-4 text-[#737373]">
+      <section className="filter-row flex items-center justify-center self-stretch bg-[#FFF] ">
+        <div className="flex flex-col py-6 gap-20 w-[1050px] ">
+          <div className="flex flex-col md:flex-row flex-wrap items-center gap-4 md:justify-between">
+            <div className="flex px-px items-center text-[#737373]">
               <h2 className="text-sm font-bold text-[#737373] ">
                 Showing all 12 results
               </h2>
@@ -61,19 +57,19 @@ export default function ProductListPage() {
 
       <section className="flex flex-wrap justify-center items-center px-40 bg-[#fff]">
         <div className="flex flex-col py-12 gap-12 items-center">
-          <div className="img-container-1 flex flex-wrap gap-8 items-start">
+          <div className="img-container-1 flex flex-wrap gap-8 items-start justify-center">
             <ProductCard />
             <ProductCard />
             <ProductCard />
             <ProductCard />
           </div>
-          <div className="img-container-2 flex flex-wrap gap-8 items-start sm:hidden">
+          <div className="img-container-2 hidden md:flex md:flex-wrap md:gap-8 items-start justify-center">
             <ProductCard />
             <ProductCard />
             <ProductCard />
             <ProductCard />
           </div>
-          <div className="img-container-3 flex flex-wrap gap-8 items-start sm:hidden">
+          <div className="img-container-3 hidden md:flex md:flex-wrap md:gap-8 items-start justify-center">
             <ProductCard />
             <ProductCard />
             <ProductCard />
@@ -83,7 +79,6 @@ export default function ProductListPage() {
         </div>
       </section>
       <Client />
-      <Footer /> */}
     </main>
   );
 }

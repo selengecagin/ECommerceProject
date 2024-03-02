@@ -28,8 +28,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="flex flex-col w-full">
-      <section className="footer-1 flex flex-row h-[142px] justify-between items-center px-48 gap-[305px]">
+    <footer className="flex flex-col w-full ">
+      <section className="footer-1 flex flex-col py-20 justify-start lg:flex-row  lg:justify-between lg:items-center lg:gap-[305px] px-[44px] sm:px-32 md:px-48">
         <Link
           to="/"
           className="text-darkTextColor text-2xl font-bold pb-2.5"
@@ -44,31 +44,34 @@ export default function Footer() {
         </div>
       </section>
 
-      <section className="footer-2 h-[272px] py-12 bg-white items-center px-48">
-        <div className="flex flex-row gap-20">
+      <section className="footer-2 py-12 bg-white items-center px-[44px] sm:px-32 md:px-48">
+        <div className="parentDiv flex flex-col md:flex-row flex-wrap gap-8 md:gap-12 lg:gap-20">
           {footerData.map((data, index) => {
             return (
-              <div className="flex flex-col items-start gap-5" key={index}>
+              <div
+                className="overlappingDiv flex flex-col items-start gap-5 min-w-0"
+                key={index}
+              >
                 <h5 className="text-darkTextColor text-base font-bold">
                   {data.key}
                 </h5>
                 {data.opts.map((opt, index) => {
                   return (
-                    <div className="flex flex-col gap-2.5" key={index}>
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-secondTextColor text-sm font-bold"
-                      >
-                        {opt}
-                      </a>
-                    </div>
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-secondTextColor text-sm font-bold"
+                      key={index}
+                    >
+                      {opt}
+                    </a>
                   );
                 })}
               </div>
             );
           })}
+
           <div className="flex flex-col items-start gap-5 ">
             <h5 className="text-darkTextColor font-bold ">Get In Touch</h5>
 
@@ -76,22 +79,22 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Your Email"
-                className=" px-[12px] h-[57px] rounded-l-md border border-solid border-lightBorderColor bg-lightBgColor"
+                className="px-[12px] h-[57px] rounded-l-md border border-solid border-lightBorderColor bg-lightBgColor"
               />
-              <button className="bg-primaryColor text-white px-6 py-4  rounded-r-md  items-center shrink-0 border border-solid border-lightBorderColor">
+              <button className="bg-primaryColor text-white px-6 py-4 rounded-r-md items-center shrink-0 border border-solid border-lightBorderColor">
                 Subscribe
               </button>
             </div>
 
-            <p className="text-secondTextColor text-xs font-normal mt-[-12px] ">
+            <p className="text-secondTextColor text-xs font-normal mt-2">
               Lore impsum dolor Amit
             </p>
           </div>
         </div>
       </section>
 
-      <section className="footer-3 h-[74px] bg-lightGray1 px-48 items-start py-6">
-        <p className="text-secondTextColor text-sm font-bold">
+      <section class="footer-3 bg-lightGray1 px-[44px] sm:px-32 md:px-48 py-6 flex items-center justify-center sm:justify-start md:w-full">
+        <p class="text-secondTextColor text-sm font-bold w-[210px] sm:w-[400px] text-center sm:text-start">
           Made With Love By Figmaland All Right Reserved
         </p>
       </section>

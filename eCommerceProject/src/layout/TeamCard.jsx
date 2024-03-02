@@ -22,9 +22,9 @@ export default function TeamCard() {
   ];
 
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col flex-wrap lg:flex-row gap-8">
       {teamData.map((data, index) => (
-        <div key={index}>
+        <div key={index} className="flex flex-col justify-center items-center">
           <img src={data.img} alt={`Team member ${index + 1}`} />
           <div className="flex flex-col items-center gap-2.5 p-7">
             <h5 className="text-base font-bold text-darkTextColor">

@@ -1,33 +1,34 @@
 import React from "react";
 
 import aboutUsHero from "../assets/images/aboutUsHero.png";
-import Header from "../components/Header";
 import TeamCard from "../layout/TeamCard";
 import Client from "../components/Client";
 import Testimonials from "../layout/Testimonials";
-import Footer from "../components/Footer";
 import VideoCard from "../layout/VideoCard";
 import Stats from "../components/Stats";
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col items-center ">
-      <Header />
-      <section className="relative bg-white">
-        <div>
-          <div className="absolute left-[195px] right-[646px] top-[50px] flex flex-col items-start py-28 gap-20">
-            <div className="flex justify-start items-center gap-7.5">
-              <div className="flex flex-col w-[600px] gap-9">
-                <p className="text-base font-bold text-darkTextColor ">
+    <main>
+      <div className="flex flex-col items-center px-[10%]">
+
+        <section className="flex flex-col lg:flex-row justify-between bg-white w-full">
+          <div className="basis-1/2 flex flex-col items-center justify-center py-28">
+            <div className="flex items-center gap-7.5">
+              <div className="flex flex-col gap-9 text-center md:text-start justify-center items-center md:items-start">
+                <p className="hidden md:flex text-base font-bold text-darkTextColor">
                   ABOUT COMPANY
                 </p>
-                <h1 className="text-[58px] font-bold text-darkTextColor ">
+                <h1 className="text-6xl font-bold text-darkTextColor ">
                   ABOUT US
                 </h1>
-                <p className="text-xl font-normal text-secondTextColor w-[315px]">
-                  We know how large objects will act, but things on a small
-                  scale
-                </p>
+                <div className="w-[315px] md:w-[400px] text-center md:text-start">
+                  <p className="text-xl font-normal text-secondTextColor ">
+                    We know how large objects will act, but things on a small
+                    scale just do not act that way.
+                  </p>
+                </div>
+
                 <div className="gap-2.5">
                   <button className="py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
                     Get Quote Now
@@ -36,34 +37,38 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-           <div className="inline-flex pl-[850px] justify-end items-center bg-cover bg-no-repeat">
-            <img src={aboutUsHero} />
+
+          <div className="basis-1/2 flex justify-center items-center shrink-0 overflow-hidden">
+            <img
+              src={aboutUsHero}
+              className="max-w-full h-auto shrink-0"
+              alt="About Us"
+            />
           </div>
-        </div>
-      </section>
-      <Stats />
-      <VideoCard />
+        </section>
+        
+        <Stats />
+        <VideoCard />
 
-      <section className="flex max-w-[1440px] px-48 items-center justify-center bg-lightTextColor">
-        <div className="flex flex-col py-28 gap-28 shrink-0">
-          <div className="flex flex-col items-center justify-center gap-2.5 width-[607px]">
-            <h2 className="text-4xl font-bold text-darkTextColor ">
-              Meet Our Team
-            </h2>
-            <p className="text-sm font-normal text-secondTextColor text-center">
-              Problems trying to resolve the conflict between
-              <br /> the two major realms of Classical physics: Newtonian
-              mechanics
-            </p>
+        <section className="flex max-w-[1440px] px-48 items-center justify-center bg-lightTextColor">
+          <div className="flex flex-col py-28 gap-28 shrink-0">
+            <div className="flex flex-col items-center justify-center gap-2.5 width-[607px]">
+              <h2 className="text-4xl font-bold text-darkTextColor ">
+                Meet Our Team
+              </h2>
+              <p className="text-sm font-normal text-secondTextColor text-center">
+                Problems trying to resolve the conflict between
+                <br /> the two major realms of Classical physics: Newtonian
+                mechanics
+              </p>
+            </div>
+
+            <TeamCard />
           </div>
-
-          <TeamCard />
-        </div>
-      </section>
-
+        </section>
+      </div>
       <Client />
       <Testimonials />
-      <Footer />
     </main>
   );
 }

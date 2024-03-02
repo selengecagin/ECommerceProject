@@ -20,19 +20,19 @@ export default function Carousel1() {
           </div>
         )}
       >
-        <div className="img1 relative h-full w-full">
+        <div className="img1 h-[720px] relative md:h-full md:w-full shrink-0 overflow-hidden">
           <img
             src={slide1}
             alt="image 1"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-300 ease-in-out transform sm:hover:scale-110"
           />
 
-          <div className=" absolute -left-0 xl:-left-[10%] inset-0 grid h-full w-full place-items-center">
-            <div className="w-3/4 text-center md:w-2/4">
+          <div className="absolute pr-16 md:-left-[40%] inset-0 grid place-items-center">
+            <div className="w-1/7">
               <Typography
                 variant="paragraph"
                 color="white"
-                className="mb-9 text-base text-start text-[#FFFFFF] font-bold"
+                className="mb-9 text-base text-center sm:text-start text-[#FFFFFF] font-bold"
               >
                 SUMMER 2020
               </Typography>
@@ -40,7 +40,7 @@ export default function Carousel1() {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-9 text-start text-[#FFFFFF] font-bold text-[55px]"
+                className="mb-9 text-center sm:text-start text-[#FFFFFF] font-bold text-[40px] lg:text-[55px] "
               >
                 NEW COLLECTION
               </Typography>
@@ -48,21 +48,16 @@ export default function Carousel1() {
               <Typography
                 variant="paragraph"
                 color="white"
-                className="mb-9 text-xl text-start text-[#FFFFFF] font-normal"
+                className="mb-9 text-xl text-center sm:text-start text-[#FFFFFF] font-normal"
               >
                 We know how large objects will act, <br /> but things on a small
                 scale.
               </Typography>
 
-              <div className="bg-[#2DC071] w-[221px] h-[61px] cursor-pointer flex justify-center gap-2 rounded-md hover:scale-110 transition duration-200">
-                <Link
-                  to="/product-list-page"
-                  className="flex text-white text-2xl font-bold items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <div className="cursor-pointer flex justify-center sm:justify-start gap-2 rounded-md hover:scale-110 transition duration-200 ">
+                <button className=" text-white text-2xl font-bold bg-[#2DC071] w-[221px] h-[61px]">
                   SHOP NOW
-                </Link>
+                </button>
               </div>
             </div>
           </div>

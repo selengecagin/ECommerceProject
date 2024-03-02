@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 export default function ContentCard() {
   return (
     <section className="flex flex-col items-start w-[348px] bg-white shadow-lg hover:scale-110 transition duration-200">
+      
       <div className="imgArea">
         <img src={featuredPostImg} alt="Featured Posts Image" />
       </div>

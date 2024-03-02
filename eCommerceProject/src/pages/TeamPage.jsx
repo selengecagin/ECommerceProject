@@ -12,8 +12,6 @@ import teamInstagramLogo from "../assets/images/teamInstagramLogo.svg";
 import teamLinkedinLogo from "../assets/images/teamLinkedinLogo.svg";
 import greyRightArrow from "../assets/images/greyRightArrow.svg";
 
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import TeamCard from "../layout/TeamCard";
 
 export default function TeamPage() {
@@ -38,14 +36,13 @@ export default function TeamPage() {
 
   return (
     <main className="flex flex-col items-center w-full">
-      <Header />
       <section className="bg-white ">
         <div className="flex flex-col items-center py-12 gap-4">
           <div className="flex flex-col items-center gap-4">
             <p className=" text-base font-bold text-center text-secondTextColor">
               WHAT WE DO
             </p>
-            <h2 className="text-[58px] font-bold text-darkTextColor text-center ">
+            <h2 className="text-[40px] w-[300px] md:w-[780px] md:text-[58px] font-bold text-darkTextColor text-center ">
               Innovation tailored for you
             </h2>
             <div className="centered flex flex-row gap-4 ">
@@ -61,24 +58,36 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="flex justify-center items-center shrink-0 gap-2.5">
+      <section className="flex flex-col lg:flex-row justify-center items-center shrink-0 gap-2.5">
         <div>
           <img src={teamHero1} className="shrink-0"></img>
         </div>
-        <div className="flex flex-col gap-2.5">
-          <img src={teamHero2} className="shrink-0"></img>
-          <img src={teamHero3} className="shrink-0 "></img>
+        <div className="flex lg:flex-col gap-2.5">
+          <img
+            src={teamHero2}
+            className="w-[200px] h-[260px] md:w-[361px] md:h-[260px] object-cover shrink-0"
+          ></img>
+          <img
+            src={teamHero3}
+            className="w-[200px] h-[260px] md:w-[361px] md:h-[260px] object-cover shrink-0 "
+          ></img>
         </div>
 
-        <div className="flex flex-col gap-2.5">
-          <img src={teamHero4} className="shrink-0"></img>
-          <img src={teamHero5} className="shrink-0"></img>
+        <div className="flex lg:flex-col gap-2.5">
+          <img
+            src={teamHero4}
+            className="w-[200px] h-[260px] md:w-[361px] md:h-[260px] object-cover shrink-0"
+          ></img>
+          <img
+            src={teamHero5}
+            className="w-[200px] h-[260px] md:w-[361px] md:h-[260px] object-cover shrink-0"
+          ></img>
         </div>
       </section>
 
-      <section className="flex flex-col flex-wrap px-48 items-center justify-center bg-lightTextColor">
-        <div className="flex flex-col items-center py-28 gap-28">
-          <h2 className="text-4xl font-bold text-darkTextColor ">
+      <section className="flex flex-col flex-wrap items-center justify-center bg-lightTextColor">
+        <div className="flex flex-col items-center justify-center py-28 gap-28">
+          <h2 className="text-4xl font-bold text-darkTextColor text-center ">
             Meet Our Team
           </h2>
 
@@ -90,36 +99,38 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="flex px-48 justify-center align-center shrink-0">
+      <section className="flex justify-center items-center shrink-0">
         <div className="flex flex-col py-20 items-center gap-9 ">
-          <h2 className="text-[40px] font-bold text-center text-darkTextColor">
-            Start your 14 days free trial
-          </h2>
-          <p className="text-sm font-normal text-center text-secondTextColor">
-            Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
-            RELIT official consequent.
-          </p>
-          <button className="flex flex-col py-4 px-10 items-center gap-2.5 bg-primaryColor text-white font-bold text-sm rounded">
-            Try it free now
-          </button>
-
-          <div className="flex p-2.5 items-start gap-8">
-            {socialMediaData.map((data, index) => {
-              return (
-                <a
-                  href={data.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={index}
-                >
-                  <img src={data.logo}></img>
-                </a>
-              );
-            })}
+          <div className="flex flex-col items-center justify-center gap-9">
+            <h2 className="text-[40px] font-bold text-center text-darkTextColor w-[330px] md:w-[540px]">
+              Start your 14 days free trial
+            </h2>
+            <p className="text-sm font-normal text-center text-secondTextColor w-[300px] md:w-[400px]">
+              Met minim Mollie non desert Alamo est sit cliquey dolor do met
+              sent. RELIT official consequent.
+            </p>
+            <button className="py-4 px-10 bg-primaryColor text-white font-bold text-sm rounded">
+              Try it free now
+            </button>
+          </div>
+          <div>
+            <div className="flex p-2.5 items-start gap-8">
+              {socialMediaData.map((data, index) => {
+                return (
+                  <a
+                    href={data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={index}
+                  >
+                    <img src={data.logo}></img>
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
-      <Footer />
     </main>
   );
 }
