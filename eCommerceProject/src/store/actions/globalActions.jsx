@@ -5,22 +5,22 @@ export const GlobalActions = {
   SWITCH_LANGUAGE: "SWITCH_LANGUAGE",
 };
 
-export const roleActionCreator = (newRole) => ({
+export const changeRoleActionCreator = (newRole) => ({
   type: GlobalActions.CHANGE_ROLE,
   payload: newRole,
 });
 
-export const categoryActionCreator = (newCategory) => ({
+export const changeCategoryActionCreator = (newCategory) => ({
   type: GlobalActions.CHANGE_CATEGORY,
   payload: newCategory,
 });
 
-export const themeActionCreator = (newTheme) => ({
+export const applyThemeActionCreator = (newTheme) => ({
   type: GlobalActions.APPLY_THEME,
   payload: newTheme,
 });
 
-export const languageActionCreator = (newLanguage) => ({
+export const switchLanguageActionCreator = (newLanguage) => ({
   type: GlobalActions.SWITCH_LANGUAGE,
   payload: newLanguage,
 });
