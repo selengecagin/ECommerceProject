@@ -10,14 +10,14 @@ import globalReducer from "./reducers/globalReducer";
 import userReducer from "./reducers/userReducer";
 import productReducer from "./reducers/productReducer";
 import storeReducer from "./reducers/storeReducer";
-import shoppingCardReducer from "./reducers/shoppingCardReducer";
+import shoppingCartReducer from "./reducers/shoppingCartReducer";
 
 export const reducers = combineReducers({
   global: globalReducer,
   user: userReducer,
   product: productReducer,
   store: storeReducer,
-  shoppingCard: shoppingCardReducer,
+  shoppingCart: shoppingCartReducer,
 });
 
 export const store = createStore(reducers, applyMiddleware(thunk, logger));

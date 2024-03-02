@@ -93,8 +93,8 @@ export default function Footer() {
         </div>
       </section>
 
-      <section class="footer-3 bg-lightGray1 px-[44px] sm:px-32 md:px-48 py-6 flex items-center justify-center sm:justify-start md:w-full">
-        <p class="text-secondTextColor text-sm font-bold w-[210px] sm:w-[400px] text-center sm:text-start">
+      <section className="footer-3 bg-lightGray1 px-[44px] sm:px-32 md:px-48 py-6 flex items-center justify-center sm:justify-start md:w-full">
+        <p className="text-secondTextColor text-sm font-bold w-[210px] sm:w-[400px] text-center sm:text-start">
           Made With Love By Figmaland All Right Reserved
         </p>
       </section>

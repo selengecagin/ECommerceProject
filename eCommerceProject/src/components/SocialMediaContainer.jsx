@@ -26,9 +26,6 @@ export default function SocialMediaContainer() {
             aria-label={`Follow us on ${link.label}`}
             rel="noopener noreferrer"
             className="text-lightTextColor hover:scale-110 transition duration-200"
-            hover:scale-110
-            transition
-            duration-200
           >
             <FontAwesomeIcon
               icon={link.icon}
