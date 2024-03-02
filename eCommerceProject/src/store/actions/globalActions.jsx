@@ -5,22 +5,22 @@ export const GlobalActions = {
   setLanguage: "SET_LANGUAGE",
 };
 
-export const setRoleActionCreator = (newRole) => ({
+export const roleActionCreator = (newRole) => ({
   type: GlobalActions.setRole,
   payload: newRole,
 });
 
-export const setCategoryActionCreator = (newCategory) => ({
+export const categoryActionCreator = (newCategory) => ({
   type: GlobalActions.setCategory,
   payload: newCategory,
 });
 
-export const setThemeActionCreator = (newTheme) => ({
+export const themeActionCreator = (newTheme) => ({
   type: GlobalActions.setTheme,
   payload: newTheme,
 });
 
-export const setLanguageActionCreator = (newLanguage) => ({
+export const languageActionCreator = (newLanguage) => ({
   type: GlobalActions.setLanguage,
   payload: newLanguage,
 });

@@ -5,22 +5,22 @@ export const GlobalProductData = {
   setFetchMore: "FETCH_MORE",
 };
 
-export const setFetching = (data) => ({
+export const fetchingActionCreator = (data) => ({
   type: GlobalProductData.fetching,
   payload: data,
 });
 
-export const setFetched = (data) => ({
+export const fetchedActionCreator = (data) => ({
   type: GlobalProductData.setFetched,
   payload: data,
 });
 
-export const setFailed = (data) => ({
+export const failedActionCreator = (data) => ({
   type: GlobalProductData.setFailed,
   payload: data,
 });
 
-export const fetchMore = (data) => ({
+export const fetchMoreActionCreator = (data) => ({
   type: GlobalProductData.setFetchMore,
   payload: data,
 });

@@ -1,25 +1,25 @@
 export const GlobalUserActions = {
-  loginSuccess: "LOGIN_SUCCESS",
-  loginFailure: "LOGIN_FAILURE",
-  loginVerify: "LOGIN_VERIFY",
-  loginExit: "LOGIN_EXIT",
+  setLoginSuccess: "LOGIN_SUCCESS",
+  setLoginFailure: "LOGIN_FAILURE",
+  setLoginVerify: "LOGIN_VERIFY",
+  setLoginExit: "LOGIN_EXIT",
 };
 
 export const loginUserSuccess = (data) => ({
-  type: GlobalUserActions.loginSuccess,
+  type: GlobalUserActions.setLoginSuccess,
   payload: data,
 });
 
 export const loginUserFailure = (data) => ({
-  type: GlobalUserActions.loginFailure,
+  type: GlobalUserActions.setLoginFailure,
   payload: data,
 });
 
 export const loginUserVerify = (data) => ({
-  type: GlobalUserActions.loginVerify,
+  type: GlobalUserActions.setLoginVerify,
   payload: data,
 });
 
 export const loginUserExit = () => ({
-  type: GlobalUserActions.loginExit,
+  type: GlobalUserActions.setLoginExit,
 });
