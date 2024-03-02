@@ -2,6 +2,7 @@ import React from "react";
 import productColors from "../assets/images/product-colors.png";
 import productImg from "../assets/images/productImg.png";
 export default function ProductCard() {
+  //TODO transform color selection part static to dynamic
   return (
     <section className="flex flex-col items-start w-[240px]">
       <div>
@@ -20,6 +21,7 @@ export default function ProductCard() {
             <p className="text-mutedColor text-sm">$16.48</p>
             <p className="text-secondaryColor text-sm">$6.48</p>
           </div>
+
           <img src={productColors} alt="product-colors-ellipses"></img>
         </div>
       </div>

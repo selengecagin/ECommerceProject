@@ -69,6 +69,7 @@ export default function ContactPage() {
         </div>
 
         <div className="flex basis-1/2 justify-center items-center shrink-0 overflow-hidden">
+          //TODO fix picture orientation
           <img
             src={ContactHero}
             className="mx-auto my-auto w-[800px]"

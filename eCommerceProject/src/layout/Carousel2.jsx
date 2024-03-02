@@ -2,6 +2,7 @@ import { Carousel, Typography } from "@material-tailwind/react";
 import React from "react";
 import carouselImg2 from "../assets/images/carouselImg2.png";
 
+//TODO fix writing and picture oriantation
 export default function Carousel1() {
   return (
     <main>

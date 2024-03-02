@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+//TODO fix 500 error of admin and customer roles
 export default function SignUpPage() {
   const {
     register,
