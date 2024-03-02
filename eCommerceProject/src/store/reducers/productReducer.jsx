@@ -11,27 +11,33 @@ const initialState = {
 
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
-    
-    case GlobalProductActions.setFetching:
-      return { ...state, loading: true };
+    case GlobalProductActions.PRODUCTS_FETCHING:
+      return { ...state, loading: true, fetchState: "FETCHING" };
 
-    case GlobalProductActions.setFetched:
+    case GlobalProductActions.PRODUCTS_FETCHED:
       return {
         ...state,
-        totalProductCount: action.payload.total,
         productList: action.payload.products,
+        totalProductCount: action.payload.totalCount,
+        pageCount: Math.ceil(
+          action.payload.totalCount / action.payload.productsPerPage
+        ),
         fetchState: "FETCHED",
       };
 
-    case GlobalProductActions.setFailed:
-      return { ...state, loading: false, products: [], error: action.payload };
-
-    case GlobalProductActions.setFailed:
+    case GlobalProductActions.PRODUCTS_FETCH_FAILED:
       return {
         ...state,
-        totalProductCount: action.payload.total,
-        productList: [...state.productList, ...action.payload.products],
+        loading: false,
+        products: [],
+        error: action.payload,
         fetchState: "FAILED",
+      };
+
+    case SET_ACTIVE_PAGE:
+      return {
+        ...state,
+        activePage: action.payload,
       };
 
     default:

@@ -5,21 +5,21 @@ export const GlobalUserActions = {
   setLoginExit: "LOGIN_EXIT",
 };
 
-export const loginUserSuccess = (data) => ({
+export const loginUserSuccessActionCreator = (data) => ({
   type: GlobalUserActions.setLoginSuccess,
   payload: data,
 });
 
-export const loginUserFailure = (data) => ({
+export const loginUserFailureActionCreator = (data) => ({
   type: GlobalUserActions.setLoginFailure,
   payload: data,
 });
 
-export const loginUserVerify = (data) => ({
+export const loginUserVerifyActionCreator = (data) => ({
   type: GlobalUserActions.setLoginVerify,
   payload: data,
 });
 
-export const loginUserExit = () => ({
+export const loginUserExitActionCreator = () => ({
   type: GlobalUserActions.setLoginExit,
 });

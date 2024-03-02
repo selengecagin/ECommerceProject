@@ -1,26 +1,28 @@
 export const GlobalProductActions = {
-  setFetching: "FETCHING",
-  setFetched: "FETCHED",
-  setFailed: "FAILED",
-  setFetchMore: "FETCH_MORE",
+  PRODUCTS_FETCHING: "PRODUCTS_FETCHING",
+  PRODUCTS_FETCHED: "PRODUCTS_FETCHED",
+  PRODUCTS_FETCH_MORE: "PRODUCTS_FETCH_MORE",
+  PRODUCTS_FETCH_FAILED: "PRODUCTS_FETCH_FAILED",
+  PRODUCTS_NOT_FETCHED: "PRODUCTS_NOT_FETCHED",
+  SET_ACTIVE_PAGE: "SET_ACTIVE_PAGE",
 };
 
-export const fetchingActionCreator = (data) => ({
-  type: GlobalProductActions.fetching,
+export const productsFetchingActionCreator = (data) => ({
+  type: GlobalProductActions.PRODUCTS_FETCHING,
   payload: data,
 });
 
-export const fetchedActionCreator = (data) => ({
-  type: GlobalProductActions.setFetched,
+export const productsFetchedActionCreator = (data) => ({
+  type: GlobalProductActions.PRODUCTS_FETCHED,
   payload: data,
+  //payload: { products, totalCount, productsPerPage }
 });
 
-export const failedActionCreator = (data) => ({
-  type: GlobalProductActions.setFailed,
-  payload: data,
+export const productsFetchActionCreator = (data) => ({
+  type: GlobalProductActions.PRODUCTS_FETCH_FAILED,
 });
 
-export const fetchMoreActionCreator = (data) => ({
-  type: GlobalProductActions.setFetchMore,
-  payload: data,
+export const setActivePageActionCreator = (pageNumber) => ({
+  type: GlobalProductActions.PRODUCTS_FETCH_FAILED,
+  payload: pageNumber,
 });

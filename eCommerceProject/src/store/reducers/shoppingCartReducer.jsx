@@ -1,5 +1,5 @@
 const initialState = {
-  cart: [],
+  cart: [], //product objects and their counts
   payment: {},
   address: {},
 };
