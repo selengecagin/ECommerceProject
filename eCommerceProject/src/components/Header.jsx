@@ -139,7 +139,7 @@ export default function Header() {
                 style={{ color: "primaryColor" }}
               />
             </Link>
-            <Link to="/sign-in" className="text-primaryColor">
+            <Link to="/signin" className="text-primaryColor">
               Login
             </Link>
             <p className="text-primaryColor">/</p>

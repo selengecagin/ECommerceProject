@@ -11,6 +11,7 @@ import BlogPage from "./pages/BlogPage";
 import SignUpPage from "./pages/SignUpPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import SignInPage from "./pages/SignInPage";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
 
         <Route path="/pages" element={<ProductPage />}></Route>
 
-        <Route path="/sign-in" element={<HomePage />}></Route>
+        <Route path="/signin" element={<SignInPage />}></Route>
 
         <Route path="/signup" element={<SignUpPage />}></Route>
 

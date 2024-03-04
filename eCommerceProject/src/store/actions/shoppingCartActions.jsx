@@ -9,3 +9,4 @@ const GlobalShoppingCartActions = {
   CLEAR_CART: "CLEAR_CART",
 };
 
+//TODO shopping card action and reducer should be created

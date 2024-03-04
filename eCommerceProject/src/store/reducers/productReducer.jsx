@@ -34,11 +34,11 @@ const productReducer = (state = initialState, action) => {
         fetchState: "FAILED",
       };
 
-    case SET_ACTIVE_PAGE:
-      return {
-        ...state,
-        activePage: action.payload,
-      };
+    // case SET_ACTIVE_PAGE:
+    //   return {
+    //     ...state,
+    //     activePage: action.payload,
+    //   };
 
     default:
       return state;
