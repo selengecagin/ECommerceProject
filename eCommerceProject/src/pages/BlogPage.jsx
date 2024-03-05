@@ -1,9 +1,7 @@
 import React from "react";
 import ContentCard from "../components/ContentCard";
 
-
 export default function BlogPage() {
-  //TODO
   return (
     <main className="flex flex-col justify-center items-center w-full px-48 bg-white m-auto">
       <section className="flex flex-col items-center gap-20 py-36 ">

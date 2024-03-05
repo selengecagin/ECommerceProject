@@ -1,8 +1,8 @@
 import React from "react";
-import productColors from "../assets/images/product-colors.png";
 import productImg from "../assets/images/productImg.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 export default function ProductCard() {
-  //TODO transform color selection part static to dynamic
   return (
     <section className="flex flex-col items-start w-[240px]">
       <div>
@@ -22,7 +22,28 @@ export default function ProductCard() {
             <p className="text-secondaryColor text-sm">$6.48</p>
           </div>
 
-          <img src={productColors} alt="product-colors-ellipses"></img>
+          <div className="inline-flex items-center gap-2">
+            <FontAwesomeIcon
+              icon={faCircle}
+              style={{ color: "#24a6f0" }}
+              size="lg"
+            />
+            <FontAwesomeIcon
+              icon={faCircle}
+              style={{ color: "#2cc071" }}
+              size="lg"
+            />
+            <FontAwesomeIcon
+              icon={faCircle}
+              style={{ color: "#e77b40" }}
+              size="lg"
+            />
+            <FontAwesomeIcon
+              icon={faCircle}
+              style={{ color: "#252b42" }}
+              size="lg"
+            />
+          </div>
         </div>
       </div>
     </section>

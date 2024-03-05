@@ -6,14 +6,28 @@ import CategoryCard from "../components/CategoryCard";
 import ProductCard from "../components/ProductCard";
 
 import squares from "../assets/images/squares.png";
-import list from "../assets/images/list.png";
-import downArrow from "../assets/images/down-arrow.svg";
-import FilterMenu from "../components/FilterMenu";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleDown,
+  faAngleRight,
+  faList,
+} from "@fortawesome/free-solid-svg-icons";
 export default function ProductListPage() {
   return (
     <main>
-      <FilterMenu />
+      {/* TODO grid icon- pro feature - solution canot be found */}
+      <section className="flex flex-col md:flex-row flex-wrap gap-3.5 items-center px-[15%] py-6 justify-between">
+        <div className=" flex ">
+          <h2 className="text-center text-2xl font-bold text-[#252B42] bg-[#FAFAFA]">
+            Shop
+          </h2>
+        </div>
+        <div className="centered flex flex-row gap-4 ">
+          <p className="text-center text-sm font-bold text-[#252B42]">Homes</p>
+          <FontAwesomeIcon icon={faAngleRight} style={{ color: "#c0c1c4" }} />
+          <p className="text-center text-sm font-bold text-[#BDBDBD]">Shop</p>
+        </div>
+      </section>
       <CategoryCard />
 
       <section className="filter-row flex items-center justify-center self-stretch bg-[#FFF] ">
@@ -33,7 +47,7 @@ export default function ProductListPage() {
               </button>
 
               <button className="flex p-4 items-center border-2 border-solid border-[#ECECEC] rounded">
-                <img src={list} alt="List" />
+                <FontAwesomeIcon icon={faList} />
               </button>
             </div>
 
@@ -42,7 +56,10 @@ export default function ProductListPage() {
                 <p className="text-sm text-[#737373] font-normal text-center">
                   Popularity
                 </p>
-                <img src={downArrow} alt="Down Arrow" />
+                <FontAwesomeIcon
+                  icon={faAngleDown}
+                  style={{ color: "#97999b" }}
+                />
               </div>
 
               <div className="filterButton flex w-[94px] flex-col items-center justify-center gap-2.5 px-5 rounded bg-[#23A6F0] ">
