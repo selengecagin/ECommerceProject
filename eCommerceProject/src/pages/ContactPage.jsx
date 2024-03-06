@@ -1,5 +1,5 @@
 import React from "react";
-import ContactHero from "../assets/images/contactHero.png";
+import ContactHero from "../assets/images/contactPageHero.png";
 
 import phone from "../assets/images/contactPagePhone.svg";
 import mail from "../assets/images/contactPageMail.svg";
@@ -69,10 +69,10 @@ export default function ContactPage() {
         </div>
 
         <div className="flex basis-1/2 justify-center items-center shrink-0 overflow-hidden">
-          //TODO fix picture orientation
+          {/* TODO fix picture orientation */}
           <img
             src={ContactHero}
-            className="mx-auto my-auto w-[800px]"
+            className="mx-auto my-auto w-auto h- sm:w-[800px] sm:h-auto sm:object-center md:object-left lg:object-left-bottom"
             alt="About Us"
           />
         </div>

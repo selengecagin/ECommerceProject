@@ -23,3 +23,5 @@ export const loginUserVerifyActionCreator = (data) => ({
 export const loginUserExitActionCreator = () => ({
   type: GlobalUserActions.setLoginExit,
 });
+
+

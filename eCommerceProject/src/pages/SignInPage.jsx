@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
- export default function SignInPage() {
+export default function SignInPage() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+
+  
+  const onSubmit = (data) => {};
+
+  const toggleRememberMe = () => {
+    setRememberMe(!rememberMe);
+  };
 
   return (
     <main className="bg-lightGray1">
@@ -42,6 +51,15 @@ import { useForm } from "react-hook-form";
             })}
           ></input>
           <p className="text-red-500">{errors.password?.message}</p>
+        </label>
+
+        <label htmlFor="rememberMe">
+          <input
+            type="checkbox"
+            checked={rememberMe}
+            onChange={toggleRememberMe}
+          />
+          Remember Me
         </label>
 
         <button

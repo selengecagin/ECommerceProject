@@ -1,26 +1,38 @@
+import api from "../../api";
+
 export const GlobalActions = {
-  CHANGE_ROLE: "CHANGE_ROLE",
-  CHANGE_CATEGORY: "CHANGE_CATEGORY",
-  APPLY_THEME: "APPLY_THEME",
-  SWITCH_LANGUAGE: "SWITCH_LANGUAGE",
+  SET_ROLE: "SET_ROLE",
+  SET_CATEGORY: "SET_CATEGORY",
+  SET_THEME: "SET_THEME",
+  SET_LANGUAGE: "SET_LANG",
 };
 
-export const changeRoleActionCreator = (newRole) => ({
-  type: GlobalActions.CHANGE_ROLE,
+//action creators
+export const setRole = (newRole) => ({
+  type: GlobalActions.SET_ROLE,
   payload: newRole,
 });
 
-export const changeCategoryActionCreator = (newCategory) => ({
-  type: GlobalActions.CHANGE_CATEGORY,
+export const setCategory = (newCategory) => ({
+  type: GlobalActions.SET_CATEGORY,
   payload: newCategory,
 });
 
-export const applyThemeActionCreator = (newTheme) => ({
-  type: GlobalActions.APPLY_THEME,
+export const setTheme = (newTheme) => ({
+  type: GlobalActions.SET_THEME,
   payload: newTheme,
 });
 
-export const switchLanguageActionCreator = (newLanguage) => ({
-  type: GlobalActions.SWITCH_LANGUAGE,
+export const setLang = (newLanguage) => ({
+  type: GlobalActions.SET_LANGUAGE,
   payload: newLanguage,
 });
+
+export const fetchRoles = () => (dispatch) => {
+  api
+    .get("/roles")
+    .then((res) => {
+      dispatch(setRole(res.data));
+    })
+    .catch((err) => console.log(err));
+};

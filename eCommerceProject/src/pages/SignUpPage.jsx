@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../api";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRoles } from "../store/actions/globalActions";
 //TODO default role implementation
 export default function SignUpPage() {
   const {
@@ -12,51 +14,40 @@ export default function SignUpPage() {
   } = useForm();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [roleOptions, setRoleOptions] = useState([]);
-  const [defaultRole, setDefaultRole] = useState("");
+  const roleOptions = useSelector((store) => store.global.roles);
+  const dispatch = useDispatch();
 
+  console.log("xxxxxxxxxxxxxxxxx", roleOptions);
   const onSubmit = (data) => {
+    //TODO formattedDatayı useForm içinden default gönder useForm({ defaultValues: initialFormData });
     let formattedData = {
       name: data.name,
       email: data.email,
       password: data.password,
       role_id: data.role_id,
     };
-    console.log(data);
     setLoading(true);
-    axios
-      .post(
-        "https://workintech-fe-ecommerce.onrender.com/signup",
-        formattedData
-      )
+    delete data.confirmPassword;
+    api
+      .post("/signup", formattedData)
       .then((res) => {
-        console.log("response: ", res);
+        console.log("Post request response: ", res);
         localStorage.setItem("token", res.data.token);
-        navigate(-1);
+        setLoading(false);
+        setTimeout(() => navigate(-1), 5000);
       })
       .catch((err) => {
         console.error("Post request failed:", err);
+        setLoading(false);
       })
       .finally(() => {
         setLoading(false);
       });
+    console.log("Form data: ", formattedData);
   };
 
   useEffect(() => {
-    setLoading(true);
-    axios
-      .get("https://workintech-fe-ecommerce.onrender.com/roles")
-      .then((res) => {
-        setRoleOptions(res.data);
-        if (res.data.length > 0) {
-          setDefaultRole(res.data[2].id);
-        }
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Role options request failed:", error);
-        setLoading(false);
-      });
+    dispatch(fetchRoles());
   }, []);
 
   return (
@@ -165,7 +156,7 @@ export default function SignUpPage() {
 
         {watch("role_id") === "2" && (
           <div className="flex flex-col gap-6 border border-solid rounded-md border-gray-400 p-4">
-            <label htmlFor="name">
+            <label htmlFor="store_name">
               <p className="pb-2 text-lg font-normal text-darkTextColor">
                 Store Name
               </p>
@@ -173,7 +164,7 @@ export default function SignUpPage() {
                 type="text"
                 placeholder="Store Name"
                 className="w-[450px] h-[50px] pl-3 items-center shrink-0 shadow-sm"
-                {...register("name", {
+                {...register("store_name", {
                   required: "Please enter your store name.",
                   minLength: {
                     value: 3,
