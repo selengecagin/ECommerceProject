@@ -40,6 +40,11 @@ function App() {
 
         <Route path="/signup" element={<SignUpPage />}></Route>
 
+        <Route
+          path="/shopping/:gender/:category"
+          element={<ProductListPage />}
+        ></Route>
+
         <Route path="*" element={<h1>404 Not Found Page</h1>} />
       </Routes>
       <Footer />

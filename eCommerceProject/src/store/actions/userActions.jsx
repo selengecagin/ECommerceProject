@@ -64,6 +64,7 @@ export const loginUserAction = (creds, navigate) => (dispatch) => {
 
 export const userAuthAction = (navigate) => (dispatch) => {
   const token = localStorage.getItem("token");
+  //TODO try header update
   if (token) {
     //auto login feature
     api

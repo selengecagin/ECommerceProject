@@ -2,7 +2,7 @@ import api from "../../api";
 
 export const GlobalActions = {
   SET_ROLE: "SET_ROLE",
-  SET_CATEGORY: "SET_CATEGORY",
+  SET_CATEGORIES: "SET_CATEGORY",
   SET_THEME: "SET_THEME",
   SET_LANGUAGE: "SET_LANGUAGE",
 };
@@ -13,8 +13,8 @@ export const setRole = (newRole) => ({
   payload: newRole,
 });
 
-export const setCategory = (newCategory) => ({
-  type: GlobalActions.SET_CATEGORY,
+export const setCategories = (newCategory) => ({
+  type: GlobalActions.SET_CATEGORIES,
   payload: newCategory,
 });
 
@@ -36,4 +36,14 @@ export const fetchRoles = () => (dispatch) => {
       dispatch(setRole(res.data));
     })
     .catch((err) => console.log(err));
+};
+
+export const fetchCategories = () => (dispatch) => {
+  api
+    .get("/categories")
+    .then((res) => {
+      dispatch(setCategories(res.data));
+      console.log("Fetch Categories Response: ", res.data);
+    })
+    .catch((err) => console.log("Fetch Categories Error: ", err));
 };

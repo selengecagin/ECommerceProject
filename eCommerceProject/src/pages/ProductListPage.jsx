@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Client from "../components/Client";
 import Pagination from "../components/Pagination";
@@ -12,7 +12,17 @@ import {
   faAngleRight,
   faList,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { fetchCategories } from "../store/actions/globalActions";
+
 export default function ProductListPage() {
+  const dispatch = useDispatch();
+
+  //2. component did mount olduğunda categories fetch edilmeli
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, []);
+
   return (
     <main>
       {/* TODO grid icon- pro feature - solution canot be found */}
