@@ -1,6 +1,14 @@
 import { GlobalUserActions } from "../actions/userActions";
 
-const initialState = { id: null, name: "", email: "" };
+const initialState = {
+  id: null,
+  name: "",
+  userName: "",
+  email: "",
+  role_id: "",
+  isLoggedIn: false,
+  error: null,
+};
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -10,16 +18,22 @@ const userReducer = (state = initialState, action) => {
         id: action.payload.id,
         name: action.payload.name,
         email: action.payload.email,
+        role_id: action.payload.role_id,
+        isLoggedIn: true,
+        error: null,
       };
 
     case GlobalUserActions.setLoginFailure:
-      return action.payload;
+      return { ...state, error: action.payload, isLoggedIn: false };
 
     case GlobalUserActions.setLoginVerify:
       return {
+        ...state,
         id: action.payload.id,
         name: action.payload.name,
         email: action.payload.email,
+        role_id: action.payload.role_id,
+        isLoggedIn: true,
       };
 
     case GlobalUserActions.setLoginExit:

@@ -16,8 +16,12 @@ export default function SignUpPage() {
   const [loading, setLoading] = useState(false);
   const roleOptions = useSelector((store) => store.global.roles);
   const dispatch = useDispatch();
+  console.log("Role options from store: ", roleOptions);
 
-  console.log("xxxxxxxxxxxxxxxxx", roleOptions);
+  useEffect(() => {
+    dispatch(fetchRoles());
+  }, []);
+
   const onSubmit = (data) => {
     //TODO formattedDatayı useForm içinden default gönder useForm({ defaultValues: initialFormData });
     let formattedData = {
@@ -45,10 +49,6 @@ export default function SignUpPage() {
       });
     console.log("Form data: ", formattedData);
   };
-
-  useEffect(() => {
-    dispatch(fetchRoles());
-  }, []);
 
   return (
     <main className="bg-lightGray1">

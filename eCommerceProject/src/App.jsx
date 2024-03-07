@@ -1,6 +1,10 @@
 import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import HomePage from "./pages/HomePage";
 import ProductListPage from "./pages/ProductListPage";
 import AboutPage from "./pages/AboutPage";
@@ -39,6 +43,7 @@ function App() {
         <Route path="*" element={<h1>404 Not Found Page</h1>} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </>
   );
 }

@@ -4,7 +4,7 @@ export const GlobalActions = {
   SET_ROLE: "SET_ROLE",
   SET_CATEGORY: "SET_CATEGORY",
   SET_THEME: "SET_THEME",
-  SET_LANGUAGE: "SET_LANG",
+  SET_LANGUAGE: "SET_LANGUAGE",
 };
 
 //action creators
@@ -28,6 +28,7 @@ export const setLang = (newLanguage) => ({
   payload: newLanguage,
 });
 
+// actions
 export const fetchRoles = () => (dispatch) => {
   api
     .get("/roles")

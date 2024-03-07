@@ -1,4 +1,5 @@
 import React from "react";
+import md5 from "md5";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
@@ -15,8 +16,18 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loginExit } from "../store/actions/userActions";
+
 export default function Header() {
+  const user = useSelector((store) => store.user);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const userEmail = useSelector((store) => store.email);
+  const hashForm = userEmail ? md5(userEmail.trim().toLowerCase()) : null;
   const socialMediaLinks = [
     {
       icon: faInstagram,
@@ -37,6 +48,12 @@ export default function Header() {
     { key: "Contact", linkTo: "/contact-page" },
     { key: "Pages", linkTo: "/pages" },
   ];
+
+  const logOutHandler = () => {
+    dispatch(loginExit());
+    localStorage.removeItem("token");
+    navigate("/");
+  };
 
   return (
     <header className="flex flex-col justify-start w-full">
@@ -131,51 +148,81 @@ export default function Header() {
           })}
         </div>
 
-        <div className="hidden lg:flex lg:gap-6 text-primaryColor items-center">
-          <div className="flex gap-2 text-primaryColor">
-            <Link to="/profile">
-              <FontAwesomeIcon
-                icon={faUser}
-                style={{ color: "primaryColor" }}
-              />
-            </Link>
-            <Link to="/signin" className="text-primaryColor">
-              Login
-            </Link>
-            <p className="text-primaryColor">/</p>
-            <Link to="/signup" className="text-primaryColor">
-              Register
-            </Link>
+        <div className="hidden lg:flex lg:gap-6 items-center">
+          <div className="hidden lg:flex lg:gap-6 text-primaryColor items-center">
+            {user.isLoggedIn ? (
+              <div className="flex items-center justify-center gap-2.5">
+                <div>
+                  <img
+                    src={`https://www.gravatar.com/avatar/${hashForm}`}
+                    alt="Gravatar"
+                    style={{ borderRadius: `50%`, width: 35, height: 35 }}
+                  />
+                </div>
+                <div>
+                  <span>{user.name}</span>
+                </div>
+                <div>
+                  <span>/</span>
+                </div>
+                <div>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => logOutHandler()}
+                  >
+                    Log Out
+                  </span>
+                </div>
+              </div>
+            ) : (
+              <div className="flex gap-2 text-primaryColor">
+                <Link to="/profile">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    style={{ color: "primaryColor" }}
+                  />
+                </Link>
+                <Link to="/signin" className="text-primaryColor">
+                  Login
+                </Link>
+                <p className="text-primaryColor">/</p>
+                <Link to="/signup" className="text-primaryColor">
+                  Register
+                </Link>
+              </div>
+            )}
           </div>
 
-          <div className="flex gap-5 ">
-            <div className="flex gap-2">
-              <Link to="/search">
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlass}
-                  style={{ color: "primaryColor" }}
-                />
-              </Link>
-            </div>
+          <div>
+            <div className="flex gap-5 ">
+              <div className="flex gap-2">
+                <Link to="/search">
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    style={{ color: "primaryColor" }}
+                  />
+                </Link>
+              </div>
 
-            <div className="flex gap-2">
-              <Link to="/basket">
-                <FontAwesomeIcon
-                  icon={faCartShopping}
-                  style={{ color: "primaryColor" }}
-                />
-              </Link>
-              <p className="text-primaryColor">1</p>
-            </div>
+              <div className="flex gap-2">
+                <Link to="/basket">
+                  <FontAwesomeIcon
+                    icon={faCartShopping}
+                    style={{ color: "primaryColor" }}
+                  />
+                </Link>
+                <p className="text-primaryColor">1</p>
+              </div>
 
-            <div className="flex gap-2">
-              <Link to="/favorites">
-                <FontAwesomeIcon
-                  icon={faHeart}
-                  style={{ color: "primaryColor" }}
-                />
-              </Link>
-              <p className="text-primaryColor">1</p>
+              <div className="flex gap-2">
+                <Link to="/favorites">
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{ color: "primaryColor" }}
+                  />
+                </Link>
+                <p className="text-primaryColor">1</p>
+              </div>
             </div>
           </div>
         </div>

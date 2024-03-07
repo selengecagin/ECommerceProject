@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { loginUserAction, userAuthAction } from "../store/actions/userActions";
 
 export default function SignInPage() {
   const {
@@ -11,18 +13,21 @@ export default function SignInPage() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const dispatch = useDispatch();
 
-  
-  const onSubmit = (data) => {};
-
-  const toggleRememberMe = () => {
-    setRememberMe(!rememberMe);
+  const onSubmit = (data) => {
+    dispatch(loginUserAction(data, navigate)); //userActiona parametre olarak gönderdik
+    console.log("Login Datası:", data);
   };
+
+  useEffect(() => {
+    dispatch(userAuthAction());
+  }, []);
 
   return (
     <main className="bg-lightGray1">
       <form
-        onSubmit={handleSubmit()}
+        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col justify-center items-center gap-8 py-12"
       >
         <label htmlFor="email" className="w-[450px]">
@@ -53,14 +58,15 @@ export default function SignInPage() {
           <p className="text-red-500">{errors.password?.message}</p>
         </label>
 
-        <label htmlFor="rememberMe">
+        {/* TODO implement remember me feature */}
+        {/* <label htmlFor="rememberMe">
           <input
             type="checkbox"
             checked={rememberMe}
-            onChange={toggleRememberMe}
+            onChange={handleRememberMe}
           />
           Remember Me
-        </label>
+        </label> */}
 
         <button
           className={`rounded-md items-center px-16 py-4 text-base font-bold text-white bg-primaryColor ${
