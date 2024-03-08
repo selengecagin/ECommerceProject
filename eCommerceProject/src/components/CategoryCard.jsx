@@ -20,7 +20,7 @@ export default function CategoryCard() {
 
   // 3. Datayı UI kısmına yerleştir
 
-  //5. Sort categoryData by rating in descending order and take the first 5
+  // 5. Sort categoryData by rating in descending order and take the first 5
   const topCategories = [...categoryData]
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 5);
@@ -37,7 +37,9 @@ export default function CategoryCard() {
             key={index}
           >
             <Link
-              to={`/shopping/:gender/:category”`}
+              to={`/shopping/${
+                data.gender === "k" ? "kadın" : "erkek"
+              }/${data.title.toLowerCase()}`}
               className="w-full h-full flex items-center justify-center"
             >
               <div
