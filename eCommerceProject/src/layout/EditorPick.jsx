@@ -5,7 +5,7 @@ import editorsPick2 from "../assets/images/editorsPick2.png";
 import editorsPick3 from "../assets/images/editorsPick3.png";
 import editorsPick4 from "../assets/images/editorsPick4.png";
 
-// TODO fix responsive structure of buttons
+// TODO Responsive structure of buttons
 export default function EditorPick() {
   return (
     <main className="flex flex-col items-center justify-center py-20 gap-12 bg-[#FAFAFA]">

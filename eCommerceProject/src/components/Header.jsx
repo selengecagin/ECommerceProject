@@ -41,24 +41,13 @@ export default function Header() {
     { icon: faTwitter, url: "https://twitter.com", label: "Twitter" },
   ];
 
-  /*   const routeData = [
-    { key: "Home", linkTo: "/" },
-    { key: "Shop", linkTo: "/product-list-page" },
-    { key: "About", linkTo: "/about-page" },
-    { key: "Blog", linkTo: "/blog-page" },
-    { key: "Team", linkTo: "/team-page" },
-    { key: "Contact", linkTo: "/contact-page" },
-    { key: "Pages", linkTo: "/pages" },
-  ];
-*/
-
   const logOutHandler = () => {
     dispatch(loginExit());
     localStorage.removeItem("token");
     navigate("/");
   };
 
-  // kategori dropdowndan ürün kategorisi seçilecek, gender filter üzerinden filtrelenecek
+  // TODO kategori dropdowndan ürün kategorisi seçilecek, gender filter üzerinden filtrelenecek
   return (
     <header className="flex flex-col justify-start w-full">
       <section className="hidden sm:flex sm:flex-row justify-between items-center h-[58px] px-[10%] text-lightTextColor font-bold bg-darkBackgroundColor">
@@ -137,67 +126,51 @@ export default function Header() {
           </div>
         </div>
 
-        {/* <div className="flex flex-col sm:flex sm:flex-row gap-4">
-          {routeData.map((data, index) => {
-            return (
-              <div className="flex items-center" key={index}>
-                <Link
-                  to={data.linkTo}
-                  className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
-                >
-                  {data.key}
-                </Link>
-              </div>
-            );
-          })}
-        </div> */}
-
         <div className="flex flex-col sm:flex sm:flex-row gap-4">
+          <Link
+            to={"/"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Home
+          </Link>
 
-            <Link
-              to={"/"}
-              className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
-            >
-              Home
-            </Link>
+          {/* TODO Sutructure that renders link inside link throws an error */}
+          <Link to={"/product-list-page"}>
+            <DropDownMenu />
+          </Link>
 
-            <Link to={"/product-list-page"}>
-              <DropDownMenu />
-            </Link>
+          <Link
+            to={"/about-page"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            About
+          </Link>
 
-            <Link
-              to={"/about-page"}
-              className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
-            >
-              About
-            </Link>
+          <Link
+            to={"/blog-page"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Blog
+          </Link>
 
-            <Link
-              to={"/blog-page"}
-              className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
-            >
-              Blog
-            </Link>
-
-            <Link
-              to={"/team-page"}
-              className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
-            >
-              Team
-            </Link>
-            <Link
-              to={"/contact-page"}
-              className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
-            >
-              Contact
-            </Link>
-            <Link
-              to={"/pages"}
-              className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
-            >
-              Pages
-            </Link>
-   
+          <Link
+            to={"/team-page"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Team
+          </Link>
+          <Link
+            to={"/contact-page"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Contact
+          </Link>
+          <Link
+            to={"/pages"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Pages
+          </Link>
         </div>
 
         <div className="hidden lg:flex lg:gap-6 items-center">

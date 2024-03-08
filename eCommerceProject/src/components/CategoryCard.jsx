@@ -5,29 +5,13 @@ export default function CategoryCard() {
   // 1. storedan category datasını çek
   const categoryData = useSelector((store) => store.global.categories);
 
-  /* category data sample
-[
-  {
-        "id": 1,
-        "code": "k:tisort",
-        "title": "Tişört",
-        "img": "https://workintech-fe-ecommerce.onrender.com/assets/category-img/category_kadın_tişört.jpg",
-        "rating": 4.2,
-        "gender": "k"
-    },
-]
-*/
-
-  // 3. Datayı UI kısmına yerleştir
-
-  // 5. Sort categoryData by rating in descending order and take the first 5
   const topCategories = [...categoryData]
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 5);
 
-  //TODO Datayı fetch ederken çok kısa bir gecikme var, bakılacak
-  //TODO reponsive'i yapılacak
-  //TODO categoriler ratinge göre listelenirken gendera bakılmadığı için her iki gender için aynı cat geliyor.
+  //TODO There is a glitch in the data fetching phase
+  //TODO Complete responsive design
+  //TODO Currently, categories listed by only rating rate, so we see same category for both man and women
   return (
     <section className="flex flex-col flex-wrap shrink-0 sm:flex-row gap-4 pb-8 px-8 justify-center items-center bg-[#FAFAFA]">
       {topCategories?.map((data, index) => {

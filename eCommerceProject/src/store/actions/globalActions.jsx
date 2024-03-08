@@ -1,32 +1,33 @@
 import api from "../../api";
 
 export const GlobalActions = {
-  SET_ROLE: "SET_ROLE",
-  SET_CATEGORIES: "SET_CATEGORY",
-  SET_THEME: "SET_THEME",
-  SET_LANGUAGE: "SET_LANGUAGE",
+  setRole: "setRole",
+  setCategories: "SET_CATEGORY",
+  setTheme: "SET_THEME",
+  setLanguage: "SET_LANGUAGE",
 };
 
 //action creators
 export const setRole = (newRole) => ({
-  type: GlobalActions.SET_ROLE,
+  type: GlobalActions.setRole,
   payload: newRole,
 });
 
 export const setCategories = (newCategory) => ({
-  type: GlobalActions.SET_CATEGORIES,
+  type: GlobalActions.setCategories,
   payload: newCategory,
 });
 
 export const setTheme = (newTheme) => ({
-  type: GlobalActions.SET_THEME,
+  type: GlobalActions.setTheme,
   payload: newTheme,
 });
 
 export const setLang = (newLanguage) => ({
-  type: GlobalActions.SET_LANGUAGE,
+  type: GlobalActions.setLanguage,
   payload: newLanguage,
 });
+
 
 // actions
 export const fetchRoles = () => (dispatch) => {
@@ -38,6 +39,7 @@ export const fetchRoles = () => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
+
 export const fetchCategories = () => (dispatch) => {
   api
     .get("/categories")
@@ -47,3 +49,5 @@ export const fetchCategories = () => (dispatch) => {
     })
     .catch((err) => console.log("Fetch Categories Error: ", err));
 };
+
+

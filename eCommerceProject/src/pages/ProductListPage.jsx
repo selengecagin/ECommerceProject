@@ -14,18 +14,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
+import { fetchProducts } from "../store/actions/productActions";
 
 export default function ProductListPage() {
   const dispatch = useDispatch();
 
-  //2. component did mount olduğunda categories fetch edilmeli
   useEffect(() => {
     dispatch(fetchCategories());
+    dispatch(fetchProducts());
   }, []);
 
   return (
     <main>
-      {/* TODO grid icon- pro feature - solution canot be found */}
+      {/* TODO grid icon- pro feature - solution cannot be found */}
       <section className="flex flex-col md:flex-row flex-wrap gap-3.5 items-center px-[15%] py-6 justify-between">
         <div className=" flex ">
           <h2 className="text-center text-2xl font-bold text-[#252B42] bg-[#FAFAFA]">
@@ -83,25 +84,11 @@ export default function ProductListPage() {
       </section>
 
       <section className="flex flex-wrap justify-center items-center px-40 bg-[#fff]">
-        <div className="flex flex-col py-12 gap-12 items-center">
-          <div className="img-container-1 flex flex-wrap gap-8 items-start justify-center">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+        <div className="flex flex-col py-12 items-center">
+          <div className="flex flex-row flex-wrap gap-8 items-start justify-center">
             <ProductCard />
           </div>
-          <div className="img-container-2 hidden md:flex md:flex-wrap md:gap-8 items-start justify-center">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
-          <div className="img-container-3 hidden md:flex md:flex-wrap md:gap-8 items-start justify-center">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
+
           <Pagination />
         </div>
       </section>

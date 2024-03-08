@@ -16,7 +16,7 @@ export default function SignInPage() {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(loginUserAction(data, navigate)); //userActiona parametre olarak gönderdik
+    dispatch(loginUserAction(data, navigate)); 
     console.log("Login Datası:", data);
   };
 
@@ -83,5 +83,4 @@ export default function SignInPage() {
     </main>
   );
 }
-//passwordu local store-token tarafından alacağız
-//email
+
