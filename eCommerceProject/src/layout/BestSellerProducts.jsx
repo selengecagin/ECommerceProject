@@ -17,19 +17,8 @@ export default function BestSellerProducts() {
           </p>
         </div>
 
-        <div className="productCard flex flex-col flex-wrap gap-y-20 justify-center">
-          <div className="flex flex-col items-center justify-center lg:flex-row  gap-8">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
-          <div className="flex flex-col items-center justify-center lg:flex-row  gap-8">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
+        <div className="productCard flex flex-col flex-wrap gap-y-20 justify-center  items-center lg:flex-row  gap-8">
+          <ProductCard />
         </div>
       </div>
     </section>
