@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 export default function ProductCard() {
   const productData = useSelector((store) => store.product.productList);
-  
+
 
   return (
     <section className="flex flex-row flex-wrap items-center justify-center max-w-[1440px] gap-12">
@@ -14,6 +14,7 @@ export default function ProductCard() {
         return (
           <div key={index} className="w-[240px]">
             <div className="">
+              {/* TODO images should be aligned and sized the same regarding their unique features */}
               <img
                 src={data.images[0].url}
                 alt="product image"

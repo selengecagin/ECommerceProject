@@ -39,7 +39,7 @@ export default function Carousel1() {
                 <p className="text-2xl text-center text-white font-bold">
                   $16.48
                 </p>
-
+{/* onclick -> sepete eklemeli ? */}
                 <button className="py-4 px-10 items-center gap-2.5 bg-[#2DC071] text-white font-bold text-sm rounded hover:scale-110 transition duration-200">
                   ADD TO CART
                 </button>
@@ -70,7 +70,7 @@ export default function Carousel1() {
                 <p className="text-2xl text-center text-white font-bold">
                   $16.48
                 </p>
-
+                {/* transform to Link and give a path */}
                 <button className="py-4 px-10 items-center gap-2.5 bg-[#2DC071] text-white font-bold text-sm rounded hover:scale-110 transition duration-200">
                   ADD TO CART
                 </button>

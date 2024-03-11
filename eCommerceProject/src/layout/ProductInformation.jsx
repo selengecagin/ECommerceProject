@@ -24,6 +24,7 @@ export default function ProductInformation() {
           We know how large objects will act, but things on a small scale.
         </p>
 
+
         <div className="flex flex-col lg:flex-row gap-2.5 ">
           <div className="bg-[#2DC071] cursor-pointer flex justify-center gap-2 py-4 px-10 rounded-md hover:scale-110 transition duration-200">
             <Link
@@ -32,7 +33,7 @@ export default function ProductInformation() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              BUY NOW
+              SHOP NOW
             </Link>
           </div>
 
