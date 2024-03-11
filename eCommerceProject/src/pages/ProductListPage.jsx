@@ -19,10 +19,11 @@ import { fetchProducts } from "../store/actions/productActions";
 export default function ProductListPage() {
   const dispatch = useDispatch();
 
+  //buradaki logic doğru mu- dispatch parent componentlerin hepsine mi eklenmeli
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(fetchProducts());
-  }, []);
+  });
 
   return (
     <main>

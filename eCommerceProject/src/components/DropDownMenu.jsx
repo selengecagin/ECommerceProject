@@ -8,7 +8,9 @@ export default function DropDownMenu() {
 
   return (
     <div className="dropdown">
-      <button className="dropbtn">Shop</button>
+      <button className="dropbtn text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold align-top">
+        Shop
+      </button>
       <div className="dropdown-content">
         {categoryData.map((item, index) => {
           return (
@@ -19,7 +21,7 @@ export default function DropDownMenu() {
                 }/${item.title.toLowerCase()}`}
                 className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
               >
-                  {item.gender === "k" ? "Kadın" : "Erkek"} {item.title}
+                {item.gender === "k" ? "Kadın" : "Erkek"} {item.title}
               </Link>
             </div>
           );

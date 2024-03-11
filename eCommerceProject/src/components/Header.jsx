@@ -134,7 +134,7 @@ export default function Header() {
             Home
           </Link>
 
-          {/* TODO Sutructure that renders link inside link throws an error */}
+          {/* TODO Structure that renders link inside link throws an error */}
           <Link to={"/product-list-page"}>
             <DropDownMenu />
           </Link>

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 export default function ProductCard() {
   const productData = useSelector((store) => store.product.productList);
+  
 
   return (
     <section className="flex flex-row flex-wrap items-center justify-center max-w-[1440px] gap-12">

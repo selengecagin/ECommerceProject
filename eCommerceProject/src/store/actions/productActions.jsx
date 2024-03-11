@@ -2,6 +2,7 @@ import api from "../../api";
 
 export const ProductActions = {
   setProductList: "SET_PRODUCT_LIST",
+  setLoadingState: "SET_LOADING_STATE",
   setTotalProductCount: "SET_TOTAL_PRODUCT_COUNT",
   setPageCount: "SET_PAGE_COUNT",
   setActivePage: "SET_ACTIVE_PAGE",
@@ -10,6 +11,10 @@ export const ProductActions = {
 
 export const setProductList = (product) => {
   return { type: ProductActions.setProductList, payload: product };
+};
+
+export const setLoadingState = (loadingState) => {
+  return { type: ProductActions.fetchState, payload: loadingState };
 };
 
 export const setTotalProductCount = (productCount) => {

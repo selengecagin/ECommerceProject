@@ -1,5 +1,6 @@
 import api from "../../api";
 import { toast } from "react-toastify";
+
 export const GlobalUserActions = {
   setLoginSuccess: "LOGIN_SUCCESS",
   setLoginFailure: "LOGIN_FAILURE",
@@ -62,7 +63,6 @@ export const loginUserAction = (creds, navigate) => (dispatch) => {
 
 export const userAuthAction = (navigate) => (dispatch) => {
   const token = localStorage.getItem("token");
-  //TODO try header update
   if (token) {
     api
       .post("/verify", {
