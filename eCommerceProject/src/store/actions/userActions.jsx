@@ -1,11 +1,12 @@
 import api from "../../api";
 import { toast } from "react-toastify";
+
 export const GlobalUserActions = {
   setLoginSuccess: "LOGIN_SUCCESS",
   setLoginFailure: "LOGIN_FAILURE",
   setLoginExit: "LOGIN_EXIT",
 };
-// action creators
+
 export const loginSuccess = (data) => ({
   type: GlobalUserActions.setLoginSuccess,
   payload: data,
@@ -25,8 +26,6 @@ export const loginExit = () => ({
   type: GlobalUserActions.setLoginExit,
 });
 
-//TODO burada navigate argüman olarak alınıyor ancak useNavigate yok,nasıl çalışıyor
-//useNavigate hook actionların içinde direkt kullanıldığında hata fırlatıyor
 export const loginUserAction = (creds, navigate) => (dispatch) => {
   localStorage.setItem("userName", creds.userName);
 
@@ -65,7 +64,6 @@ export const loginUserAction = (creds, navigate) => (dispatch) => {
 export const userAuthAction = (navigate) => (dispatch) => {
   const token = localStorage.getItem("token");
   if (token) {
-    //auto login feature
     api
       .post("/verify", {
         header: {
@@ -73,22 +71,16 @@ export const userAuthAction = (navigate) => (dispatch) => {
         },
       })
       .then((res) => {
-        const user = res.data.user; // Assuming the response has a 'user' object
-        const newToken = res.data.token; // Assuming the response sends back a new token
+        const user = res.data.user;
+        const newToken = res.data.token;
 
-        // Dispatch user object to reducer
         dispatch(loginSuccess(user));
 
-        // Update token in localStorage & Axios header if a new token is provided
         if (newToken) {
-          localStorage.setItem("token", newToken); // Renew token in local storage
+          localStorage.setItem("token", newToken);
           api.defaults.headers.common["Authorization"] = newToken;
-
-          // If using an Axios instance named 'api', replace the line above with:
-          // api.defaults.headers.common['Authorization'] = newToken;
         }
 
-        // Navigate after successful token verification
         setTimeout(() => navigate(-1), 5000);
       })
       .catch((err) => {

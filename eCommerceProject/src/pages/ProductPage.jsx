@@ -246,19 +246,8 @@ export default function ProductPage() {
             </h3>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
-            <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-8">
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-            </div>
-            <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-8">
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-            </div>
+          <div className="flex flex-wrap flex-col md:flex-row items-center justify-center gap-8">
+            <ProductCard />
           </div>
         </div>
       </section>

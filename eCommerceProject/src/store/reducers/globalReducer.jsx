@@ -9,14 +9,14 @@ const initialState = {
 
 const globalReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GlobalActions.SET_ROLE:
+    case GlobalActions.setRole:
       return { ...state, roles: action.payload };
-    case GlobalActions.SET_CATEGORY:
-      return { ...state, roles: action.payload };
-    case GlobalActions.SET_THEME:
-      return { ...state, roles: action.payload };
-    case GlobalActions.SET_LANGUAGE:
-      return { ...state, roles: action.payload };
+    case GlobalActions.setCategories:
+      return { ...state, categories: action.payload };
+    case GlobalActions.setTheme:
+      return { ...state, theme: action.payload };
+    case GlobalActions.setLanguage:
+      return { ...state, language: action.payload };
     default:
       return state;
   }

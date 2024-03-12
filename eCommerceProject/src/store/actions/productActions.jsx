@@ -1,28 +1,48 @@
-export const GlobalProductActions = {
-  PRODUCTS_FETCHING: "PRODUCTS_FETCHING",
-  PRODUCTS_FETCHED: "PRODUCTS_FETCHED",
-  PRODUCTS_FETCH_MORE: "PRODUCTS_FETCH_MORE",
-  PRODUCTS_FETCH_FAILED: "PRODUCTS_FETCH_FAILED",
-  PRODUCTS_NOT_FETCHED: "PRODUCTS_NOT_FETCHED",
-  SET_ACTIVE_PAGE: "SET_ACTIVE_PAGE",
+import api from "../../api";
+
+export const ProductActions = {
+  setProductList: "SET_PRODUCT_LIST",
+  setLoadingState: "SET_LOADING_STATE",
+  setTotalProductCount: "SET_TOTAL_PRODUCT_COUNT",
+  setPageCount: "SET_PAGE_COUNT",
+  setActivePage: "SET_ACTIVE_PAGE",
+  fetchState: "SET_FETCH_STATE",
 };
 
-export const productsFetchingActionCreator = (data) => ({
-  type: GlobalProductActions.PRODUCTS_FETCHING,
-  payload: data,
-});
+export const setProductList = (product) => {
+  return { type: ProductActions.setProductList, payload: product };
+};
 
-export const productsFetchedActionCreator = (data) => ({
-  type: GlobalProductActions.PRODUCTS_FETCHED,
-  payload: data,
-  //payload: { products, totalCount, productsPerPage }
-});
+export const setLoadingState = (loadingState) => {
+  return { type: ProductActions.fetchState, payload: loadingState };
+};
 
-export const productsFetchActionCreator = (data) => ({
-  type: GlobalProductActions.PRODUCTS_FETCH_FAILED,
-});
+export const setTotalProductCount = (productCount) => {
+  return {
+    type: ProductActions.setTotalProductCount,
+    payload: productCount,
+  };
+};
 
-export const setActivePageActionCreator = (pageNumber) => ({
-  type: GlobalProductActions.PRODUCTS_FETCH_FAILED,
-  payload: pageNumber,
-});
+export const setPageCount = (pageCount) => {
+  return { type: ProductActions.setPageCount, payload: pageCount };
+};
+
+export const setActivePage = (activePage) => {
+  return { type: ProductActions.setActivePage, payload: activePage };
+};
+
+export const fethingState = (fetchState) => {
+  return { type: ProductActions.fetchState, payload: fetchState };
+};
+
+export const fetchProducts = () => (dispatch) => {
+  
+  api
+    .get("/products")
+    .then((res) => {
+      dispatch(setProductList(res.data));
+      console.log("Fetch Products Response: ", res.data);
+    })
+    .catch((err) => console.log("Fetch Products Error: ", err));
+};

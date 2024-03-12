@@ -2,6 +2,7 @@ import React from "react";
 import md5 from "md5";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faAngleDown,
   faCartShopping,
   faEnvelope,
   faHeart,
@@ -19,6 +20,11 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loginExit } from "../store/actions/userActions";
+import DropDownMenu from "./DropDownMenu";
+
+
+// TODO create multilevel dropdown menu
+
 
 export default function Header() {
   const user = useSelector((store) => store.user);
@@ -39,21 +45,12 @@ export default function Header() {
     { icon: faTwitter, url: "https://twitter.com", label: "Twitter" },
   ];
 
-  const routeData = [
-    { key: "Home", linkTo: "/" },
-    { key: "Shop", linkTo: "/product-list-page" },
-    { key: "About", linkTo: "/about-page" },
-    { key: "Blog", linkTo: "/blog-page" },
-    { key: "Team", linkTo: "/team-page" },
-    { key: "Contact", linkTo: "/contact-page" },
-    { key: "Pages", linkTo: "/pages" },
-  ];
-
   const logOutHandler = () => {
     dispatch(loginExit());
     localStorage.removeItem("token");
     navigate("/");
   };
+
 
   return (
     <header className="flex flex-col justify-start w-full">
@@ -134,18 +131,50 @@ export default function Header() {
         </div>
 
         <div className="flex flex-col sm:flex sm:flex-row gap-4">
-          {routeData.map((data, index) => {
-            return (
-              <div className="flex items-center" key={index}>
-                <Link
-                  to={data.linkTo}
-                  className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
-                >
-                  {data.key}
-                </Link>
-              </div>
-            );
-          })}
+          <Link
+            to={"/"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Home
+          </Link>
+
+          {/* TODO fix- nested navigation throws an error */}
+          <Link to={"/product-list-page"}>
+            <DropDownMenu />
+          </Link>
+
+          <Link
+            to={"/about-page"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            About
+          </Link>
+
+          <Link
+            to={"/blog-page"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Blog
+          </Link>
+
+          <Link
+            to={"/team-page"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Team
+          </Link>
+          <Link
+            to={"/contact-page"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Contact
+          </Link>
+          <Link
+            to={"/pages"}
+            className="text-secondTextColor text-xl font-normal sm:text-sm sm:font-bold"
+          >
+            Pages
+          </Link>
         </div>
 
         <div className="hidden lg:flex lg:gap-6 items-center">

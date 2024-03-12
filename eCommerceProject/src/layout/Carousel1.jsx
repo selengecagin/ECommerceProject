@@ -54,8 +54,9 @@ export default function Carousel1() {
                 scale.
               </Typography>
 
-              <div className="cursor-pointer flex justify-center sm:justify-start gap-2 rounded-md hover:scale-110 transition duration-200 ">
-                <button className=" text-white text-2xl font-bold bg-[#2DC071] w-[221px] h-[61px]">
+              <div className="cursor-pointer flex justify-center sm:justify-start">
+                {/* transform to Link and give a path */}
+                <button className=" text-white text-2xl font-bold bg-[#2DC071] w-[221px] h-[61px] rounded-md hover:scale-110 transition duration-200 ">
                   SHOP NOW
                 </button>
               </div>

@@ -12,6 +12,10 @@ import productReducer from "./reducers/productReducer";
 import storeReducer from "./reducers/storeReducer";
 import shoppingCartReducer from "./reducers/shoppingCartReducer";
 
+
+// eğer bir componente state datası çekmek istiyorsak store içerisinden reducer içersisinden değeri çekmeliyiz
+//örneğin store içerisinden categories çekmek için store.global.categories den almalıyız.
+//signUpPage ->const roleOptions = useSelector((store) => store.global.roles);
 export const reducers = combineReducers({
   global: globalReducer,
   user: userReducer,

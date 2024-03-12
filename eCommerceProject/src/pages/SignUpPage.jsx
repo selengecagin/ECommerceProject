@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../api";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRoles } from "../store/actions/globalActions";
-//TODO default role implementation
+//TODO add default role implementation
 export default function SignUpPage() {
   const {
     register,
