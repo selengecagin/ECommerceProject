@@ -37,6 +37,7 @@ export const fethingState = (fetchState) => {
 };
 
 export const fetchProducts = () => (dispatch) => {
+  
   api
     .get("/products")
     .then((res) => {

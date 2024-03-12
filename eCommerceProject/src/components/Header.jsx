@@ -22,6 +22,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginExit } from "../store/actions/userActions";
 import DropDownMenu from "./DropDownMenu";
 
+
+// TODO create multilevel dropdown menu
+
+
 export default function Header() {
   const user = useSelector((store) => store.user);
 
@@ -47,7 +51,7 @@ export default function Header() {
     navigate("/");
   };
 
-  // TODO kategori dropdowndan ürün kategorisi seçilecek, gender filter üzerinden filtrelenecek
+
   return (
     <header className="flex flex-col justify-start w-full">
       <section className="hidden sm:flex sm:flex-row justify-between items-center h-[58px] px-[10%] text-lightTextColor font-bold bg-darkBackgroundColor">
@@ -134,7 +138,7 @@ export default function Header() {
             Home
           </Link>
 
-          {/* TODO Structure that renders link inside link throws an error */}
+          {/* TODO fix- nested navigation throws an error */}
           <Link to={"/product-list-page"}>
             <DropDownMenu />
           </Link>

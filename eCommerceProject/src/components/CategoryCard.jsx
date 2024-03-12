@@ -9,9 +9,10 @@ export default function CategoryCard() {
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 5);
 
-  //TODO There is a glitch in the data fetching phase
-  //TODO Complete responsive design
-  //TODO Currently, categories listed by only rating rate, so we see same category for both man and women
+  // TODO add responsive features
+  // TODO currently, categories listed by only rating rate, so we see same category for both man and women ?
+  // TODO add descriptive text to rating and stock
+
   return (
     <section className="flex flex-col flex-wrap shrink-0 sm:flex-row gap-4 pb-8 px-8 justify-center items-center bg-[#FAFAFA]">
       {topCategories?.map((data, index) => {

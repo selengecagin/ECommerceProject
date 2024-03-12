@@ -2,6 +2,7 @@ import React from "react";
 import SocialMediaContainer from "./SocialMediaContainer";
 import { Link } from "react-router-dom";
 
+// TODO add functionality to email form and subscribe button
 export default function Footer() {
   const footerData = [
     {
@@ -30,12 +31,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col w-full ">
       <section className="footer-1 flex flex-col py-20 justify-start lg:flex-row  lg:justify-between lg:items-center lg:gap-[305px] px-[44px] sm:px-32 md:px-48">
-        <Link
-          to="/"
-          className="text-darkTextColor text-2xl font-bold pb-2.5"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link to="/" className="text-darkTextColor text-2xl font-bold pb-2.5">
           BrandName
         </Link>
 
@@ -59,8 +55,6 @@ export default function Footer() {
                   return (
                     <a
                       href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="text-secondTextColor text-sm font-bold"
                       key={index}
                     >
