@@ -29,7 +29,7 @@ export default function ProductCard() {
                 <h2 className="text-base font-bold leading-3 text-darkTextColor text-center">
                   {data.name}
                 </h2>
-                <p className="text-sm font-bold text-secondTextColor text-center">
+                <p className="text-sm font-bold text-secondTextColor text-center h-[75px]">
                   {data.description}
                 </p>
                 <div className="flex flex-row text-base font-bold justify-around gap-2">
@@ -37,7 +37,7 @@ export default function ProductCard() {
                   <p className="text-secondaryColor text-sm">{data.stock}</p>
                 </div>
 
-                <div className="inline-flex items-center gap-2">
+                <div className="flex flex-row items-center justify-center gap-2">
                   <FontAwesomeIcon
                     icon={faCircle}
                     style={{ color: "#24a6f0" }}
@@ -61,6 +61,8 @@ export default function ProductCard() {
                 </div>
               </div>
             </div>
+
+            
           </div>
         );
       })}
