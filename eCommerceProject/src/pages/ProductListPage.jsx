@@ -20,7 +20,6 @@ import InfiniteScroll from "react-infinite-scroll-component";
 export default function ProductListPage() {
   const dispatch = useDispatch();
   const productData = useSelector((store) => store.product.productList);
-  const [selectedCategory, setSelectedCategory] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
 
@@ -117,7 +116,7 @@ export default function ProductListPage() {
               loader={<h4>Loading...</h4>}
               endMessage={
                 <p style={{ textAlign: "center" }}>
-                  <b>Yay! You have seen it all</b>
+                  <b>There is no more products to load!</b>
                 </p>
               }
               className="flex flex-col"
