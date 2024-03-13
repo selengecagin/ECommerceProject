@@ -1,48 +1,68 @@
 import api from "../../api";
 
 export const ProductActions = {
-  setProductList: "SET_PRODUCT_LIST",
-  setLoadingState: "SET_LOADING_STATE",
-  setTotalProductCount: "SET_TOTAL_PRODUCT_COUNT",
-  setPageCount: "SET_PAGE_COUNT",
-  setActivePage: "SET_ACTIVE_PAGE",
-  fetchState: "SET_FETCH_STATE",
+  setFetching: "SET_FETCHING",
+  setFetchMore: "SET_FETCH_MORE",
+  setFetched: "SET_FETCHED",
+  setFailed: "SET_FAILED",
+  setFetchSingleProduct: "SET_FETCH_SINGLE_PRODUCT",
 };
 
-export const setProductList = (product) => {
-  return { type: ProductActions.setProductList, payload: product };
+export const setFetching = (product) => {
+  return { type: ProductActions.setFetching, payload: product };
 };
 
-export const setLoadingState = (loadingState) => {
-  return { type: ProductActions.fetchState, payload: loadingState };
+export const setFetched = (product) => {
+  return { type: ProductActions.setFetched, payload: product };
 };
 
-export const setTotalProductCount = (productCount) => {
-  return {
-    type: ProductActions.setTotalProductCount,
-    payload: productCount,
-  };
+export const setFailed = (product) => {
+  return { type: ProductActions.setFailed, payload: product };
 };
 
-export const setPageCount = (pageCount) => {
-  return { type: ProductActions.setPageCount, payload: pageCount };
+export const setFetchSingleProduct = (product) => {
+  return { type: ProductActions.setFetchSingleProduct, payload: product };
 };
 
-export const setActivePage = (activePage) => {
-  return { type: ProductActions.setActivePage, payload: activePage };
-};
-
-export const fethingState = (fetchState) => {
-  return { type: ProductActions.fetchState, payload: fetchState };
-};
+export const fetchMore = (product) => ({
+  type: ProductActions.setFetchMore,
+  payload: product,
+});
 
 export const fetchProducts = () => (dispatch) => {
-  
   api
     .get("/products")
     .then((res) => {
-      dispatch(setProductList(res.data));
+      dispatch(setFetching(res.data));
       console.log("Fetch Products Response: ", res.data);
     })
-    .catch((err) => console.log("Fetch Products Error: ", err));
+    .catch((err) => console.log("Fetch products error: ", err));
+};
+
+export const fetchNextPage = (data) => (dispatch) => {
+  api
+    .get("/products", {
+      params: data,
+    })
+    .then((res) => {
+      dispatch(fetchMore(res.data));
+      console.log("Product data from fetchNextPage action: ", res.data);
+    })
+    .catch((err) => {
+      dispatch(setFailed(err.message));
+    });
+};
+
+export const fetchSingleProduct = (data) => (dispatch) => {
+  dispatch(setFetching());
+
+  api
+    .get(`/products/${data}`)
+    .then((res) => {
+      dispatch(fetchSingleProduct(res.data));
+      console.log("Product data: ", res.data);
+    })
+    .catch((err) => {
+      dispatch(setFailed(err.message));
+    });
 };

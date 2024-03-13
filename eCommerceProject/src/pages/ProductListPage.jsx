@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Client from "../components/Client";
-import Pagination from "../components/Pagination";
+
 import CategoryCard from "../components/CategoryCard";
 import ProductCard from "../components/ProductCard";
 
@@ -12,24 +12,39 @@ import {
   faAngleRight,
   faList,
 } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
-import { fetchProducts } from "../store/actions/productActions";
-
+import { fetchNextPage, fetchProducts } from "../store/actions/productActions";
+import InfiniteScroll from "react-infinite-scroll-component";
+// TODO convert imgs to icons
 export default function ProductListPage() {
   const dispatch = useDispatch();
+  const productData = useSelector((store) => store.product.productList);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
 
-  const [loading, setLoading] = useState(false);
-
+  const fetchData = (data) => {
+    setIsLoading(true);
+    dispatch(fetchNextPage(data))
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.err("Error fetching next page: ", err);
+        setIsLoading(false);
+        setHasMore(false);
+      });
+  };
 
   useEffect(() => {
     dispatch(fetchCategories());
+    setIsLoading(true);
     dispatch(fetchProducts());
-  });
-// TODO convert imgs to icons
+  }, []);
+
   return (
     <main>
-   
       <section className="flex flex-col md:flex-row flex-wrap gap-3.5 items-center px-[15%] py-6 justify-between">
         <div className=" flex ">
           {/* TODO convert h2-shop to Link and give shop's path */}
@@ -91,10 +106,29 @@ export default function ProductListPage() {
       <section className="flex flex-wrap justify-center items-center px-40 bg-[#fff]">
         <div className="flex flex-col py-12 items-center">
           <div className="flex flex-row flex-wrap gap-8 items-start justify-center">
-            <ProductCard />
+            <InfiniteScroll
+              dataLength={productData.length}
+              next={() =>
+                fetchData({
+                  offset: 25,
+                })
+              }
+              hasMore={hasMore}
+              loader={<h4>Loading...</h4>}
+              endMessage={
+                <p style={{ textAlign: "center" }}>
+                  <b>Yay! You have seen it all</b>
+                </p>
+              }
+              className="flex flex-col"
+            >
+              <div className="flex flex-wrap flex-row justify-center py-12 px-[10%] gap-8">
+                {productData.products?.map((item) => (
+                  <ProductCard key={item.id} product={item} />
+                ))}
+              </div>
+            </InfiniteScroll>
           </div>
-
-          <Pagination />
         </div>
       </section>
       <Client />
