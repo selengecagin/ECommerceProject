@@ -14,34 +14,37 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
-import { fetchNextPage, fetchProducts } from "../store/actions/productActions";
-import InfiniteScroll from "react-infinite-scroll-component";
-// TODO convert imgs to icons
-export default function ProductListPage() {
-  const dispatch = useDispatch();
-  const productData = useSelector((store) => store.product.productList);
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
+import { fetchProducts } from "../store/actions/productActions";
 
-  const fetchData = (data) => {
-    setIsLoading(true);
-    dispatch(fetchNextPage(data))
-      .then(() => {
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.err("Error fetching next page: ", err);
-        setIsLoading(false);
-        setHasMore(false);
-      });
+export default function ProductListPage() {
+  const { products, loading, total } = useSelector(
+    (store) => store.product.products
+  );
+
+  const [offset, setOffset] = useState(0);
+  const dispatch = useDispatch();
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+      document.documentElement.offsetHeight
+    )
+      return;
+    if (products.length < total) {
+      setOffset(offset + 25);
+    }
   };
 
   useEffect(() => {
     dispatch(fetchCategories());
-    setIsLoading(true);
-    dispatch(fetchProducts());
-  }, []);
+    dispatch(fetchProducts({ offset }));
+  }, [dispatch, offset]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+  // TODO convert imgs to icons
   return (
     <main>
       <section className="flex flex-col md:flex-row flex-wrap gap-3.5 items-center px-[15%] py-6 justify-between">
@@ -105,28 +108,9 @@ export default function ProductListPage() {
       <section className="flex flex-wrap justify-center items-center px-40 bg-[#fff]">
         <div className="flex flex-col py-12 items-center">
           <div className="flex flex-row flex-wrap gap-8 items-start justify-center">
-            <InfiniteScroll
-              dataLength={productData.length}
-              next={() =>
-                fetchData({
-                  offset: 25,
-                })
-              }
-              hasMore={hasMore}
-              loader={<h4>Loading...</h4>}
-              endMessage={
-                <p style={{ textAlign: "center" }}>
-                  <b>There is no more products to load!</b>
-                </p>
-              }
-              className="flex flex-col"
-            >
-              <div className="flex flex-wrap flex-row justify-center py-12 px-[10%] gap-8">
-                {productData.products?.map((item) => (
-                  <ProductCard key={item.id} product={item} />
-                ))}
-              </div>
-            </InfiniteScroll>
+            {products?.map((data, index) => {
+              return <ProductCard data={data} key={index} />;
+            })}
           </div>
         </div>
       </section>

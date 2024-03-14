@@ -1,48 +1,28 @@
 import { ProductActions } from "../actions/productActions";
 
 const initialState = {
-  productList: [],
-  totalProductCount: 0,
-  pageCount: 0,
-  activePage: 1,
-  fetchState: "NOT_FETCHED",
+  loading: false,
+  products: [],
+  total: 0,
+  error: null,
 };
 
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ProductActions.setFetching:
-      return { ...state, productList: action.payload };
 
-    case ProductActions.setFetched:
-      return {
-        ...state,
-        totalProductCount: action.payload.total,
-        productList: action.payload.products,
-        fetchState: "FETCHED",
-      };
+    case ProductActions.fetchProductRequest:
+      return { ...state, loading: true };
 
-    case ProductActions.setFailed:
+    case ProductActions.fetchProductSuccess:
       return {
         ...state,
         loading: false,
-        products: [],
-        error: action.payload,
+        products: action.payload,
+        total: action.payload.total,
       };
 
-    case ProductActions.setFetchMore:
-      return {
-        ...state,
-        totalProductCount: action.payload.total,
-        productList: [...state.productList, ...action.payload.products],
-        fetchState: "FETCH_MORE",
-      };
-
-    case ProductActions.setFetchSingleProduct:
-      return {
-        ...state,
-        product: action.payload,
-        fetchState: "FETCHED",
-      };
+    case ProductActions.fetchProductFailure:
+      return { ...state, loading: false, error: action.error };
 
     default:
       return state;

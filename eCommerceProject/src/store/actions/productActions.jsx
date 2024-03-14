@@ -1,68 +1,29 @@
 import api from "../../api";
 
 export const ProductActions = {
-  setFetching: "SET_FETCHING",
-  setFetchMore: "SET_FETCH_MORE",
-  setFetched: "SET_FETCHED",
-  setFailed: "SET_FAILED",
-  setFetchSingleProduct: "SET_FETCH_SINGLE_PRODUCT",
+  fetchProductRequest: "FETCH_PRODUCT_REQUEST",
+  fetchProductSuccess: "FETCH_PRODUCT_SUCCESS",
+  fetchProductFailure: "FETCH_PRODUCT_FAILURE",
 };
 
-export const setFetching = (product) => {
-  return { type: ProductActions.setFetching, payload: product };
+export const fetchProductRequest = () => {
+  return { type: ProductActions.fetchProductRequest };
 };
 
-export const setFetched = (product) => {
-  return { type: ProductActions.setFetched, payload: product };
+export const fetchProductSuccess = (data) => {
+  return { type: ProductActions.fetchProductSuccess, payload: data };
 };
 
-export const setFailed = (product) => {
-  return { type: ProductActions.setFailed, payload: product };
+export const fetchProductFailure = (error) => {
+  return { type: ProductActions.fetchProductFailure, error };
 };
-
-export const setFetchSingleProduct = (product) => {
-  return { type: ProductActions.setFetchSingleProduct, payload: product };
-};
-
-export const fetchMore = (product) => ({
-  type: ProductActions.setFetchMore,
-  payload: product,
-});
 
 export const fetchProducts = () => (dispatch) => {
   api
     .get("/products")
     .then((res) => {
-      dispatch(setFetching(res.data));
+      dispatch(fetchProductSuccess(res.data));
       console.log("Fetch Products Response: ", res.data);
     })
-    .catch((err) => console.log("Fetch products error: ", err));
-};
-
-export const fetchNextPage = (data) => (dispatch) => {
-  api
-    .get("/products", {
-      params: data,
-    })
-    .then((res) => {
-      dispatch(fetchMore(res.data));
-      console.log("Product data from fetchNextPage action: ", res.data);
-    })
-    .catch((err) => {
-      dispatch(setFailed(err.message));
-    });
-};
-
-export const fetchSingleProduct = (data) => (dispatch) => {
-  dispatch(setFetching());
-
-  api
-    .get(`/products/${data}`)
-    .then((res) => {
-      dispatch(fetchSingleProduct(res.data));
-      console.log("Product data: ", res.data);
-    })
-    .catch((err) => {
-      dispatch(setFailed(err.message));
-    });
+    .catch((err) => console.log("Fetch Products Error: ", err));
 };
