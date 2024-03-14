@@ -15,9 +15,8 @@ export default function ProductCard({ data }) {
     return <div>Product data is not available</div>;
   }
 
-  console.log("dataaaaa", data);
   return (
-    <section className="flex flex-row flex-wrap items-center justify-center max-w-[1440px] gap-12">
+    <section className="flex flex-row flex-wrap items-center justify-center gap-12">
       <div className="w-[240px]">
         <div className="">
           <img src={data?.images?.[0]?.url} alt="product image" />

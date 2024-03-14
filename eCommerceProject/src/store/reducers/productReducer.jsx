@@ -3,13 +3,13 @@ import { ProductActions } from "../actions/productActions";
 const initialState = {
   loading: false,
   products: [],
+  hasMore: true,
   total: 0,
   error: null,
 };
 
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
-
     case ProductActions.fetchProductRequest:
       return { ...state, loading: true };
 

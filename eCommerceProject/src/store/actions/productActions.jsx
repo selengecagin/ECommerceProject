@@ -19,11 +19,15 @@ export const fetchProductFailure = (error) => {
 };
 
 export const fetchProducts = () => (dispatch) => {
+  dispatch(fetchProductRequest());
   api
     .get("/products")
     .then((res) => {
       dispatch(fetchProductSuccess(res.data));
       console.log("Fetch Products Response: ", res.data);
     })
-    .catch((err) => console.log("Fetch Products Error: ", err));
+    .catch((err) => {
+      dispatch(fetchProductFailure(err));
+      console.log("Fetch Products Error: ", err);
+    });
 };
