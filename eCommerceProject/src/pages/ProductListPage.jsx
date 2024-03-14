@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 import Client from "../components/Client";
 import CategoryCard from "../components/CategoryCard";
 import ProductCard from "../components/ProductCard";
@@ -11,36 +12,54 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
-import { fetchProducts } from "../store/actions/productActions";
+import {
+  fetchMoreProducts,
+  fetchProducts,
+} from "../store/actions/productActions";
 import { useForm } from "react-hook-form";
-import { useSearchParams } from "react-router-dom";
+
 import { sortProducts } from "../store/actions/sortingActions";
 
 export default function ProductListPage() {
-  const { products, loading, hasMore, total } = useSelector(
+  const { products, loading, total } = useSelector(
     (store) => store.product.products
   );
   const categoriesData = useSelector((store) => store.global.categories);
-  const sortOption = useSelector((state) => state.sort.sortOption);
+  const sortOption = useSelector((store) => store.sort.sortOption);
+
   const [offset, setOffset] = useState(0);
   const dispatch = useDispatch();
 
   const { register, handleSubmit } = useForm();
+  const [hasMore, setHasMore] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchData = (data) => {
+    setIsLoading(true);
+    dispatch(fetchMoreProducts(data))
+      .then(() => {
+        
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching next page:", error);
+        setIsLoading(false);
+        setHasMore(false);
+      });
+  };
 
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(fetchProducts({ offset }));
-  }, [dispatch, offset]);
+    //url params part
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set("sort", sortOption);
+    window.history.pushState({}, "", newUrl);
+  }, [dispatch, offset, sortOption]);
 
   const handleSortChange = (e) => {
     dispatch(sortProducts(e.target.value));
   };
-
-  useEffect(() => {
-    const newUrl = new URL(window.location);
-    newUrl.searchParams.set("sort", sortOption);
-    window.history.pushState({}, "", newUrl);
-  }, [sortOption]);
 
   // TODO convert imgs to icons
   return (
@@ -197,11 +216,28 @@ export default function ProductListPage() {
               </div>
             </div>
           ) : (
-            <div className="flex flex-row flex-wrap gap-8 items-start justify-center max-w-[1440px]">
-              {products?.map((data, index) => {
-                return <ProductCard data={data} key={index} />;
-              })}
-            </div>
+            <InfiniteScroll
+              dataLength={products?.length ?? 0}
+              next={() =>
+                fetchData({
+                  offset: 25,
+                })
+              }
+              hasMore={hasMore}
+              loader={<h4>Loading...</h4>}
+              endMessage={
+                <p style={{ textAlign: "center" }}>
+                  <b>No more products to load!</b>
+                </p>
+              }
+              className="flex flex-col"
+            >
+              <div className="flex flex-row flex-wrap gap-8 items-start justify-center max-w-[1440px]">
+                {products?.map((data, index) => {
+                  return <ProductCard data={data} key={data.id} />;
+                })}
+              </div>
+            </InfiniteScroll>
           )}
         </div>
       </section>
