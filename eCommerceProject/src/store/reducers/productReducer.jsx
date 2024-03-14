@@ -3,7 +3,6 @@ import { ProductActions } from "../actions/productActions";
 const initialState = {
   loading: false,
   products: [],
-  hasMore: true,
   total: 0,
   error: null,
 };

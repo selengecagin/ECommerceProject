@@ -18,6 +18,8 @@ export const fetchProductFailure = (error) => {
   return { type: ProductActions.fetchProductFailure, error };
 };
 
+
+
 export const fetchProducts = () => (dispatch) => {
   dispatch(fetchProductRequest());
   api
