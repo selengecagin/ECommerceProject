@@ -12,19 +12,35 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../store/actions/globalActions";
 import { fetchProducts } from "../store/actions/productActions";
+import { useForm } from "react-hook-form";
+import { useSearchParams } from "react-router-dom";
+import { sortProducts } from "../store/actions/sortingActions";
 
 export default function ProductListPage() {
   const { products, loading, hasMore, total } = useSelector(
     (store) => store.product.products
   );
-
+  const categoriesData = useSelector((store) => store.global.categories);
+  const sortOption = useSelector((state) => state.sort.sortOption);
   const [offset, setOffset] = useState(0);
   const dispatch = useDispatch();
+
+  const { register, handleSubmit } = useForm();
 
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(fetchProducts({ offset }));
   }, [dispatch, offset]);
+
+  const handleSortChange = (e) => {
+    dispatch(sortProducts(e.target.value));
+  };
+
+  useEffect(() => {
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set("sort", sortOption);
+    window.history.pushState({}, "", newUrl);
+  }, [sortOption]);
 
   // TODO convert imgs to icons
   return (
@@ -46,7 +62,7 @@ export default function ProductListPage() {
       <CategoryCard />
 
       <section className="filter-row flex items-center justify-center self-stretch bg-[#FFF] ">
-        <div className="flex flex-col py-6 gap-20 w-[1050px] ">
+        <div className="flex flex-col py-6 gap-20 w-[1440px]">
           <div className="flex flex-col md:flex-row flex-wrap items-center gap-4 md:justify-between">
             <div className="flex px-px items-center text-[#737373]">
               <h2 className="text-sm font-bold text-[#737373] ">
@@ -67,20 +83,81 @@ export default function ProductListPage() {
             </div>
             {/* TODO create sort and filter */}
             <div className="flex flex-row gap-4">
-              <div className="popularityButton  flex w-[141px] h-[50px] items-center gap-1.5 py-4 pr-[18px] border border-gray-300 pl-[30px] rounded bg-gray-100">
-                <p className="text-sm text-[#737373] font-normal text-center">
-                  Popularity
-                </p>
-                <FontAwesomeIcon
-                  icon={faAngleDown}
-                  style={{ color: "#97999b" }}
-                />
-              </div>
+              <div className="filterButton flex w-[94px] flex-col items-center justify-center gap-2.5 px-5">
+                {/* <form className="flex" onSubmit={handleSubmit(onSubmit)}> */}
+                <label className="flex border-2 items-center p-2">
+                  <p className="text-[#737373] text-sm font-bold">Category</p>
+                  <select {...register("category")}>
+                    {categoriesData.map((category) => (
+                      <option
+                        key={category.id}
+                        value={category.id}
+                        className="text-[#737373] text-sm font-bold"
+                      >
+                        {category.id}
+                        {category.code}
+                      </option>
+                    ))}
+                  </select>
+                </label>
 
-              <div className="filterButton flex w-[94px] flex-col items-center justify-center gap-2.5 px-5 rounded bg-[#23A6F0] ">
-                <p className="text-sm font-bold text-[#FFFFFF] text-center ">
-                  Filter
-                </p>
+                <label className="flex border-2 items-center p-2 gap-2.5 ">
+                  <select
+                    {...register("sort")}
+                    className="w-[100px]"
+                    value={sortOption}
+                    onChange={handleSortChange}
+                  >
+                    <option
+                      value="default"
+                      className="text-[#737373] text-sm font-bold"
+                    >
+                      Sort By
+                    </option>
+                    <option
+                      value="ascendingPrice"
+                      className="text-[#737373] text-sm font-bold"
+                    >
+                      PRICE: Low to High
+                    </option>
+                    <option
+                      value="descendingPrice"
+                      className="text-[#737373] text-sm font-bold"
+                    >
+                      PRICE: High to Low
+                    </option>
+                    <option
+                      value="ascendingRating"
+                      className="text-[#737373] text-sm font-bold"
+                    >
+                      RATING: Low to High
+                    </option>
+                    <option
+                      value="descendingRating"
+                      className="text-[#737373] text-sm font-bold"
+                    >
+                      RATING: Low To High
+                    </option>
+                  </select>
+                </label>
+
+                <div className="flex flex-row gap-2.5">
+                  <label className="flex border-2 items-center p-2 text-[#737373] font-bold gap-2.5">
+                    <input
+                      type="text"
+                      {...register("filter")}
+                      className="w-20"
+                      placeholder="Search"
+                    />
+                  </label>
+                  <button
+                    type="submit"
+                    className="border-[#23A6F0] w-20 bg-[#23A6F0] text-white rounded"
+                  >
+                    Search
+                  </button>
+                </div>
+                {/* </form> */}
               </div>
             </div>
           </div>

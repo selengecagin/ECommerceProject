@@ -27,6 +27,15 @@ function App() {
         <Route path="/about-page" element={<AboutPage />}></Route>
 
         <Route path="/product-list-page" element={<ProductListPage />}></Route>
+        <Route
+          path="/shopping/:category_id/:gender/:category"
+          element={<ProductListPage />}
+        />
+
+        <Route
+          path="/shopping/:gender/:category"
+          element={<ProductListPage />}
+        />
 
         <Route path="/team-page" element={<TeamPage />}></Route>
 

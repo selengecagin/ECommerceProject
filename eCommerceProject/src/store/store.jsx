@@ -11,6 +11,7 @@ import userReducer from "./reducers/userReducer";
 import productReducer from "./reducers/productReducer";
 import storeReducer from "./reducers/storeReducer";
 import shoppingCartReducer from "./reducers/shoppingCartReducer";
+import sortReducer from "./reducers/sortingReducer";
 
 // eğer bir componente state datası çekmek istiyorsak store içerisinden reducer içersisinden değeri çekmeliyiz
 //örneğin store içerisinden categories çekmek için store.global.categories den almalıyız.
@@ -21,6 +22,7 @@ export const reducers = combineReducers({
   product: productReducer,
   store: storeReducer,
   shoppingCart: shoppingCartReducer,
+  sort: sortReducer,
 });
 
 export const store = createStore(reducers, applyMiddleware(thunk, logger));
