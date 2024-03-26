@@ -20,13 +20,6 @@ const productReducer = (state = initialState, action) => {
         total: action.payload.total,
       };
 
-    case ProductActions.fetchMoreProduct:
-      return {
-        ...state,
-        total: action.payload.total,
-        products: [...state.products, ...action.payload.products],
-      };
-
     case ProductActions.fetchProductFailure:
       return { ...state, loading: false, error: action.error };
 

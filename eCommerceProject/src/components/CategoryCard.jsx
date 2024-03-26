@@ -10,7 +10,6 @@ export default function CategoryCard() {
     .slice(0, 5);
 
   // TODO add responsive features
-  // TODO currently, categories listed by only rating rate, so we see same category for both man and women ?
   // TODO add descriptive text to rating and stock
 
   return (
