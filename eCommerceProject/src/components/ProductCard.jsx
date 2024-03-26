@@ -2,20 +2,11 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import { useSelector } from "react-redux";
 
 export default function ProductCard({ data }) {
   //  TODO images should be aligned and sized the same regarding their unique features
   //  TODO add other UI elements of the product card- rating, stock etc.
   //  TODO make color selection clickable and add cursor pointer
-
-  if (!data || !data.images || data.images.length === 0) {
-    // Optionally, return null or some placeholder when data is not available
-    console.log("Invalid data:", data);
-    return <div>Product data is not available</div>;
-  }
-
- 
   return (
     <section className="flex flex-row flex-wrap items-center justify-center max-w-[1440px] gap-12">
       <div className="w-[240px]">
